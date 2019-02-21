@@ -1,0 +1,76 @@
+﻿<div class="modal fade" id="popupReclamarEnCurso" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-title">
+                    <span>
+                        <i class="fa fa-edit big-icon naranja"></i>
+                        <span style="font-size: 18px; margin-left: 5px">Reclamo de Servicio <span id="ecLblNroInc"></span> </span>
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body">
+                    <input type="hidden" id="ecIncID" name="ecIncID" />
+                    <div class="row row-show-grid">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="ecNroInc">N&uacute;mero de Incidente</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon" style="background-color: #428bca"><i class="fa fa-ambulance big-icon blanco"></i></span>
+                                    <input type="text" class="form-control" id="ecNroInc" readonly="readonly" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="ecNroOrden">N&uacute;mero de Orden</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon" style="background-color: #428bca"><i class="fa fa-file-text-o big-icon blanco"></i></span>
+                                    <input type="text" class="form-control" id="ecNroOrden" readonly="readonly"  />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-show-grid">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="ecPaciente">Paciente</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon" style="background-color: #428bca"><i class="fa fa-user big-icon blanco"></i></span>
+                                    <input type="text" class="form-control" id="ecPaciente" readonly="readonly"  />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="ecEstado">Estado</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon" style="background-color: #428bca"><i class="fa fa-asterisk big-icon blanco"></i></span>
+                                    <input type="text" class="form-control" id="ecEstado" readonly="readonly"  />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row row-show-grid">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="ecObservaciones">Observaciones</label>
+                                <textarea id="ecObservaciones" name="ecObservaciones" rows="6" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="btn-group col-md-offset-4">
+                            <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">Cerrar</button>
+                            <button type="button" id="btnReclamarEnCurso" class="btn btn-primary btn-lg">Enviar</button>
+                        </div>
+
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+

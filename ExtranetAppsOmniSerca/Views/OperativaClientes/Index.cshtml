@@ -1,0 +1,44 @@
+﻿<script>
+
+    var habCurso = '@Session["acceso_curso"]';
+    var habFinaliz = '@Session["acceso_finalizados"]';
+    var habErroneos = '@Session["acceso_erroneos"]';
+    var habDenuncias = '@Session["acceso_denuncias"]';
+
+</script>
+
+
+@Html.Partial("_PopupValidErroneos")
+@Html.Partial("_PopupReclamarEnCurso")
+
+<div class="row" style="margin-top: 20px; display: none" id="displayTabs">
+    <div class="col-md-12" style="margin-top: -10px">
+        <ul class="nav nav-tabs" id="tabsOperativaClientes">
+            <li id="liEnCurso"><a href="#enCurso" data-toggle="tab">En curso</a></li>
+            <li id="liFinalizados"><a href="#finalizados" data-toggle="tab">Finalizados</a></li>
+            <li id="liErroneos"><a href="#validErroneas" data-toggle="tab">Validaciones Erróneas</a></li>
+            <li id="liDenuncias"><a href="#denuncias" data-toggle="tab">Denuncias</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane fade" id="enCurso">
+                @Html.Partial("_EnCurso")
+            </div>
+
+            <div class="tab-pane fade" id="finalizados">
+                @Html.Partial("_Finalizados")
+            </div>
+
+            <div class="tab-pane fade" id="validErroneas">
+                @Html.Partial("_Erroneos")
+            </div>
+
+            <div class="tab-pane fade" id="denuncias">
+                @Html.Partial("_Denuncias")
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

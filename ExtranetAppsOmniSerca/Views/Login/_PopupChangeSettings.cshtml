@@ -1,0 +1,40 @@
+﻿<div class="modal fade" id="popupChangeSettings" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-app="app">
+    <div class="modal-dialog" style="width:450px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-title">
+                    <span>
+                        <span style="font-size:18px;">Cambio de Email</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="login-form padding20 block-shadow bg-grayLighter" style="padding: 1.25em 1.25em 4.25em 1.25em;">
+                <form name="changeSettingsForm" ng-submit="changeSettings()" role="form" enctype="multipart/form-data">
+                    <div class="input-control text full-size" data-role="input">
+                        <label for="usuario">Email Actual:</label>
+                        <div class="inner-addon left-addon">
+                            <i class="glyphicon glyphicon-envelope"></i>
+                            <input type="email" class="form-control" name="currentemail" id="currentemail" ng-model="currentemail" readonly="readonly"  />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="input-control text full-size" data-role="input">
+                        <label for="usuario">Nuevo Email:</label>
+                        <div class="inner-addon left-addon">
+                            <i class="glyphicon glyphicon-envelope"></i>
+                            <input type="email" class="form-control" name="newemail" id="newemail" ng-model="newemail" required />
+                        </div>
+                        <span ng-show="changeSettingsForm.newemail.$dirty && (changeSettingsForm.newemail.$error.required || changeSettingsForm.newemail.$error.email)" class="help-block" style="color: red;">Nuevo Email es requerido y debe ser un correo válido</span>
+                    </div>
+                    <br />
+                    <div class="form-actions">
+                        @*<a class="button link place-left" href="#/home" style="padding-left: 0 !important;">Cancelar</a>*@
+                        <button type="submit" ng-disabled="changeSettingsForm.$invalid" class="button rounded primary place-right"><span class="mif-cog"></span> Cambiar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

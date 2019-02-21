@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:s0="http://tempuri.org" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org">
+      <s:element name="GetCuentaCorrienteV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCuentaCorrienteV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetCuentaCorrienteV2Result" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DataSet">
+        <s:sequence>
+          <s:element ref="s:schema" />
+          <s:any />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProveedores">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProveedoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetProveedoresResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsuarioValidacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsuarioValidacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetUsuarioValidacionResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetComprobante">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pCtaId" type="s:long" />
+            <s:element minOccurs="0" name="pNroCae" type="s:long" />
+            <s:element minOccurs="0" name="pFecEmi" type="s:long" />
+            <s:element minOccurs="0" name="pTipCmp" type="s:string" />
+            <s:element minOccurs="0" name="pNroCmp" type="s:string" />
+            <s:element minOccurs="0" name="pImp" type="s:decimal" />
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetComprobanteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="SetComprobanteResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetComprobanteV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pNroOp" type="s:string" />
+            <s:element minOccurs="0" name="pTipCmp" type="s:string" />
+            <s:element minOccurs="0" name="pNroCmp" type="s:string" />
+            <s:element minOccurs="0" name="pFecEmi" type="s:long" />
+            <s:element minOccurs="0" name="pNroCae" type="s:long" />
+            <s:element minOccurs="0" name="pImp" type="s:decimal" />
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetComprobanteV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="SetComprobanteV2Result" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCuentaCorrienteV2SoapIn">
+    <wsdl:part name="parameters" element="s0:GetCuentaCorrienteV2" />
+  </wsdl:message>
+  <wsdl:message name="GetCuentaCorrienteV2SoapOut">
+    <wsdl:part name="parameters" element="s0:GetCuentaCorrienteV2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetProveedoresSoapIn">
+    <wsdl:part name="parameters" element="s0:GetProveedores" />
+  </wsdl:message>
+  <wsdl:message name="GetProveedoresSoapOut">
+    <wsdl:part name="parameters" element="s0:GetProveedoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsuarioValidacionSoapIn">
+    <wsdl:part name="parameters" element="s0:GetUsuarioValidacion" />
+  </wsdl:message>
+  <wsdl:message name="GetUsuarioValidacionSoapOut">
+    <wsdl:part name="parameters" element="s0:GetUsuarioValidacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetComprobanteSoapIn">
+    <wsdl:part name="parameters" element="s0:SetComprobante" />
+  </wsdl:message>
+  <wsdl:message name="SetComprobanteSoapOut">
+    <wsdl:part name="parameters" element="s0:SetComprobanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetComprobanteV2SoapIn">
+    <wsdl:part name="parameters" element="s0:SetComprobanteV2" />
+  </wsdl:message>
+  <wsdl:message name="SetComprobanteV2SoapOut">
+    <wsdl:part name="parameters" element="s0:SetComprobanteV2Response" />
+  </wsdl:message>
+  <wsdl:portType name="ProveedoresCuentasSoap">
+    <wsdl:operation name="GetCuentaCorrienteV2">
+      <wsdl:input message="s0:GetCuentaCorrienteV2SoapIn" />
+      <wsdl:output message="s0:GetCuentaCorrienteV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProveedores">
+      <wsdl:input message="s0:GetProveedoresSoapIn" />
+      <wsdl:output message="s0:GetProveedoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuarioValidacion">
+      <wsdl:input message="s0:GetUsuarioValidacionSoapIn" />
+      <wsdl:output message="s0:GetUsuarioValidacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetComprobante">
+      <wsdl:input message="s0:SetComprobanteSoapIn" />
+      <wsdl:output message="s0:SetComprobanteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetComprobanteV2">
+      <wsdl:input message="s0:SetComprobanteV2SoapIn" />
+      <wsdl:output message="s0:SetComprobanteV2SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProveedoresCuentasSoap" type="s0:ProveedoresCuentasSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCuentaCorrienteV2">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ProveedoresCuentas.GetCuentaCorrienteV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProveedores">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ProveedoresCuentas.GetProveedores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuarioValidacion">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ProveedoresCuentas.GetUsuarioValidacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetComprobante">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ProveedoresCuentas.SetComprobante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetComprobanteV2">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ProveedoresCuentas.SetComprobanteV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProveedoresCuentas">
+    <wsdl:port name="ProveedoresCuentasSoap" binding="s0:ProveedoresCuentasSoap">
+      <soap:address location="remote.omnisaludsa.com.ar:57772/csp/shaman/WebServices.ProveedoresCuentas.cls" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

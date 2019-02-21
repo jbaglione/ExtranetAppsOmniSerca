@@ -1,0 +1,113 @@
+﻿<script>
+    var tipoAcceso = '@Session["Acceso"]';
+    var usr_id_medico = '@Session["usr_id"]';
+</script>
+
+<div id="content"></div>
+<div id="busy-holder">
+    <div id="busy">
+        <div id="floatingCirclesG">
+            <div class="f_circleG" id="frotateG_01">
+            </div>
+            <div class="f_circleG" id="frotateG_02">
+            </div>
+            <div class="f_circleG" id="frotateG_03">
+            </div>
+            <div class="f_circleG" id="frotateG_04">
+            </div>
+            <div class="f_circleG" id="frotateG_05">
+            </div>
+            <div class="f_circleG" id="frotateG_06">
+            </div>
+            <div class="f_circleG" id="frotateG_07">
+            </div>
+            <div class="f_circleG" id="frotateG_08">
+            </div>
+        </div>
+    </div>
+</div>
+
+@Html.Partial("_PopupRevisarGuardias")
+@Html.Partial("_PopupRevisarServicios")
+
+<div class="row" style="margin-top:20px" id="displayTabs">
+    <div class="col-md-10" style="margin-top:-10px">
+        <ul class="nav nav-tabs" id="tabsCliente">
+            <li class="active"><a href="#guardias" data-toggle="tab">Guardias</a></li>
+            <li class=""><a href="#servicios" data-toggle="tab">Servicios</a></li>
+            <li class=""><a href="#resumen" data-toggle="tab">Resumen</a></li>
+            @*@if (Convert.ToInt16(Session["Acceso"]) == 3)
+            {
+                <li class=""><a href="#guardiasPotenciales" data-toggle="tab">Guardias Potenciales</a></li>
+            }
+            <li class=""><a href="#mensajes" data-toggle="tab">Mensajes @Html.Raw(ViewBag.NotificacionesNuevas)</a></li>
+            @if (Convert.ToInt16(Session["Acceso"]) == 3)
+            {
+                <li class=""><a href="#mensajesAdmin" data-toggle="tab">Gestion de Mensajes</a></li>
+                <li class=""><a href="#horarios" data-toggle="tab">Horarios Coordinación</a></li>
+            }*@
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane fade active in" id="guardias">
+                @Html.Partial("_Guardias")
+                @Html.Partial("_Totalizador")
+            </div>
+            <div class="tab-pane fade" id="servicios">
+                @Html.Partial("_Servicios")
+                @Html.Partial("_Totalizador")
+            </div>
+            <div class="tab-pane fade" id="resumen">
+                @Html.Partial("_Resumen")
+                <div class="row" style="margin-top:12px">
+                </div>
+            </div>
+            @*<div class="tab-pane fade" id="guardiasPotenciales">
+                @Html.Partial("_GuardiasPotenciales")
+                @Html.Partial("_Totalizador")
+            </div>
+            <div class="tab-pane fade" id="mensajes">
+                @Html.Action("popupver", "mensajes")
+                @Html.Action("index", "mensajes")
+            </div>
+            <div class="tab-pane fade" id="mensajesAdmin">
+                @Html.Action("popupedicion", "mensajes")
+                @Html.Action("gestion", "mensajes")
+            </div>
+            <div class="tab-pane fade" id="horarios">
+                @Html.Partial("_Horarios")
+            </div>*@
+        </div>
+
+        <div class="row" style="margin-top:10px">
+            <div class="col-md-12">
+                <h6>
+                    La información a la que Ud. tiene acceso es confidencial y está dirigida solamente a las personas que posee el usuario y contraseña correspondiente para el ingreso al sistema.
+                    Dicha información solo debe ser considerada a título informativo.
+                    Todo acceso no autorizado, uso, reproducción, o divulgación está prohibido.
+                    SERCA no asumirá responsabilidad ni obligación legal alguna por cualquier información incorrecta o alterada contenida en el sistema.
+                </h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-2">
+        <div class="list-group" id="listInstruccionesUso">
+            <a href="#" class="list-group-item active">Instrucciones de uso</a>
+            <a href="#" class="list-group-item"><span class="fa fa-check-circle-o verde icon-right-margin big-icon "></span>Conforme con los valores del servicio</a>
+            <a href="#" class="list-group-item"><span class="fa fa-times-circle-o rojo icon-right-margin big-icon "></span>No conforme con los valores del servicio</a>
+            <a href="#" class="list-group-item"><span class="fa fa-exclamation-circle color-yellow icon-right-margin big-icon "></span>He recibido respuesta a mi reclamo</a>
+            <a href="#" class="list-group-item"><span class="fa fa-check-circle-o  azul icon-right-margin big-icon "></span>Reclamo aceptado y se aplica la diferencia</a>
+            <a href="#" class="list-group-item"><span class="fa fa-times-circle-o naranja icon-right-margin big-icon "></span>Reclamo no aceptado e importe no alterado</a>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    @if (Convert.ToInt16(Session["Acceso"]) == 3)
+    {
+        <script src="~/Scripts/site/Medicos/horarios.js"></script>
+    }
+
+}

@@ -1,0 +1,131 @@
+﻿<div class="modal fade" id="popupRevisarServicio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-title">
+                    <span>
+                        <i class="fa fa-search big-icon naranja"></i>
+                        <span id="titlePopupServicios" style="font-size: 18px; margin-left: 5px"></span>
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="Medicos/SetReclamoServicio" id="formSetReclamoServicio">
+                    <input type="hidden" name="ServicioID" id="ServicioID" />
+                    <div class="row row-show-grid rowConfServicios">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-check-circle big-icon icon-right-margin verde"></i>
+                                    <input type="radio" name="Conforme" value="1" checked>
+                                </span>
+                                <input type="text" readonly="readonly" class="form-control" value="ESTOY CONFORME" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-times-circle big-icon icon-right-margin rojo"></i>
+                                    <input type="radio" name="Conforme" value="0">
+                                </span>
+                                <input type="text" readonly="readonly" class="form-control" value="NO ESTOY CONFORME" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="popupServicioContNoConforme">
+                        <hr />
+
+                        @*                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label for="ftrMotivoReclamoServicio">Motivo:</label>
+                                <div id="ftrMotivoReclamoServicio" name="MotivoIdServicio"></div>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="popupServDiferencia">Su diferencia</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">$</span>
+                                    <input type="text" id="popupServDiferencia" class="form-control" name="Diferencia" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="popupServNuestroValor">Nuestro valor</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">$</span>
+                                    <input type="text" id="popupServNuestroValor" class="form-control" name="NuestroValor" />
+                                </div>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="popupServValorEsperado">Valor esperado</label>
+                                <div class="input-group">
+                                    <span class="input-group-addon">$</span>
+                                    <input type="text" id="popupServValorEsperado" class="form-control" name="ValorEsperado" />
+                                </div>
+                            </div>
+                        </div>*@
+
+                        <div class="row row-show-grid">
+                            <div class="form-group col-md-12">
+                                <label for="popupServObservaciones">Observaciones:</label>
+                                <textarea id="popupServObservaciones" class="form-control" name="Reclamo" maxlength="250"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row" id="rowEstadoForMedicoServ" style="display: none">
+                            <div class="col-md-12">
+                                <div class="alert fade in" id="alertRowEstadoForMedicoServ">
+                                    <strong id="txtRowEstadoForMedicoServ"></strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row row-show-grid" id="rowResolucionForAdminServ" style="display: none">
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-exclamation-circle big-icon icon-right-margin amarillo"></i>
+                                        <input type="radio" name="Estado" value="0" checked>
+                                    </span>
+                                    <input type="text" readonly class="form-control" value="Pendiente" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-check-circle big-icon icon-right-margin azul"></i>
+                                        <input type="radio" name="Estado" value="1">
+                                    </span>
+                                    <input type="text" readonly class="form-control" value="Aceptado" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-times-circle big-icon icon-right-margin naranja"></i>
+                                        <input type="radio" name="Estado" value="2">
+                                    </span>
+                                    <input type="text" readonly class="form-control" value="Rechazado" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="popupServRespuesta">Respuesta recibida:</label>
+                                <textarea id="popupServRespuesta" class="form-control" name="Respuesta"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="btn-group col-md-offset-4">
+                            <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">Cerrar</button>
+                            <input type="submit" id="btnGuardarReclamoServicio" class="btn btn-primary btn-lg">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

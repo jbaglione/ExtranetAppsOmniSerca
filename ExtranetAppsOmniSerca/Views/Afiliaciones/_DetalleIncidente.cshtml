@@ -1,0 +1,146 @@
+﻿<div class="modal fade" id="popupDetalle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-title">
+                    <span>
+                        <i class="fa fa-search big-icon naranja"></i>
+                        <span style="font-size:18px;margin-left:5px">Detalle del servicio: {{data.detalle.FecIncidente}} - {{data.detalle.NroIncidente}}</span>
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body">
+<!--
+                <div class="row row-show-grid">
+                    <div class="col-md-3">
+                        <label>Fecha:</label>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="text" ng-model="data.detalle.FecIncidente" readonly style="width:100%;text-align:center;" />
+                    </div>
+                    <div class="col-md-2">
+                        <label>Nro:</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" ng-model="data.detalle.NroIncidente" readonly style="width:100%;text-align:center;" />
+                    </div>
+                </div>                
+-->
+                <div class="row row-show-grid">
+                    <div class="col-md-3">
+                        <label>Paciente:</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" ng-model="data.detalle.Paciente" readonly style="width:100%;" />
+                    </div>
+                </div>
+                <div class="row row-show-grid">
+                    <div class="col-md-3">
+                        <label>Grado:</label>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="text" ng-model="data.detalle.Concepto" readonly style="width:100%;" />
+                    </div>
+                    <div class="col-md-2">
+                        <label>Sexo/Edad:</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" ng-model="data.detalle.Sexo + ' / ' + data.detalle.Edad" readonly style="width:100%;text-align:center;" />
+                    </div>
+                </div>
+                <div class="row row-show-grid">
+                    <div class="col-md-3">
+                        <label>Origen:</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" ng-model="data.detalle.Origen" readonly style="width:100%;" />
+                    </div>
+                </div>
+                <div class="row row-show-grid" ng-show="data.detalle.Destino">
+                    <div class="col-md-3">
+                        <label>Destino:</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" ng-model="data.detalle.Destino" readonly style="width:100%;" />
+                    </div>
+                </div>
+                <div class="row row-show-grid" ng-show="data.detalle.Anexo1">
+                    <div class="col-md-3">
+                        <label>Anexo I:</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" ng-model="data.detalle.Anexo1" readonly style="width:100%;" />
+                    </div>
+                </div>
+                <div class="row row-show-grid" ng-show="data.detalle.Anexo2">
+                    <div class="col-md-3">
+                        <label>Anexo II:</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" ng-model="data.detalle.Anexo2" readonly style="width:100%;" />
+                    </div>
+                </div>
+                <div class="row row-show-grid">
+                    <div class="col-md-3">
+                        <label>Motivo:</label>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" ng-model="data.detalle.Motivo" readonly style="width:100%;" />
+                    </div>
+                </div>
+                <div class="row row-show-grid">
+                    <div class="col-md-3">
+                        <label>Importe:</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" ng-model="data.detalle.Importe | number: 2" readonly style="width:100%;text-align:right;" />
+                    </div>
+                    <div class="col-md-3">
+                        <label>CoPago:</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" ng-model="data.detalle.CoPago | number: 2" readonly style="width:100%;text-align:right;" />
+                    </div>
+                </div>
+                <div class="row row-show-grid">
+                    <div class="col-md-3">
+                        <label>Hora Despacho:</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" ng-model="data.detalle.HorDespacho" readonly style="width:100%;text-align:center;" />
+                    </div>
+                    <div class="col-md-3">
+                        <label>Hora Llegada:</label>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" ng-model="data.detalle.HorLlegada" readonly style="width:100%;text-align:center;" />
+                    </div>
+                </div>
+                <hr style="height: 2px;border: 0;box-shadow: 0 5px 5px -5px #8c8b8b inset;"/>
+                <div class="row">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col" style="width:80%;"><i>Composición del Cálculo...</i></th>
+                                <th scope="col" style="width:20%;text-align:right;"><i>Importe</i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="calculo in data.detalle.IncidenteCalculoList">
+                                <td scope="row" style="width:80%;">{{calculo.SubConcepto}}</td>
+                                <td style="width:20%;text-align:right;">{{calculo.Importe.toFixed(2)}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <div class="col-md-offset-5 col-md-2">
+                        <button type="button" class="btn btn-default btn-primary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

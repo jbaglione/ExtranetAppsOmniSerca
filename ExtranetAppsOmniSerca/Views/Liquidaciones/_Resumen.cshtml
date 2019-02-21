@@ -1,0 +1,108 @@
+﻿@Html.Partial("_ResumenDetalle")
+<div class="row">
+    <div class="col-md-6">
+        <table class="table table-striped" >
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col" ng-style="style.Descripcion"><i>Productividad</i></th>
+                    <th scope="col" ng-style="style.Importe"><i>Importe</i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in data.resumen.Productividad">
+                    <td scope="row" ng-style="style.Descripcion">
+                        <div ng-show="item.Link==0">{{item.Descripcion}}</div>
+                        <a ng-click="ResumenDetalle(item)" ng-show="item.Link!=0" style="cursor: pointer;">{{item.Descripcion}}</a>
+                    </td>
+                    <td ng-style="style.Importe">{{item.Importe.toFixed(2)}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col" ng-style="style.Descripcion"><i>Su Factura</i></th>
+                    <th scope="col" ng-style="style.Importe"><i>Importe</i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in data.resumen.Factura">
+                    <td scope="row" ng-style="style.Descripcion">
+                        <div ng-show="item.Link==0">{{item.Descripcion}}</div>
+                        <a ng-click="ResumenDetalle(item)" ng-show="item.Link!=0" style="cursor: pointer;">{{item.Descripcion}}</a>
+                    </td>
+                    <td ng-style="style.Importe">{{item.Importe.toFixed(2)}}</td>
+                </tr>
+                <tr ng-show="acceso==1">
+                    <td scope="row" ng-style="style.Descripcion">
+                        <div ng-show="data.resumen.Factura[0].flgStatus==0">* Aguarde antes de confeccionar su factura</div>
+                        <a href="/CuentaCorriente?usr=@Session["usr_id"]" ng-show="data.resumen.Factura[0].flgStatus==1" style="cursor: pointer;" title="Haga click para dirigir al sitio de facturación">* Ya puede confeccionar su factura</a>
+                    </td>
+                    <td ng-style="style.Importe">{{item.Importe.toFixed(2)}}</td>
+                </tr>
+                <!--
+                
+                 (link a CuentasCorrientes)
+                -->
+            </tbody>
+        </table>
+
+
+    </div>
+
+    <div class="col-md-6">
+        <table class="table table-striped">
+            <thead class="thead-light">
+                <tr >
+                    <th scope="col" ng-style="style.Descripcion"><i>Retenciones Impositivias</i></th>
+                    <th scope="col" ng-style="style.Importe"><i>Importe</i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in data.resumen.Retenciones">
+                    <td scope="row" ng-style="style.Descripcion">
+                        <div ng-show="item.Link==0">{{item.Descripcion}}</div>
+                        <a ng-click="ResumenDetalle(item)" ng-show="item.Link!=0" style="cursor: pointer;">{{item.Descripcion}}</a>
+                    </td>
+                    <td ng-style="style.Importe">{{(item.Importe == 0) ? '0.00' : ('(' + item.Importe.toFixed(2) + ')')}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col" ng-style="style.Descripcion"><i>Descuentos</i></th>
+                    <th scope="col" ng-style="style.Importe"><i>Importe</i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in data.resumen.Descuentos">
+                    <td scope="row" ng-style="style.Descripcion">
+                        <div ng-show="item.Link==0">{{item.Descripcion}}</div>
+                        <a ng-click="ResumenDetalle(item)" ng-show="item.Link!=0" style="cursor: pointer;">{{item.Descripcion}}</a>
+                    </td>
+                    <td ng-style="style.Importe">{{(item.Importe == 0) ? '0.00' : ('(' + item.Importe.toFixed(2) + ')')}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col" ng-style="style.Descripcion"><i>Pagos</i></th>
+                    <th scope="col" ng-style="style.Importe"><i>Importe</i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in data.resumen.Pagos">
+                    <td scope="row" ng-style="style.Descripcion">
+                        <div ng-show="item.Link==0">{{item.Descripcion}}</div>
+                        <a ng-click="ResumenDetalle(item)" ng-show="item.Link!=0" style="cursor: pointer;">{{item.Descripcion}}</a>
+                    </td>
+                    <td ng-style="style.Importe">{{item.Importe.toFixed(2)}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>

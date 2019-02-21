@@ -1,0 +1,316 @@
+﻿<div class="modal fade" id="popupMapa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true" data-backdrop="static" style="z-index:100000">
+    <div class="modal-content">
+        <div class="modal-body modal-map">
+            <input id='pac-input' class='controls' type='text' placeholder='Ingrese su dirección...'>
+            <div id='map'></div>
+        </div>
+        <div class="modal-footer modal-footer-map"/>
+            <div class="row">
+                <div class="col-md-8" style="padding-left: 4px;">
+                    <p>
+                        <font size="2">
+                            Utilice el cuadro de búsqueda superior izquierdo para establecer el domicilio deseado, luego presione Enter. Puede utilizar el puntero para mover el domicilio a la ubicación deseada...
+                        </font>
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <button type="button" class="btn btn-primary" onclick="saveLocation()" data-dismiss="modal">Aceptar</button>
+                    <button type="button" class="btn btn-default" onclick="deleteLocation()" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    var map, infowindow, marker, searchBox;
+    var ref;
+    var source;
+    var input = document.getElementById('pac-input');
+    var mapaResponse = new Object();
+    var defLocation = "";//decodeURIComponent("Buenos Aires");
+
+    function successGetCurrentPosition(pos) {
+        var geocoder = new google.maps.Geocoder();
+
+        var crd = pos.coords;
+        console.log('Your current position is:');
+        console.log(crd);
+        console.log('Latitude : ' + crd.latitude);
+        console.log('Longitude: ' + crd.longitude);
+        console.log('More or less ' + crd.accuracy + ' meters.');
+
+        //defLocation = decodeURIComponent(crd.latitude + ', ' + crd.longitude);
+
+        var latlng = new google.maps.LatLng(crd.latitude, crd.longitude);
+        defLocation = decodeURIComponent(crd.latitude + ', ' + crd.longitude);
+
+        geocoder.geocode({
+            'latLng': latlng
+        }, function (results, status) {
+            if (status === google.maps.GeocoderStatus.OK) {
+                if (results[1]) {
+                    console.log(results[1]);
+                    defLocation = decodeURIComponent(results[1].formatted_address);
+
+                } else {
+                    console.log("Error 1");
+                }
+            } else {
+                console.log('Geocoder failed due to: ' + status);
+            }
+            SetLocationInMap();
+        });
+    };
+
+    function errorGetCurrentPosition(err) {
+        console.warn('ERROR(' + err.code + '): ' + err.message);
+    };
+
+    function getQueryString(field, url) {
+        var href = url ? url : window.location.href;
+        var reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
+        var string = reg.exec(href);
+        return string ? string[1] : null;
+    }
+
+    function initMap(calle, altura, localidad, provincia, latitude, longitude, pSource) {
+        ref = "";
+        source = pSource;
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 5,
+            center: {
+                lat: -34.654744,
+                lng: -58.555602
+            },
+            mapTypeId: google.maps.MapTypeId.TERRAIN,
+            mapTypeControl: false,
+            scaleControl: false,
+            streetViewControl: false,
+            rotateControl: false,
+            fullscreenControl: true
+        });
+        
+        //Set ubicacion
+        if (calle != null && calle != "" &&
+            //altura != null && altura != "" &&
+            localidad != null && localidad != "")
+        {
+            ////&& provincia != null && provincia != "") {
+            //if (latitude != null && latitude != "" &&
+            //longitude != null && longitude != "") {
+            //    //var latlng = new google.maps.LatLng(latitude, longitude);
+            //    defLocation = decodeURIComponent(latitude + ', ' + longitude);
+            //}
+            //else {
+
+            if(altura != null && altura != "")
+                direccion = calle + " " + altura + ", " + localidad + ", " + provincia;
+            else
+                direccion = calle + ", " + localidad + ", " + provincia;
+
+                defLocation = decodeURIComponent(direccion);
+            //}
+            SetLocationInMap();
+        }
+            //else {
+            //        defLocation = decodeURIComponent("Buenos Aires");
+            //}
+        else {
+
+            defLocation = decodeURIComponent("Buenos Aires");
+            if (navigator.geolocation) {
+                var options = {
+                    enableHighAccuracy: true,
+                    timeout: 5000,
+                    maximumAge: 0
+                };
+
+                navigator.geolocation.getCurrentPosition(successGetCurrentPosition, errorGetCurrentPosition, options);
+                //plotCurrentLocation(map);
+            }
+        }
+    }
+
+    function SetLocationInMap() {
+        infowindow = new google.maps.InfoWindow();
+        searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+        map.addListener('bounds_changed', function () {
+            searchBox.setBounds(map.getBounds());
+        });
+        searchBox.addListener('places_changed', function () {
+            searchPlace();
+        });
+
+        input.value = defLocation;
+        var geocoder = new google.maps.Geocoder();
+
+        geocodeAddress(geocoder, map);
+
+    }
+
+    function geocodeAddress(geocoder, resultsMap) {
+
+        var address = defLocation;
+        geocoder.geocode({
+            'address': address
+        },
+            function (results, status) {
+                if (status === 'OK') {
+                    placeAddress(results[0]);
+                    map.setCenter(results[0].geometry.location);
+                    map.setZoom(16);
+                }
+            });
+    }
+
+    function placeAddress(place, bounds) {
+
+        if (!place.geometry) {
+            console.log('Returned place contains no geometry');
+            return;
+        }
+        marker = new google.maps.Marker({
+            map: map,
+            draggable: true,
+            animation: google.maps.Animation.DROP,
+            position: place.geometry.location,
+            address: place.formatted_address
+        });
+        google.maps.event.addListener(marker, 'mouseover', function () {
+            setInfoContent();
+            infowindow.open(map, this);
+        });
+        google.maps.event.addListener(marker, 'mouseout', function () {
+            infowindow.close();
+        });
+        google.maps.event.addListener(marker, 'dragend', function () {
+            infowindow.close();
+            updateMarkerPosition();
+            infowindow.open(map, this);
+        });
+        if (bounds) {
+            if (place.geometry.viewport) {
+                bounds.union(place.geometry.viewport);
+            } else {
+                bounds.extend(place.geometry.location);
+            }
+        }
+    }
+
+    function searchPlace() {
+
+        var places = searchBox.getPlaces();
+        if (places.length === 0) {
+            return;
+        }
+        if (places.length > 1) {
+            alert('Debe seleccionar un lugar mas específico.');
+        }
+        if (marker) {
+            marker.setMap(null);
+        }
+        var bounds = new google.maps.LatLngBounds();
+        places.forEach(function (place) {
+            placeAddress(place, bounds);
+        });
+        map.fitBounds(bounds);
+    }
+
+    function setInfoContent() {
+
+        infowindow.setContent('<div><strong>' + marker.address + '</strong></div>');
+    }
+
+    function saveLocation() {
+
+        if (!marker) {
+            alert('Debe seleccionar un punto en el mapa');
+            return;
+        }
+        ref = {
+
+            lat: marker.position.lat(),
+            lng: marker.position.lng(),
+            address: marker.address,
+            title: marker.title
+        };
+        //return ref.lat + ref.lng + ref.address + ref.title;
+        direccionDelForm = ref.lat + '$' + ref.lng + '$' + ref.address + '$' + ref.title;
+    }
+
+    function deleteLocation() {
+
+        direccionDelForm = null;
+    }
+
+    function updateMarkerPosition() {
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({
+            latLng: marker.getPosition()
+        }, function (results, status) {
+            if (status === google.maps.GeocoderStatus.OK) {
+                var updatedPlace = results[0];
+                input.value = updatedPlace.formatted_address;
+                marker.name = updatedPlace.name;
+                marker.address = updatedPlace.formatted_address;
+                setInfoContent();
+            }
+        });
+    }
+
+    function FormatearFecha(direccionDelForm, callback) {
+        $.ajax({
+            url: '@Url.Action("FormatearFecha", "Mapa")',
+            type: 'POST',
+            data: { 'direction': direccionDelForm },
+            success: function (result) {
+                if (typeof callback !== 'undefined') {
+                    result.source = source;
+                    callback(result);
+                }
+            },
+            error: function (result) {
+                
+                return "";
+            }
+        });
+    }
+
+    function isNumeric(n) {
+        return !isNaN(parseFloat(n)) && isFinite(n);
+    }
+
+    function IsCodigoPostal(CodPost) {
+        var i = void 0;
+        var letra = void 0;
+        if ((CodPost == '')) {
+            return false;
+        }
+        for (i = 1; (i <= CodPost.length) ; i++) {
+
+            letra = CodPost.substring((i - 1), i).toUpperCase().charCodeAt(0);
+            if (((i == 1)
+                || (i > 5))) {
+                if (((letra < 65)
+                    || (letra > 90))) {
+                    return false;
+                }
+            }
+            else if (i >= 2 && i <= 5) {
+                if ('0123456789'.indexOf(CodPost.substring(i), 1) > 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    var StringHasValue = function (strValue) {
+        if ($.trim(strValue) != "" && $.trim(strValue) != null && $.trim(strValue) != undefined)
+            return true;
+        else
+            return false;
+    };
+</script>
+<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCgGOZyoyPNYnpqnmUR4NbLsRDowF-sYG8&libraries=places&callback=initMap' async defer></script>

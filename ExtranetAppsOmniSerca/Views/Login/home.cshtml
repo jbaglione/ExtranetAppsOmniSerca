@@ -1,0 +1,25 @@
+﻿<div class="tile-area no-padding">
+    <h3 class="fg-orange text-light" style="margin-left: 1em;">APLICACIONES<span class="mif-chevron-right mif-2x" style="vertical-align: top !important;"></span></h3>
+    <div class="tile-group no-padding" style="margin-top: 1em; width: 100%;">
+        <div class="tile-wide bg-paramedicTile fg-white" data-role="tile" ng-repeat="accion in acciones" ng-click="redireccionarAccion(accion)">
+            <div class="tile-content iconic">
+                <a href="javascript:void(0);" class="fg-white" target="_blank">
+                    <span class="icon mif-{{accion.Icono}}"></span>
+                    <span class="tile-label">{{accion.Titulo}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+    <div class="tile-container padding20 block-shadow bg-darkCobalt" style="min-height: 450px;">
+        <div class="tile-wide bg-paramedicTile fg-white" data-role="tile" ng-repeat="accion in acciones" ng-click="redireccionarAccion(accion)">
+            <div class="tile-content iconic">
+                <a href="javascript:void(0);" class="fg-white">
+                    <span class="icon mif-{{accion.Icono}}"></span>
+                    <span class="tile-label">{{accion.Titulo}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+-->

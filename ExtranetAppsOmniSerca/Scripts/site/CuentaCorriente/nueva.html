@@ -1,0 +1,76 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title" >{{$ctrl.resolve.model.title}} {{$ctrl.resolve.model.NroOrdenPago}}</h3>
+</div>
+<div class="modal-body">
+    <form name="frmFacturaNueva" class="form-horizontal">
+        <div class="form-group">
+            <label class="col-md-2 control-label">Tipo de comprobante</label>
+            <div class="col-md-4">
+                <select style="width:100%" class="form-control" ng-model="$ctrl.model.tipo">
+                    <option value="FAC">Factura</option>
+                    <option value="NC">Nota de Crédito</option>
+                    <option value="ND">Nota de Débito</option>
+                </select>
+            </div>
+            <label class="col-md-2 control-label">Nro. de comprobante*</label>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="$ctrl.model.sucursal" required="true" maxlength="5"
+                           ng-pattern-restrict="^[A-Za-z]{0,1}([0-9]{0,4})?$" />
+                    <span class="input-group-addon">-</span>
+                    <input type="text" class="form-control" ng-model="$ctrl.model.numero" required="true" maxlength="8"
+                           ng-pattern-restrict="^[0-9]{0,8}$" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Fecha de emisión*</label>
+            <div class="col-md-2 input-group date">
+                <input type="text" ng-model="$ctrl.model.fecha" jqdatepicker class="form-control" style="background-color:  white;" />
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar "></span>
+                </div>            
+            </div>
+            <label class="col-md-2 control-label">Monto*</label>
+            <div class="col-md-2">
+                <input type="text" class="form-control" ng-model="$ctrl.model.monto" style="text-align:right;" required="true" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Archivo PDF*</label>
+            <div class="col-md-4">
+                <jqx-file-upload jqx-settings="$ctrl.pdfSettings">{{$ctrl.model.pdf}}</jqx-file-upload>
+            </div>
+            <label class="col-md-2 control-label">CAE</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" ng-model="$ctrl.model.cae" />
+            </div>
+        </div>
+        <!--<div class="form-group">
+            <label class="col-md-2 control-label">CAE</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" ng-model="$ctrl.model.cae" />
+            </div>
+            <label class="col-md-2 control-label">Cabecera</label>
+            <div class="col-md-4">
+                <jqx-file-upload jqx-settings="$ctrl.cabeceraSettings">{{$ctrl.model.cabecera}}</jqx-file-upload>
+            </div>-->
+        </div>
+        <!--<div class="form-group">
+            <label class="col-md-2 control-label">Detalle</label>
+            <div class="col-md-4">
+                <jqx-file-upload jqx-settings="$ctrl.detalleSettings">{{$ctrl.model.detalle}}</jqx-file-upload>
+            </div>
+            <label class="col-md-2 control-label">Ventas</label>
+            <div class="col-md-4">
+                <jqx-file-upload jqx-settings="$ctrl.ventaSettings">{{$ctrl.model.venta}}</jqx-file-upload>
+            </div>
+        </div>-->
+        <div class="form-group">
+            <div class="btn-group col-md-offset-5">
+                <button class="btn btn-default btn-lg" ng-click="$ctrl.cerrar()">Cerrar</button>
+                <button class="btn btn-primary btn-lg" ng-click="$ctrl.enviar()" ng-disabled="frmFacturaNueva.$valid==false || !$ctrl.model.fecha" >Enviar</button>
+            </div>
+        </div>
+    </form>
+</div>

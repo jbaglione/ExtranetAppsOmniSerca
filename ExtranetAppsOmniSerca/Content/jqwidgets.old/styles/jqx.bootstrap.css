@@ -1,0 +1,1631 @@
+﻿/*Rounded Corners*/
+/*top-left rounded Corners*/
+.jqx-rc-tl-bootstrap {
+    -moz-border-radius-topleft: 4px;
+    -webkit-border-top-left-radius: 4px;
+    border-top-left-radius: 4px;
+}
+/*top-right rounded Corners*/
+.jqx-rc-tr-bootstrap {
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+/*bottom-left rounded Corners*/
+.jqx-rc-bl-bootstrap {
+    -moz-border-radius-bottomleft: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+/*bottom-right rounded Corners*/
+.jqx-rc-br-bootstrap {
+    -moz-border-radius-bottomright: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+/*top rounded Corners*/
+.jqx-rc-t-bootstrap {
+    -moz-border-radius-topleft: 4px;
+    -webkit-border-top-left-radius: 4px;
+    border-top-left-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+/*bottom rounded Corners*/
+.jqx-rc-b-bootstrap {
+    -moz-border-radius-bottomleft: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+/*right rounded Corners*/
+.jqx-rc-r-bootstrap {
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-right-radius: 4px;
+    border-top-right-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -webkit-border-bottom-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+/*left rounded Corners*/
+.jqx-rc-l-bootstrap {
+    -moz-border-radius-topleft: 4px;
+    -webkit-border-top-left-radius: 4px;
+    border-top-left-radius: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    -webkit-border-bottom-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+/*all rounded Corners*/
+.jqx-rc-all-bootstrap {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.jqx-widget-bootstrap, .jqx-widget-header-bootstrap, .jqx-fill-state-normal-bootstrap,
+.jqx-widget-content-bootstrap, .jqx-fill-state-hover-bootstrap, .jqx-fill-state-pressed-bootstrap {
+    font-family: "Droid-Sans", sans-serif;
+    -webkit-transition: box-shadow linear 0.2s;
+    -moz-transition: box-shadow linear 0.1s;
+    -o-transition: box-shadow linear 0.1s;
+    transition: box-shadow linear 0.1s;
+}
+
+.jqx-widget-content-bootstrap {
+    background-color: #ffffff;
+    border-color: #e6e6e6;
+}
+
+.jqx-widget-header-bootstrap {
+    background-color: #f5f5f5;
+    border-color: #cccccc;
+}
+
+.jqx-fill-state-normal-bootstrap {
+    color: #333333;
+    background-color: #ffffff;
+    border-color: #cccccc;
+}
+
+.jqx-button-bootstrap {
+     padding: 4px 12px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    *zoom: 1;
+    color: #333333;
+    background-color: #ffffff;
+    border-color: #cccccc;
+}
+
+.jqx-combobox-multi-item-bootstrap {
+    padding: 1px 3px;
+}
+
+.jqx-fill-state-hover-bootstrap, .jqx-fill-state-pressed-bootstrap {
+    color: #333333;
+    background-color: #ebebeb;
+    border-color: #adadad;
+}
+
+.jqx-fill-state-hover-bootstrap, .jqx-fill-state-focus-bootstrap {
+    color: #333333;
+    text-decoration: none;
+}
+
+.jqx-fill-state-pressed-bootstrap {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.jqx-grid-cell-bootstrap {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.jqx-grid-column-menubutton-bootstrap {
+    background-color: transparent;
+}
+
+.jqx-calendar-row-header-bootstrap, .jqx-calendar-top-left-header-bootstrap {
+    background-color: #f0f0f0;
+    border: 0px solid #f2f2f2;
+}
+
+.jqx-calendar-column-header-bootstrap {
+    background-color: #FFF;
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.jqx-expander-header-bootstrap {
+    background: #fff;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-color: #e6e6e6;
+}
+
+.jqx-widget-bootstrap, .jqx-widget-header-bootstrap, .jqx-widget-content-bootstrap {
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+.jqx-scrollbar-state-normal-bootstrap {
+    background-color: #f0f0f0;
+    border: 1px solid #f0f0f0;
+}
+
+.jqx-scrollbar-thumb-state-normal-bootstrap, .jqx-scrollbar-thumb-state-normal-horizontal-bootstrap {
+    background: #f5f5f5;
+    border-color: #b3b3b3;
+}
+
+.jqx-scrollbar-thumb-state-hover-bootstrap, .jqx-scrollbar-thumb-state-hover-horizontal-bootstrap {
+    background: #e6e6e6;
+    border-color: #b3b3b3;
+}
+
+.jqx-progressbar-bootstrap {
+    background: #f7f7f7 !important;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.jqx-progressbar-value-bootstrap, .jqx-splitter-collapse-button-horizontal-bootstrap {
+    background-color: #428bca;
+}
+
+.jqx-splitter-collapse-button-vertical-bootstrap, .jqx-progressbar-value-vertical-bootstrap {
+    background-color: #428bca;
+}
+
+.jqx-scrollbar-thumb-state-pressed-bootstrap, .jqx-splitter-splitbar-vertical-bootstrap, .jqx-splitter-splitbar-horizontal-bootstrap, .jqx-scrollbar-thumb-state-pressed-horizontal-bootstrap {
+    background: #d9d9d9;
+    border-color: #b3b3b3;
+}
+
+.jqx-grid-column-sortdescbutton-bootstrap, jqx-grid-column-filterbutton-bootstrap, .jqx-grid-column-sortascbutton-bootstrap {
+    background-color: transparent;
+    border-style: solid;
+    border-width: 0px 0px 0px 0px;
+    border-color: #cccccc;
+}
+
+.jqx-slider-rangebar-bootstrap {
+    background: #cccccc;
+}
+
+.jqx-menu-vertical-bootstrap {
+    background: #ffffff;
+    filter: none;
+}
+
+.jqx-checkbox-check-checked-bootstrap {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAcklEQVQY02NgwA/YoJgoEA/Es4DYgJBCJSBeD8SboRinBiYg7kZS2IosyQ/Eakh8LySFq4FYHFlxGRBvBOJYqMRqJMU+yApNkSRAeC0Sux3dfSCTetE0wKyXxOWhMKhTYIr9CAUXyJMzgLgBagBBgDPGAI2LGdNt0T1AAAAAAElFTkSuQmCC');
+}
+
+.jqx-combobox-content-bootstrap, .jqx-input-bootstrap {
+}
+
+.jqx-combobox-content-bootstrap {
+    border-color: #cccccc;
+}
+
+.jqx-fill-state-focus-bootstrap, .jqx-combobox-content-focus-bootstrap, .jqx-numberinput-focus-bootstrap {
+    outline: none;
+    border-color: #b3b3b3;
+}
+
+.jqx-grid-bottomright-bootstrap, .jqx-panel-bottomright-bootstrap, .jqx-listbox-bottomright-bootstrap {
+    background-color: #efefef;
+}
+
+.jqx-tabs-title-bootstrap,
+.jqx-tabs-title-bottom-bootstrap, .jqx-expander-header-bootstrap {
+    color: #0088cc !important;
+}
+
+    .jqx-expander-header-bootstrap:hover {
+        color: #005580 !important;
+        cursor: pointer;
+    }
+
+.jqx-tabs-title-hover-top-bootstrap,
+.jqx-tabs-title-hover-bottom-bootstrap {
+    color: #005580 !important;
+    background: #eee;
+    border-color: #eee;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.jqx-tabs-title-selected-top-bootstrap, .jqx-tabs-selection-tracker-top-bootstrap {
+    border-color: #ddd;
+    border-bottom: 1px solid #fff;
+    filter: none;
+    color: #555555 !important;
+    background: #fff;
+    box-shadow: none;
+}
+
+.jqx-tabs-title-selected-bottom-bootstrap, .jqx-tabs-selection-tracker-bottom-bootstrap {
+    border-color: #ddd;
+    border-top: 1px solid #fff;
+    filter: none;
+    color: #555555 !important;
+    background: #fff;
+    box-shadow: none;
+}
+
+.jqx-tabs-header-bootstrap {
+    background: #fff;
+    border-color: #ddd;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.jqx-tabs-bootstrap {
+    border-color: #ddd;
+}
+
+.jqx-window-bootstrap, .jqx-tooltip-bootstrap {
+    box-shadow: 0 4px 23px 5px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.jqx-docking-bootstrap .jqx-window-bootstrap {
+    box-shadow: none;
+}
+
+.jqx-docking-panel-bootstrap .jqx-window-bootstrap {
+    box-shadow: none;
+}
+
+.jqx-radiobutton-bootstrap {
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+    background: none;
+}
+
+.jqx-radiobutton-bootstrap-bootstrap, .jqx-radiobutton-hover-bootstrap {
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+}
+
+.jqx-radiobutton-check-checked-bootstrap {
+    filter: none;
+    background: #666;
+    background-repeat: no-repeat;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.jqx-radiobutton-check-indeterminate-bootstrap {
+    filter: none;
+    background: #999;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.jqx-radiobutton-check-indeterminate-disabled-bootstrap {
+    filter: none;
+    background: #999;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.jqx-slider-track-horizontal-bootstrap, .jqx-slider-track-vertical-bootstrap {
+    border-color: #cccccc;
+    background: #f0f0f0;
+}
+
+.jqx-slider-button-bootstrap {
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.jqx-fill-state-normal-bootstrap.jqx-primary {
+    color: #ffffff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+
+.jqx-fill-state-hover-bootstrap.jqx-primary {
+    color: #ffffff;
+    background-color: #3276b1;
+    border-color: #285e8e;
+}
+
+.jqx-fill-state-pressed-bootstrap.jqx-primary {
+    color: #ffffff;
+    background-color: #3276b1;
+    border-color: #285e8e;
+}
+
+.jqx-fill-state-normal-bootstrap.jqx-warning {
+    color: #ffffff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+
+.jqx-fill-state-hover-bootstrap.jqx-warning {
+    color: #ffffff;
+    background-color: #ed9c28;
+    border-color: #d58512;
+}
+
+.jqx-fill-state-pressed-bootstrap.jqx-warning {
+    color: #ffffff;
+    background-color: #ed9c28;
+    border-color: #d58512;
+}
+
+.jqx-fill-state-normal-bootstrap.jqx-danger {
+    color: #ffffff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+.jqx-fill-state-hover-bootstrap.jqx-danger {
+    color: #ffffff;
+    background-color: #d2322d;
+    border-color: #ac2925;
+}
+
+.jqx-fill-state-pressed-bootstrap.jqx-danger {
+    color: #ffffff;
+    background-color: #d2322d;
+    border-color: #ac2925;
+}
+
+.jqx-fill-state-normal-bootstrap.jqx-success {
+    color: #ffffff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.jqx-fill-state-hover-bootstrap.jqx-success {
+    color: #ffffff;
+    background-color: #47a447;
+    border-color: #398439;
+}
+
+.jqx-fill-state-pressed-bootstrap.jqx-success {
+    color: #ffffff;
+    background-color: #47a447;
+    border-color: #398439;
+}
+
+.jqx-fill-state-normal-bootstrap.jqx-info {
+    color: #ffffff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+
+.jqx-fill-state-hover-bootstrap.jqx-info {
+    color: #ffffff;
+    background-color: #39b3d7;
+    border-color: #269abc;
+}
+
+.jqx-fill-state-pressed-bootstrap.jqx-info {
+    color: #ffffff;
+    background-color: #39b3d7;
+    border-color: #269abc;
+}
+
+.jqx-fill-state-normal-bootstrap.jqx-inverse {
+    color: #ffffff;
+    background-color: #222222;
+    border-color: #080808;
+}
+
+.jqx-fill-state-hover-bootstrap.jqx-inverse {
+    color: #ffffff;
+    background-color: #080808;
+}
+
+.jqx-fill-state-pressed-bootstrap.jqx-inverse {
+    color: #ffffff;
+    background-color: #080808;
+}
+
+/*applied to a list item when the item is selected.*/
+.jqx-listitem-state-hover-bootstrap, .jqx-menu-item-hover-bootstrap, .jqx-tree-item-hover-bootstrap, .jqx-calendar-cell-hover-bootstrap, .jqx-grid-cell-hover-bootstrap,
+.jqx-menu-vertical-bootstrap .jqx-menu-item-top-hover-bootstrap, .jqx-input-popup-bootstrap .jqx-fill-state-hover-bootstrap,
+.jqx-input-button-header-bootstrap, .jqx-input-popup-bootstrap .jqx-fill-state-pressed-bootstrap,
+.jqx-input-button-header-bootstrap {
+    color: #ffffff !important;
+    color: #333333 !important;
+    background-color: #ebebeb !important;
+    border-color: #ebebeb !important;
+    outline: 0;
+}
+.jqx-grid-cell-hover-bootstrap {
+    border-color: #ccc !important;
+}
+.jqx-listitem-state-selected-bootstrap, .jqx-menu-item-selected-bootstrap, .jqx-tree-item-selected-bootstrap, .jqx-calendar-cell-selected-bootstrap, .jqx-grid-cell-selected-bootstrap,
+.jqx-menu-vertical-bootstrap .jqx-menu-item-top-selected-bootstrap, .jqx-grid-selectionarea-bootstrap {
+    color: #ffffff !important;
+    background-color: #428bca !important;
+    border-color: #357ebd !important;
+}
+/*top rounded Corners*/
+.jqx-rc-t-expanded-bootstrap {
+    -moz-border-radius-topleft: 4px !important;
+    -webkit-border-top-left-radius: 4px !important;
+    border-top-left-radius: 4px !important;
+    -moz-border-radius-topright: 4px !important;
+    -webkit-border-top-right-radius: 4px !important;
+    border-top-right-radius: 4px !important;
+}
+/*bottom rounded Corners*/
+.jqx-rc-b-expanded-bootstrap {
+    -moz-border-radius-bottomleft: 4px !important;
+    -webkit-border-bottom-left-radius: 4px !important;
+    border-bottom-left-radius: 4px !important;
+    -moz-border-radius-bottomright: 4px !important;
+    -webkit-border-bottom-right-radius: 4px !important;
+    border-bottom-right-radius: 4px !important;
+}
+
+.jqx-popup-bootstrap.jqx-listbox-bootstrap, .jqx-popup-bootstrap.jqx-calendar-bootstrap {
+    top: 2px !important;
+    position: relative;
+}
+
+.jqx-popup-up-bootstrap.jqx-listbox-bootstrap, .jqx-popup-up-bootstrap.jqx-calendar-bootstrap {
+    top: 23px !important;
+    position: relative;
+}
+
+.jqx-menu-popup-bootstrap > div:first-child {
+    padding-bottom: 15px !important;
+    padding-right: 15px !important;
+}
+
+.jqx-menu-dropdown-bootstrap, .jqx-popup-bootstrap.jqx-dropdownbutton-popup-bootstrap {
+    margin-top: 2px !important;
+}
+
+.jqx-popup-bootstrap {
+    border: 1px solid #ccc;
+    *border-right-width: 2px;
+    *border-bottom-width: 2px;
+    -webkit-border-radius: 4px !important;
+    -moz-border-radius: 4px !important;
+    border-radius: 4px !important;
+    -webkit-box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    -webkit-background-clip: padding-box !important;
+    -moz-background-clip: padding !important;
+    background-clip: padding-box !important;
+}
+
+.jqx-widget-bootstrap .jqx-grid-cell-bootstrap, .jqx-widget-bootstrap .jqx-grid-column-header-bootstrap, .jqx-widget-bootstrap .jqx-grid-group-cell {
+    border-color: #ccc;
+}
+
+.jqx-widget-bootstrap .jqx-grid-column-menubutton-bootstrap, .jqx-widget-bootstrap .jqx-grid-column-sortascbutton-bootstrap, .jqx-widget-bootstrap .jqx-grid-column-sortdescbutton-bootstrap, .jqx-widget .jqx-grid-column-filterbutton-bootstrap {
+    border-color: #ccc;
+}
+
+.jqx-grid-column-sortascbutton-bootstrap, .jqx-expander-arrow-bottom-bootstrap, .jqx-window-collapse-button-bootstrap, .jqx-menu-item-arrow-up-bootstrap, .jqx-menu-item-arrow-up-selected-bootstrap, .jqx-menu-item-arrow-top-up-bootstrap, .jqx-icon-arrow-up-bootstrap, .jqx-icon-arrow-up-hover-bootstrap, .jqx-icon-arrow-up-selected-bootstrap {
+    background-image: url('images/icon-up.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-widget-bootstrap .jqx-grid-group-expand-bootstrap, .jqx-grid-group-expand-bootstrap, .jqx-grid-column-menubutton-bootstrap, .jqx-grid-column-sortdescbutton-bootstrap, .jqx-expander-arrow-top-bootstrap, .jqx-window-collapse-button-collapsed-bootstrap, .jqx-menu-item-arrow-down-bootstrap, .jqx-menu-item-arrow-down-selected-bootstrap, .jqx-menu-item-arrow-down-bootstrap, .jqx-icon-arrow-down-bootstrap, .jqx-icon-arrow-down-hover-bootstrap, .jqx-icon-arrow-down-selected-bootstrap {
+    background-image: url('images/icon-down.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-tabs-arrow-left-bootstrap, .jqx-menu-item-arrow-left-selected-bootstrap, .jqx-menu-item-arrow-top-left, .jqx-icon-arrow-left-bootstrap, .jqx-icon-arrow-down-left-bootstrap, .jqx-icon-arrow-left-selected-bootstrap {
+    background-image: url('images/icon-left.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-widget-bootstrap .jqx-grid-group-collapse-bootstrap, .jqx-grid-group-collapse-bootstrap, .jqx-tabs-arrow-right-bootstrap, .jqx-menu-item-arrow-right-selected-bootstrap, .jqx-menu-item-arrow-top-right-bootstrap, .jqx-icon-arrow-right-bootstrap, .jqx-icon-arrow-right-hover-bootstrap, .jqx-icon-arrow-right-selected-bootstrap {
+    background-image: url('images/icon-right.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-tree-item-arrow-collapse-rtl-bootstrap, .jqx-tree-item-arrow-collapse-hover-rtl-bootstrap {
+    background-image: url(images/icon-left.png);
+}
+
+.jqx-menu-item-arrow-left-selected-bootstrap {
+    background-image: url('images/icon-left-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-menu-item-arrow-right-selected-bootstrap {
+    background-image: url('images/icon-right-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-primary .jqx-grid-column-sortascbutton-bootstrap, .jqx-primary .jqx-expander-arrow-bottom-bootstrap, .jqx-primary .jqx-window-collapse-button-bootstrap, .jqx-primary .jqx-menu-item-arrow-up-bootstrap, .jqx-primary .jqx-menu-item-arrow-up-selected-bootstrap, .jqx-primary .jqx-menu-item-arrow-top-up-bootstrap, .jqx-primary .jqx-icon-arrow-up-bootstrap, .jqx-primary .jqx-icon-arrow-up-hover-bootstrap, .jqx-primary .jqx-icon-arrow-up-selected-bootstrap {
+    background-image: url('images/icon-up-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-primary .jqx-widget-bootstrap .jqx-primary .jqx-grid-group-expand-bootstrap, .jqx-primary .jqx-grid-group-expand-bootstrap, .jqx-primary .jqx-grid-column-menubutton-bootstrap, .jqx-primary .jqx-grid-column-sortdescbutton-bootstrap, .jqx-primary .jqx-expander-arrow-top-bootstrap, .jqx-primary .jqx-window-collapse-button-collapsed-bootstrap, .jqx-primary .jqx-menu-item-arrow-down-bootstrap, .jqx-primary .jqx-menu-item-arrow-down-selected-bootstrap, .jqx-primary .jqx-menu-item-arrow-down-bootstrap, .jqx-primary .jqx-icon-arrow-down-bootstrap, .jqx-primary .jqx-icon-arrow-down-hover-bootstrap, .jqx-primary .jqx-icon-arrow-down-selected-bootstrap {
+    background-image: url('images/icon-down-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-primary .jqx-tabs-arrow-left-bootstrap, .jqx-primary .jqx-menu-item-arrow-left-selected-bootstrap, .jqx-primary .jqx-menu-item-arrow-top-left, .jqx-primary .jqx-icon-arrow-left-bootstrap, .jqx-primary .jqx-icon-arrow-down-left-bootstrap, .jqx-primary .jqx-icon-arrow-left-selected-bootstrap {
+    background-image: url('images/icon-left-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-primary .jqx-widget-bootstrap .jqx-primary .jqx-grid-group-collapse-bootstrap, .jqx-primary .jqx-grid-group-collapse-bootstrap, .jqx-primary .jqx-tabs-arrow-right-bootstrap, .jqx-primary .jqx-menu-item-arrow-right-selected-bootstrap, .jqx-primary .jqx-menu-item-arrow-top-right-bootstrap, .jqx-primary .jqx-icon-arrow-right-bootstrap, .jqx-primary .jqx-icon-arrow-right-hover-bootstrap, .jqx-primary .jqx-icon-arrow-right-selected-bootstrap {
+    background-image: url('images/icon-right-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-primary .jqx-window-close-button-bootstrap, .jqx-primary .jqx-icon-close-bootstrap, .jqx-primary .jqx-tabs-close-button-bootstrap, .jqx-primary .jqx-tabs-close-button-hover-bootstrap, .jqx-primary .jqx-tabs-close-button-selected-bootstrap {
+    background-image: url(images/close_white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-primary .jqx-tree-item-arrow-collapse-rtl-bootstrap, .jqx-primary .jqx-tree-item-arrow-collapse-hover-rtl-bootstrap {
+    background-image: url(images/icon-left.png);
+}
+
+.jqx-warning .jqx-grid-column-sortascbutton-bootstrap, .jqx-warning .jqx-expander-arrow-bottom-bootstrap, .jqx-warning .jqx-window-collapse-button-bootstrap, .jqx-warning .jqx-menu-item-arrow-up-bootstrap, .jqx-warning .jqx-menu-item-arrow-up-selected-bootstrap, .jqx-warning .jqx-menu-item-arrow-top-up-bootstrap, .jqx-warning .jqx-icon-arrow-up-bootstrap, .jqx-warning .jqx-icon-arrow-up-hover-bootstrap, .jqx-warning .jqx-icon-arrow-up-selected-bootstrap {
+    background-image: url('images/icon-up-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-warning .jqx-widget-bootstrap .jqx-warning .jqx-grid-group-expand-bootstrap, .jqx-warning .jqx-grid-group-expand-bootstrap, .jqx-warning .jqx-grid-column-menubutton-bootstrap, .jqx-warning .jqx-grid-column-sortdescbutton-bootstrap, .jqx-warning .jqx-expander-arrow-top-bootstrap, .jqx-warning .jqx-window-collapse-button-collapsed-bootstrap, .jqx-warning .jqx-menu-item-arrow-down-bootstrap, .jqx-warning .jqx-menu-item-arrow-down-selected-bootstrap, .jqx-warning .jqx-menu-item-arrow-down-bootstrap, .jqx-warning .jqx-icon-arrow-down-bootstrap, .jqx-warning .jqx-icon-arrow-down-hover-bootstrap, .jqx-warning .jqx-icon-arrow-down-selected-bootstrap {
+    background-image: url('images/icon-down-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-warning .jqx-tabs-arrow-left-bootstrap, .jqx-warning .jqx-menu-item-arrow-left-selected-bootstrap, .jqx-warning .jqx-menu-item-arrow-top-left, .jqx-warning .jqx-icon-arrow-left-bootstrap, .jqx-warning .jqx-icon-arrow-down-left-bootstrap, .jqx-warning .jqx-icon-arrow-left-selected-bootstrap {
+    background-image: url('images/icon-left-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-warning .jqx-widget-bootstrap .jqx-warning .jqx-grid-group-collapse-bootstrap, .jqx-warning .jqx-grid-group-collapse-bootstrap, .jqx-warning .jqx-tabs-arrow-right-bootstrap, .jqx-warning .jqx-menu-item-arrow-right-selected-bootstrap, .jqx-warning .jqx-menu-item-arrow-top-right-bootstrap, .jqx-warning .jqx-icon-arrow-right-bootstrap, .jqx-warning .jqx-icon-arrow-right-hover-bootstrap, .jqx-warning .jqx-icon-arrow-right-selected-bootstrap {
+    background-image: url('images/icon-right-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-warning .jqx-window-close-button-bootstrap, .jqx-warning .jqx-icon-close-bootstrap, .jqx-warning .jqx-tabs-close-button-bootstrap, .jqx-warning .jqx-tabs-close-button-hover-bootstrap, .jqx-warning .jqx-tabs-close-button-selected-bootstrap {
+    background-image: url(images/close_white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-warning .jqx-tree-item-arrow-collapse-rtl-bootstrap, .jqx-warning .jqx-tree-item-arrow-collapse-hover-rtl-bootstrap {
+    background-image: url(images/icon-left.png);
+}
+
+.jqx-danger .jqx-grid-column-sortascbutton-bootstrap, .jqx-danger .jqx-expander-arrow-bottom-bootstrap, .jqx-danger .jqx-window-collapse-button-bootstrap, .jqx-danger .jqx-menu-item-arrow-up-bootstrap, .jqx-danger .jqx-menu-item-arrow-up-selected-bootstrap, .jqx-danger .jqx-menu-item-arrow-top-up-bootstrap, .jqx-danger .jqx-icon-arrow-up-bootstrap, .jqx-danger .jqx-icon-arrow-up-hover-bootstrap, .jqx-danger .jqx-icon-arrow-up-selected-bootstrap {
+    background-image: url('images/icon-up-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-danger .jqx-widget-bootstrap .jqx-danger .jqx-grid-group-expand-bootstrap, .jqx-danger .jqx-grid-group-expand-bootstrap, .jqx-danger .jqx-grid-column-menubutton-bootstrap, .jqx-danger .jqx-grid-column-sortdescbutton-bootstrap, .jqx-danger .jqx-expander-arrow-top-bootstrap, .jqx-danger .jqx-window-collapse-button-collapsed-bootstrap, .jqx-danger .jqx-menu-item-arrow-down-bootstrap, .jqx-danger .jqx-menu-item-arrow-down-selected-bootstrap, .jqx-danger .jqx-menu-item-arrow-down-bootstrap, .jqx-danger .jqx-icon-arrow-down-bootstrap, .jqx-danger .jqx-icon-arrow-down-hover-bootstrap, .jqx-danger .jqx-icon-arrow-down-selected-bootstrap {
+    background-image: url('images/icon-down-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-danger .jqx-tabs-arrow-left-bootstrap, .jqx-danger .jqx-menu-item-arrow-left-selected-bootstrap, .jqx-danger .jqx-menu-item-arrow-top-left, .jqx-danger .jqx-icon-arrow-left-bootstrap, .jqx-danger .jqx-icon-arrow-down-left-bootstrap, .jqx-danger .jqx-icon-arrow-left-selected-bootstrap {
+    background-image: url('images/icon-left-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-danger .jqx-widget-bootstrap .jqx-danger .jqx-grid-group-collapse-bootstrap, .jqx-danger .jqx-grid-group-collapse-bootstrap, .jqx-danger .jqx-tabs-arrow-right-bootstrap, .jqx-danger .jqx-menu-item-arrow-right-selected-bootstrap, .jqx-danger .jqx-menu-item-arrow-top-right-bootstrap, .jqx-danger .jqx-icon-arrow-right-bootstrap, .jqx-danger .jqx-icon-arrow-right-hover-bootstrap, .jqx-danger .jqx-icon-arrow-right-selected-bootstrap {
+    background-image: url('images/icon-right-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-danger .jqx-window-close-button-bootstrap, .jqx-danger .jqx-icon-close-bootstrap, .jqx-danger .jqx-tabs-close-button-bootstrap, .jqx-danger .jqx-tabs-close-button-hover-bootstrap, .jqx-danger .jqx-tabs-close-button-selected-bootstrap {
+    background-image: url(images/close_white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-danger .jqx-tree-item-arrow-collapse-rtl-bootstrap, .jqx-danger .jqx-tree-item-arrow-collapse-hover-rtl-bootstrap {
+    background-image: url(images/icon-left.png);
+}
+
+.jqx-info .jqx-grid-column-sortascbutton-bootstrap, .jqx-info .jqx-expander-arrow-bottom-bootstrap, .jqx-info .jqx-window-collapse-button-bootstrap, .jqx-info .jqx-menu-item-arrow-up-bootstrap, .jqx-info .jqx-menu-item-arrow-up-selected-bootstrap, .jqx-info .jqx-menu-item-arrow-top-up-bootstrap, .jqx-info .jqx-icon-arrow-up-bootstrap, .jqx-info .jqx-icon-arrow-up-hover-bootstrap, .jqx-info .jqx-icon-arrow-up-selected-bootstrap {
+    background-image: url('images/icon-up-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-info .jqx-widget-bootstrap .jqx-info .jqx-grid-group-expand-bootstrap, .jqx-info .jqx-grid-group-expand-bootstrap, .jqx-info .jqx-grid-column-menubutton-bootstrap, .jqx-info .jqx-grid-column-sortdescbutton-bootstrap, .jqx-info .jqx-expander-arrow-top-bootstrap, .jqx-info .jqx-window-collapse-button-collapsed-bootstrap, .jqx-info .jqx-menu-item-arrow-down-bootstrap, .jqx-info .jqx-menu-item-arrow-down-selected-bootstrap, .jqx-info .jqx-menu-item-arrow-down-bootstrap, .jqx-info .jqx-icon-arrow-down-bootstrap, .jqx-info .jqx-icon-arrow-down-hover-bootstrap, .jqx-info .jqx-icon-arrow-down-selected-bootstrap {
+    background-image: url('images/icon-down-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-info .jqx-tabs-arrow-left-bootstrap, .jqx-info .jqx-menu-item-arrow-left-selected-bootstrap, .jqx-info .jqx-menu-item-arrow-top-left, .jqx-info .jqx-icon-arrow-left-bootstrap, .jqx-info .jqx-icon-arrow-down-left-bootstrap, .jqx-info .jqx-icon-arrow-left-selected-bootstrap {
+    background-image: url('images/icon-left-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-info .jqx-widget-bootstrap .jqx-info .jqx-grid-group-collapse-bootstrap, .jqx-info .jqx-grid-group-collapse-bootstrap, .jqx-info .jqx-tabs-arrow-right-bootstrap, .jqx-info .jqx-menu-item-arrow-right-selected-bootstrap, .jqx-info .jqx-menu-item-arrow-top-right-bootstrap, .jqx-info .jqx-icon-arrow-right-bootstrap, .jqx-info .jqx-icon-arrow-right-hover-bootstrap, .jqx-info .jqx-icon-arrow-right-selected-bootstrap {
+    background-image: url('images/icon-right-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-info .jqx-window-close-button-bootstrap, .jqx-info .jqx-icon-close-bootstrap, .jqx-info .jqx-tabs-close-button-bootstrap, .jqx-info .jqx-tabs-close-button-hover-bootstrap, .jqx-info .jqx-tabs-close-button-selected-bootstrap {
+    background-image: url(images/close_white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-info .jqx-tree-item-arrow-collapse-rtl-bootstrap, .jqx-info .jqx-tree-item-arrow-collapse-hover-rtl-bootstrap {
+    background-image: url(images/icon-left.png);
+}
+
+.jqx-success .jqx-grid-column-sortascbutton-bootstrap, .jqx-success .jqx-expander-arrow-bottom-bootstrap, .jqx-success .jqx-window-collapse-button-bootstrap, .jqx-success .jqx-menu-item-arrow-up-bootstrap, .jqx-success .jqx-menu-item-arrow-up-selected-bootstrap, .jqx-success .jqx-menu-item-arrow-top-up-bootstrap, .jqx-success .jqx-icon-arrow-up-bootstrap, .jqx-success .jqx-icon-arrow-up-hover-bootstrap, .jqx-success .jqx-icon-arrow-up-selected-bootstrap {
+    background-image: url('images/icon-up-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-success .jqx-widget-bootstrap .jqx-success .jqx-grid-group-expand-bootstrap, .jqx-success .jqx-grid-group-expand-bootstrap, .jqx-success .jqx-grid-column-menubutton-bootstrap, .jqx-success .jqx-grid-column-sortdescbutton-bootstrap, .jqx-success .jqx-expander-arrow-top-bootstrap, .jqx-success .jqx-window-collapse-button-collapsed-bootstrap, .jqx-success .jqx-menu-item-arrow-down-bootstrap, .jqx-success .jqx-menu-item-arrow-down-selected-bootstrap, .jqx-success .jqx-menu-item-arrow-down-bootstrap, .jqx-success .jqx-icon-arrow-down-bootstrap, .jqx-success .jqx-icon-arrow-down-hover-bootstrap, .jqx-success .jqx-icon-arrow-down-selected-bootstrap {
+    background-image: url('images/icon-down-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-success .jqx-tabs-arrow-left-bootstrap, .jqx-success .jqx-menu-item-arrow-left-selected-bootstrap, .jqx-success .jqx-menu-item-arrow-top-left, .jqx-success .jqx-icon-arrow-left-bootstrap, .jqx-success .jqx-icon-arrow-down-left-bootstrap, .jqx-success .jqx-icon-arrow-left-selected-bootstrap {
+    background-image: url('images/icon-left-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-success .jqx-widget-bootstrap .jqx-success .jqx-grid-group-collapse-bootstrap, .jqx-success .jqx-grid-group-collapse-bootstrap, .jqx-success .jqx-tabs-arrow-right-bootstrap, .jqx-success .jqx-menu-item-arrow-right-selected-bootstrap, .jqx-success .jqx-menu-item-arrow-top-right-bootstrap, .jqx-success .jqx-icon-arrow-right-bootstrap, .jqx-success .jqx-icon-arrow-right-hover-bootstrap, .jqx-success .jqx-icon-arrow-right-selected-bootstrap {
+    background-image: url('images/icon-right-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-success .jqx-window-close-button-bootstrap, .jqx-success .jqx-icon-close-bootstrap, .jqx-success .jqx-tabs-close-button-bootstrap, .jqx-success .jqx-tabs-close-button-hover-bootstrap, .jqx-success .jqx-tabs-close-button-selected-bootstrap {
+    background-image: url(images/close_white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-success .jqx-tree-item-arrow-collapse-rtl-bootstrap, .jqx-success .jqx-tree-item-arrow-collapse-hover-rtl-bootstrap {
+    background-image: url(images/icon-left.png);
+}
+
+.jqx-inverse .jqx-grid-column-sortascbutton-bootstrap, .jqx-inverse .jqx-expander-arrow-bottom-bootstrap, .jqx-inverse .jqx-window-collapse-button-bootstrap, .jqx-inverse .jqx-menu-item-arrow-up-bootstrap, .jqx-inverse .jqx-menu-item-arrow-up-selected-bootstrap, .jqx-inverse .jqx-menu-item-arrow-top-up-bootstrap, .jqx-inverse .jqx-icon-arrow-up-bootstrap, .jqx-inverse .jqx-icon-arrow-up-hover-bootstrap, .jqx-inverse .jqx-icon-arrow-up-selected-bootstrap {
+    background-image: url('images/icon-up-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-inverse .jqx-widget-bootstrap .jqx-inverse .jqx-grid-group-expand-bootstrap, .jqx-inverse .jqx-grid-group-expand-bootstrap, .jqx-inverse .jqx-grid-column-menubutton-bootstrap, .jqx-inverse .jqx-grid-column-sortdescbutton-bootstrap, .jqx-inverse .jqx-expander-arrow-top-bootstrap, .jqx-inverse .jqx-window-collapse-button-collapsed-bootstrap, .jqx-inverse .jqx-menu-item-arrow-down-bootstrap, .jqx-inverse .jqx-menu-item-arrow-down-selected-bootstrap, .jqx-inverse .jqx-menu-item-arrow-down-bootstrap, .jqx-inverse .jqx-icon-arrow-down-bootstrap, .jqx-inverse .jqx-icon-arrow-down-hover-bootstrap, .jqx-inverse .jqx-icon-arrow-down-selected-bootstrap {
+    background-image: url('images/icon-down-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-inverse .jqx-tabs-arrow-left-bootstrap, .jqx-inverse .jqx-menu-item-arrow-left-selected-bootstrap, .jqx-inverse .jqx-menu-item-arrow-top-left, .jqx-inverse .jqx-icon-arrow-left-bootstrap, .jqx-inverse .jqx-icon-arrow-down-left-bootstrap, .jqx-inverse .jqx-icon-arrow-left-selected-bootstrap {
+    background-image: url('images/icon-left-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-inverse .jqx-widget-bootstrap .jqx-inverse .jqx-grid-group-collapse-bootstrap, .jqx-inverse .jqx-grid-group-collapse-bootstrap, .jqx-inverse .jqx-tabs-arrow-right-bootstrap, .jqx-inverse .jqx-menu-item-arrow-right-selected-bootstrap, .jqx-inverse .jqx-menu-item-arrow-top-right-bootstrap, .jqx-inverse .jqx-icon-arrow-right-bootstrap, .jqx-inverse .jqx-icon-arrow-right-hover-bootstrap, .jqx-inverse .jqx-icon-arrow-right-selected-bootstrap {
+    background-image: url('images/icon-right-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-inverse .jqx-window-close-button-bootstrap, .jqx-inverse .jqx-icon-close-bootstrap, .jqx-inverse .jqx-tabs-close-button-bootstrap, .jqx-inverse .jqx-tabs-close-button-hover-bootstrap, .jqx-inverse .jqx-tabs-close-button-selected-bootstrap {
+    background-image: url(images/close_white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-inverse .jqx-tree-item-arrow-collapse-rtl-bootstrap, .jqx-inverse .jqx-tree-item-arrow-collapse-hover-rtl-bootstrap {
+    background-image: url(images/icon-left.png);
+}
+
+
+.jqx-input-button-content-bootstrap {
+    font-size: 10px;
+}
+
+.jqx-combobox-content-bootstrap, .jqx-input-bootstrap {
+    border-color: #cccccc;
+    color: #555555;
+    background-color: #ffffff;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+.jqx-combobox-content-bootstrap, .jqx-combobox-bootstrap, .jqx-combobox-state-normal-bootstrap {
+    border-color: #cccccc;
+}
+
+.jqx-combobox-content-focus-bootstrap, .jqx-combobox-state-focus-bootstrap, .jqx-fill-state-focus-bootstrap,
+.jqx-numberinput-focus-bootstrap {
+    outline: none;
+    border-color: rgba(82, 168, 236, 0.8);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+
+.jqx-datetimeinput-content, .jqx-datetimeinput-container {
+    overflow: visible !important;
+}
+
+input[type="text"].jqx-input-bootstrap, input[type="text"].jqx-widget-content-bootstrap, input[type="textarea"].jqx-widget-content-bootstrap, textarea.jqx-input-bootstrap {
+    padding-left: 1px !important;
+}
+
+input[type="text"].jqx-input-bootstrap:-moz-placeholder, input[type="text"].jqx-widget-content-bootstrap:-moz-placeholder, input[type="textarea"].jqx-widget-content-bootstrap:-moz-placeholder, textarea.jqx-input-bootstrap:-moz-placeholder {
+    color: #999999;
+}
+
+input[type="text"].jqx-input-bootstrap:-webkit-input-placeholder, input[type="text"].jqx-widget-content-bootstrap:-webkit-input-placeholder, input[type="textarea"].jqx-widget-content-bootstrap:-webkit-input-placeholder, textarea.jqx-input-bootstrap:-webkit-input-placeholder {
+    color: #999999;
+}
+
+input[type="text"].jqx-input-bootstrap:-ms-input-placeholder, input[type="text"].jqx-widget-content-bootstrap:-ms-input-placeholder, input[type="textarea"].jqx-widget-content-bootstrap:-ms-input-placeholder, textarea.jqx-input-bootstrap:-ms-input-placeholder {
+    color: #999999;
+}
+
+input[type="password"].jqx-input-bootstrap, input[type="password"].jqx-widget-content-bootstrap, input[type="textarea"].jqx-widget-content-bootstrap, textarea.jqx-input-bootstrap {
+    padding-left: 1px !important;
+}
+
+input[type="password"].jqx-input-bootstrap:-moz-placeholder, input[type="password"].jqx-widget-content-bootstrap:-moz-placeholder, input[type="textarea"].jqx-widget-content-bootstrap:-moz-placeholder, textarea.jqx-input-bootstrap:-moz-placeholder {
+    color: #999999;
+}
+
+input[type="password"].jqx-input-bootstrap:-webkit-input-placeholder, input[type="password"].jqx-widget-content-bootstrap:-webkit-input-placeholder, input[type="textarea"].jqx-widget-content-bootstrap:-webkit-input-placeholder, textarea.jqx-input-bootstrap:-webkit-input-placeholder {
+    color: #999999;
+}
+
+input[type="password"].jqx-input-bootstrap:-ms-input-placeholder, input[type="password"].jqx-widget-content-bootstrap:-ms-input-placeholder, input[type="textarea"].jqx-widget-content-bootstrap:-ms-input-placeholder, textarea.jqx-input-bootstrap:-ms-input-placeholder {
+    color: #999999;
+}
+
+.jqx-dropdownlist-state-normal-bootstrap.jqx-fill-state-focus-bootstrap, .jqx-listbox-bootstrap.jqx-fill-state-focus-bootstrap {
+    outline: none;
+    border-color: #b2b2b2;
+    -webkit-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.jqx-dropdownlist-state-normal-bootstrap.jqx-fill-state-focus-bootstrap.jqx-primary {
+    border-color: #0044cc #0044cc #002a80;
+}
+
+.jqx-dropdownlist-state-normal-bootstrap.jqx-fill-state-focus-bootstrap.jqx-warning {
+    border-color: #f89406 #f89406 #ad6704;
+}
+
+.jqx-dropdownlist-state-normal-bootstrap.jqx-fill-state-focus-bootstrap.jqx-danger {
+    border-color: #bd362f #bd362f #802420;
+}
+
+.jqx-dropdownlist-state-normal-bootstrap.jqx-fill-state-focus-bootstrap.jqx-success {
+    border-color: #51a351 #51a351 #387038;
+}
+
+.jqx-dropdownlist-state-normal-bootstrap.jqx-fill-state-focus-bootstrap.jqx-info {
+    border-color: #2f96b4 #2f96b4 #1f6377;
+}
+
+.jqx-dropdownlist-state-normal-bootstrap.jqx-fill-state-focus-bootstrap.jqx-inverse {
+    border-color: #222222 #222222 #000000;
+}
+
+.jqx-popup-bootstrap.jqx-fill-state-focus-bootstrap {
+    border: 1px solid #ccc;
+    *border-right-width: 2px;
+    *border-bottom-width: 2px;
+    -webkit-border-radius: 4px !important;
+    -moz-border-radius: 4px !important;
+    border-radius: 4px !important;
+    -webkit-box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.jqx-expander-content-bootstrap.jqx-fill-state-focus-bootstrap {
+    z-index: 20;
+}
+
+.jqx-slider-rangebar-bootstrap {
+    border-color: #428bca;
+    background: #428bca;
+}
+
+.jqx-slider-button-bootstrap {
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    padding: 3px;
+}
+
+.jqx-grid-cell-bootstrap.jqx-grid-cell-selected-bootstrap > .jqx-grid-group-expand-bootstrap {
+    background-image: url('images/icon-down-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-grid-cell-bootstrap.jqx-grid-cell-selected-bootstrap > .jqx-grid-group-collapse-bootstrap {
+    background-image: url('images/icon-right-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-grid-cell-bootstrap.jqx-grid-cell-selected-bootstrap > .jqx-grid-group-collapse-rtl-bootstrap {
+    background-image: url('images/icon-left-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.jqx-grid-cell-bootstrap.jqx-grid-cell-selected-bootstrap > .jqx-grid-group-expand-rtl-bootstrap {
+    background-image: url('images/icon-down-white.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.jqx-widget-bootstrap
+{
+  font-family:  'Droid-Sans', sans-serif;
+}
+.jqx-widget-content-bootstrap
+{
+  color: #333333;
+  text-shadow: none;
+  border-color: #e6e6e6;
+  background: #ffffff;
+  font-family:  'Droid-Sans', sans-serif;
+}
+.jqx-widget-header-bootstrap, .jqx-grid-bootstrap .jqx-widget-header-bootstrap
+{
+  font-family:  'Droid-Sans', sans-serif;
+}
+.jqx-grid-column-menubutton-bootstrap, .jqx-widget-bootstrap.jqx-grid-column-menubutton-bootstrap
+{
+}
+.jqx-grid-cell-bootstrap, .jqx-widget-bootstrap .jqx-grid-cell-bootstrap
+{
+  background-color: #ffffff;
+  color: #222222;
+  text-shadow: none;
+}
+.jqx-fill-state-normal-bootstrap
+{
+  font-family:  'Droid-Sans', sans-serif;
+}
+.jqx-button-bootstrap
+{
+  font-family:  'Droid-Sans', sans-serif;
+}
+.jqx-grid-selectionarea-bootstrap
+{
+}
+.jqx-widget-bootstrap .jqx-grid-cell-sort-bootstrap, .jqx-widget-bootstrap .jqx-grid-cell-filter-bootstrap, .jqx-widget-bootstrap .jqx-grid-cell-pinned-bootstrap, .jqx-grid-cell-sort-bootstrap, .jqx-grid-cell-filter-bootstrap, .jqx-grid-cell-pinned-bootstrap
+{
+  background-color: #E5E5E5;
+  color: #000000;
+  text-shadow: none;
+}
+.jqx-widget-bootstrap .jqx-grid-cell-alt-bootstrap, .jqx-widget-bootstrap .jqx-grid-cell-sort-alt-bootstrap, .jqx-widget-bootstrap .jqx-grid-cell-pinned-alt-bootstrap, .jqx-widget-bootstrap .jqx-grid-cell-filter-alt-bootstrap, .jqx-grid-cell-alt-bootstrap, .jqx-grid-cell-sort-alt-bootstrap, .jqx-grid-cell-filter-alt-bootstrap
+{
+  background-color: #f9f9f9;
+  color: #000000;
+  text-shadow: none;
+}
+.jqx-fill-state-hover-bootstrap, .jqx-widget-bootstrap .jqx-grid-cell-hover-bootstrap
+{
+  font-family:  'Droid-Sans', sans-serif;
+}
+.jqx-fill-state-pressed-bootstrap, .jqx-widget-bootstrap .jqx-grid-cell-selected-bootstrap
+{
+  font-family:  'Droid-Sans', sans-serif;
+}
+.jqx-switchbutton-label-on-bootstrap
+{
+}
+.jqx-tabs-title-selected-top-bootstrap, .jqx-tabs-selection-tracker-top-bootstrap
+{
+  color: #333333;
+  text-shadow: none;
+  border-color: #e6e6e6;
+  border-bottom: 1px solid #ffffff;
+  background-image: none ;
+  background-color: #ffffff;
+}
+.jqx-tabs-title-selected-bottom-bootstrap, .jqx-tabs-selection-tracker-bottom-bootstrap
+{
+  color: #333333;
+  text-shadow: none;
+  border-color: #e6e6e6;
+  border-top: 1px solid #ffffff;
+  background-image: none ;
+  background-color: #ffffff;
+}
+.jqx-splitter-splitbar-hover-bootstrap
+{
+}
+.jqx-splitter-splitbar-vertical-bootstrap, .jqx-splitter-splitbar-horizontal-bootstrap, .jqx-slider-track-horizontal-bootstrap, .jqx-slider-track-vertical-bootstrap
+{
+}
+.jqx-splitter-collapse-button-horizontal-bootstrap, .jqx-splitter-collapse-button-vertical-bootstrap, .jqx-slider-rangebar-bootstrap
+{
+}
+.jqx-scrollbar-state-normal-bootstrap
+{
+  background-color: #f0f0f0;
+  border-color: #f0f0f0;
+}
+.jqx-grid-bottomright-bootstrap, .jqx-panel-bottomright-bootstrap, .jqx-listbox-bottomright-bootstrap
+{
+  background-color: #f0f0f0;
+}
+.jqx-scrollbar-thumb-state-normal-bootstrap
+{
+  background-color: #e6e6e6;
+  background-color: #e6e6e6;
+  background-image: -moz-linear-gradient(left, #e6e6e6, #e6e6e6);
+  background-image: -ms-linear-gradient(left, #e6e6e6, #e6e6e6);
+  background-image: -o-linear-gradient(left, #e6e6e6, #e6e6e6);
+  background-image: -webkit-gradient(linear, left top, right top, from(#e6e6e6), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(left, #e6e6e6, #e6e6e6);
+  background-image: linear-gradient(left, #e6e6e6, #e6e6e6);
+  background-image: linear-gradient(left right, #e6e6e6, #e6e6e6);
+}
+.jqx-scrollbar-thumb-state-normal-horizontal-bootstrap
+{
+  background-color: #e6e6e6;
+  background-color: #e6e6e6;
+  background-image: -moz-linear-gradient(top, #e6e6e6, #e6e6e6);
+  background-image: -ms-linear-gradient(top, #e6e6e6, #e6e6e6);
+  background-image: -o-linear-gradient(top, #e6e6e6, #e6e6e6);
+  background-image: -webkit-gradient(linear, center top, center bottom, from(#e6e6e6), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #e6e6e6, #e6e6e6);
+  background-image: linear-gradient(top, #e6e6e6, #e6e6e6);
+  background-image: linear-gradient(to bottom, #e6e6e6, #e6e6e6);
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+.jqx-scrollbar-thumb-state-hover-bootstrap
+{
+  background-color: #e6e6e6;
+  border-color: #e6e6e6;
+  background-image: -moz-linear-gradient(left, #e6e6e6, #e6e6e6);
+  background-image: -ms-linear-gradient(left, #e6e6e6, #e6e6e6);
+  background-image: -o-linear-gradient(left, #e6e6e6, #e6e6e6);
+  background-image: -webkit-gradient(linear, left top, right top, from(#e6e6e6), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(left, #e6e6e6, #e6e6e6);
+  background-image: linear-gradient(left, #e6e6e6, #e6e6e6);
+  background-image: linear-gradient(left right, #e6e6e6, #e6e6e6);
+}
+.jqx-scrollbar-thumb-state-hover-horizontal-bootstrap
+{
+  background-color: #e6e6e6;
+  border-color: #e6e6e6;
+  background-image: -moz-linear-gradient(top, #e6e6e6, #e6e6e6);
+  background-image: -ms-linear-gradient(top, #e6e6e6, #e6e6e6);
+  background-image: -o-linear-gradient(top, #e6e6e6, #e6e6e6);
+  background-image: -webkit-gradient(linear, center top, center bottom, from(#e6e6e6), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #e6e6e6, #e6e6e6);
+  background-image: linear-gradient(top, #e6e6e6, #e6e6e6);
+  background-image: linear-gradient(to bottom, #e6e6e6, #e6e6e6);
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+.jqx-scrollbar-thumb-state-pressed-bootstrap
+{
+  background-color: #d9d9d9;
+  border-color: #d9d9d9;
+  background-image: -moz-linear-gradient(left, #d9d9d9, #d9d9d9);
+  background-image: -ms-linear-gradient(left, #d9d9d9, #d9d9d9);
+  background-image: -o-linear-gradient(left, #d9d9d9, #d9d9d9);
+  background-image: -webkit-gradient(linear, left top, right top, from(#d9d9d9), to(#d9d9d9));
+  background-image: -webkit-linear-gradient(left, #d9d9d9, #d9d9d9);
+  background-image: linear-gradient(left, #d9d9d9, #d9d9d9);
+  background-image: linear-gradient(left right, #d9d9d9, #d9d9d9);
+}
+.jqx-scrollbar-thumb-state-pressed-horizontal-bootstrap
+{
+  background-color: #d9d9d9;
+  border-color: #d9d9d9;
+  background-image: -moz-linear-gradient(top, #d9d9d9, #d9d9d9);
+  background-image: -ms-linear-gradient(top, #d9d9d9, #d9d9d9);
+  background-image: -o-linear-gradient(top, #d9d9d9, #d9d9d9);
+  background-image: -webkit-gradient(linear, center top, center bottom, from(#d9d9d9), to(#d9d9d9));
+  background-image: -webkit-linear-gradient(top, #d9d9d9, #d9d9d9);
+  background-image: linear-gradient(top, #d9d9d9, #d9d9d9);
+  background-image: linear-gradient(to bottom, #d9d9d9, #d9d9d9);
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+.jqx-scrollbar-button-state-normal-bootstrap
+{
+  background-color: #f0f0f0;
+  background-image: -moz-linear-gradient(top, #f0f0f0, #f0f0f0);
+  background-image: -ms-linear-gradient(top, #f0f0f0, #f0f0f0);
+  background-image: -o-linear-gradient(top, #f0f0f0, #f0f0f0);
+  background-image: -webkit-gradient(linear, center top, center bottom, from(#f0f0f0), to(#f0f0f0));
+  background-image: -webkit-linear-gradient(top, #f0f0f0, #f0f0f0);
+  background-image: linear-gradient(top, #f0f0f0, #f0f0f0);
+  background-image: linear-gradient(to bottom, #f0f0f0, #f0f0f0);
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+.jqx-scrollbar-button-state-hover-bootstrap
+{
+  background-color: #e6e6e6;
+  border-color: #b3b3b3;
+  background-image: -moz-linear-gradient(top, #e6e6e6, #e6e6e6);
+  background-image: -ms-linear-gradient(top, #e6e6e6, #e6e6e6);
+  background-image: -o-linear-gradient(top, #e6e6e6, #e6e6e6);
+  background-image: -webkit-gradient(linear, center top, center bottom, from(#e6e6e6), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #e6e6e6, #e6e6e6);
+  background-image: linear-gradient(top, #e6e6e6, #e6e6e6);
+  background-image: linear-gradient(to bottom, #e6e6e6, #e6e6e6);
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+.jqx-scrollbar-button-state-pressed-bootstrap
+{
+  background-color: #d9d9d9;
+  border-color: #b3b3b3;
+  background-image: -moz-linear-gradient(top, #d9d9d9, #d9d9d9);
+  background-image: -ms-linear-gradient(top, #d9d9d9, #d9d9d9);
+  background-image: -o-linear-gradient(top, #d9d9d9, #d9d9d9);
+  background-image: -webkit-gradient(linear, center top, center bottom, from(#d9d9d9), to(#d9d9d9));
+  background-image: -webkit-linear-gradient(top, #d9d9d9, #d9d9d9);
+  background-image: linear-gradient(top, #d9d9d9, #d9d9d9);
+  background-image: linear-gradient(to bottom, #d9d9d9, #d9d9d9);
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+.jqx-radiobutton-check-checked-bootstrap
+{
+  background: #666666;
+  width: 7px;
+  height: 7px;
+  margin-left: 2px;
+  margin-top: 2px;
+  border-width: 1px;
+  border-style: solid;
+}
+.jqx-rc-tl-bootstrap
+{
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-radius-topleft: 4px;
+  border-radius-topleft: 4px;
+}
+.jqx-rc-tr-bootstrap
+{
+  -moz-border-radius-topright: 4px;
+  -webkit-border-radius-topright: 4px;
+  border-radius-topright: 4px;
+}
+.jqx-rc-bl-bootstrap
+{
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-radius-bottomleft: 4px;
+  border-radius-bottomleft: 4px;
+}
+.jqx-rc-br-bootstrap
+{
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-radius-bottomright: 4px;
+  border-radius-bottomright: 4px;
+}
+.jqx-rc-t-bootstrap
+{
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.jqx-rc-b-bootstrap
+{
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.jqx-rc-r-bootstrap
+{
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.jqx-rc-l-bootstrap
+{
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.jqx-radiobutton-default-bootstrap, .jqx-radiobutton-bootstrap, .jqx-radiobutton-check-checked-bootstrap, .jqx-radiobutton-hover-bootstrap, .jqx-radiobutton-check-indeterminate-bootstrap, .jqx-radiobutton-check-indeterminate-disabled-bootstrap, .jqx-slider-button-bootstrap
+{
+  -moz-border-radius: 100% !important;
+  -webkit-border-radius: 100% !important;
+  border-radius: 100% !important;
+}
+.jqx-rc-all-bootstrap, .jqx-tooltip-bootstrap, .jqx-tooltip-text-bootstrap, .jqx-tooltip-main-bootstrap
+{
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+.jqx-grid-column-sortascbutton-bootstrap, .jqx-expander-arrow-bottom-bootstrap, .jqx-window-collapse-button-bootstrap, .jqx-menu-item-arrow-up-bootstrap, .jqx-menu-item-arrow-top-up-bootstrap, .jqx-icon-arrow-up-bootstrap
+{
+  background-image: url('images/icon-up.png');
+}
+.jqx-icon-arrow-up-hover-bootstrap
+{
+  background-image: url('images/icon-up.png');
+}
+.jqx-menu-item-arrow-up-selected-bootstrap, .jqx-icon-arrow-up-selected-bootstrap.jqx-expander-arrow-expanded-bootstrap
+{
+  background-image: url('images/icon-up.png');
+}
+.jqx-grid-column-menubutton-bootstrap, .jqx-grid-column-sortdescbutton-bootstrap, .jqx-expander-arrow-top-bootstrap, .jqx-window-collapse-button-collapsed-bootstrap, .jqx-menu-item-arrow-down-bootstrap, .jqx-menu-item-arrow-down-bootstrap, .jqx-tree-item-arrow-expand-bootstrap, .jqx-grid-group-expand-bootstrap, .jqx-widget-bootstrap .jqx-grid-group-expand-bootstrap, .jqx-icon-arrow-down-bootstrap
+{
+  background-image: url('images/icon-down.png');
+}
+.jqx-icon-arrow-down-hover-bootstrap
+{
+  background-image: url('images/icon-down.png');
+}
+.jqx-menu-item-arrow-down-selected-bootstrap, .jqx-icon-arrow-down-selected-bootstrap
+{
+  background-image: url('images/icon-down.png');
+}
+.jqx-tabs-arrow-left-bootstrap, .jqx-menu-item-arrow-top-left-bootstrap, .jqx-grid-group-collapse-rtl-bootstrap, .jqx-widget-bootstrap .jqx-grid-group-collapse-rtl-bootstrap, .jqx-icon-arrow-left-bootstrap, .jqx-icon-arrow-down-left-bootstrap
+{
+  background-image: url('images/icon-left.png');
+}
+.jqx-icon-arrow-left-hover-bootstrap
+{
+  background-image: url('images/icon-left.png');
+}
+.jqx-menu-vertical-bootstrap
+{
+  background: #ffffff;
+}
+.jqx-menu-item-arrow-left-selected-bootstrap, .jqx-icon-arrow-left-selected-bootstrap
+{
+  background-image: url('images/icon-left.png');
+}
+.jqx-tabs-arrow-right-bootstrap, .jqx-menu-item-arrow-top-right-bootstrap, .jqx-menu-item-arrow-collapse-bootstrap, .jqx-grid-group-collapse-bootstrap, .jqx-widget-bootstrap .jqx-grid-group-collapse-bootstrap, .jqx-icon-arrow-right-bootstrap
+{
+  background-image: url('images/icon-right.png');
+}
+.jqx-icon-arrow-right-hover-bootstrap
+{
+  background-image: url('images/icon-right.png');
+}
+.jqx-menu-item-arrow-right-selected-bootstrap, .jqx-icon-arrow-right-selected-bootstrap
+{
+  background-image: url('images/icon-right.png');
+}
+.jqx-window-close-button-bootstrap, .jqx-tabs-close-button-bootstrap, .icon-close-bootstrap
+{
+  background-image: url('images/close.png');
+}
+.jqx-tabs-close-button-selected-bootstrap
+{
+  background-image: url('images/close.png');
+}
+.jqx-tabs-close-button-hover-bootstrap
+{
+  background-image: url('images/close.png');
+}
+.jqx-widget-bootstrap .jqx-grid-column-header-bootstrap, .jqx-widget-bootstrap .jqx-grid-cell-bootstrap, .jqx-widget-bootstrap .jqx-grid-group-cell-bootstrap, .jqx-grid-cell-bootstrap
+{
+  border-color: #cccccc;
+}
+.jqx-checkbox-check-checked-bootstrap
+{
+  background-image: url('images/check_black.png');
+}
+.jqx-checkbox-check-indeterminate-bootstrap
+{
+  background-image: url('images/check_indeterminate_black.png');
+}
+.jqx-tooltip-bootstrap, .jqx-tooltip-main-bootstrap
+{
+}
+.jqx-combobox-content-bootstrap, .jqx-input-bootstrap
+{
+  color: #333333;
+  text-shadow: none;
+  border-color: #cccccc;
+  background-color: #ffffff;
+}
+.jqx-combobox-input-bootstrap
+{
+  color: #333333;
+  text-shadow: none;
+}
+.jqx-input-content-bootstrap
+{
+  color: #333333;
+  text-shadow: none;
+  background-color: #ffffff;
+}
+.jqx-fill-state-focus-bootstrap, .jqx-popup-bootstrap .jqx-fill-state-focus-bootstrap
+{
+  border-color: #52A8EC;
+}
+.jqx-popup-bootstrap.jqx-listbox-bootstrap, .jqx-popup-bootstrap.jqx-calendar-bootstrap,.jqx-menu-dropdown-bootstrap,  .jqx-popup-bootstrap.jqx-dropdownbutton-popup-bootstrap
+{
+  color: #333333;
+  text-shadow: none;
+  border-color: #e6e6e6;
+  background-color: #ffffff;
+}
+.jqx-menu-item-arrow-right-bootstrap, .jqx-tree-item-arrow-collapse-bootstrap
+{
+  background-image: url('images/icon-right.png');
+}
+.jqx-menu-item-arrow-left-bootstrap
+{
+  background-image: url('images/icon-left.png');
+}
+.jqx-tree-item-arrow-expand-bootstrap
+{
+  background-image: url('images/icon-down.png');
+}
+.jqx-menu-item-arrow-right-hover-bootstrap
+{
+  background-image: url('images/icon-right.png');
+}
+.jqx-menu-item-arrow-left-hover-bootstrap
+{
+  background-image: url('images/icon-left.png');
+}
+.jqx-menu-item-arrow-right-selected-bootstrap
+{
+  background-image: url('images/icon-right-white.png');
+}
+.jqx-menu-item-arrow-left-selected-bootstrap
+{
+  background-image: url('images/icon-left-white.png');
+}
+.jqx-scrollbar-bootstrap .jqx-icon-arrow-up-bootstrap
+{
+  background-image: url('images/icon-up.png');
+}
+.jqx-scrollbar-bootstrap .jqx-icon-arrow-left-bootstrap
+{
+  background-image: url('images/icon-left.png');
+}
+.jqx-scrollbar-bootstrap .jqx-icon-arrow-right-bootstrap
+{
+  background-image: url('images/icon-right.png');
+}
+.jqx-scrollbar-bootstrap .jqx-icon-arrow-bottom-bootstrap
+{
+  background-image: url('images/icon-bottom.png');
+}
+.jqx-scrollbar-bootstrap .jqx-icon-arrow-up-hover-bootstrap
+{
+  background-image: url('images/icon-up.png');
+}
+.jqx-scrollbar-bootstrap .jqx-icon-arrow-left-hover-bootstrap
+{
+  background-image: url('images/icon-left.png');
+}
+.jqx-scrollbar-bootstrap .jqx-icon-arrow-right-hover-bootstrap
+{
+  background-image: url('images/icon-right.png');
+}
+.jqx-scrollbar-bootstrap .jqx-icon-arrow-bottom-hover-bootstrap
+{
+  background-image: url('images/icon-bottom.png');
+}
+.jqx-scrollbar-bootstrap .jqx-icon-arrow-up-selected-bootstrap
+{
+  background-image: url('images/icon-up.png');
+}
+.jqx-scrollbar-bootstrap .jqx-icon-arrow-left-selected-bootstrap
+{
+  background-image: url('images/icon-left.png');
+}
+.jqx-scrollbar-bootstrap .jqx-icon-arrow-right-selected-bootstrap
+{
+  background-image: url('images/icon-right.png');
+}
+.jqx-scrollbar-bootstrap .jqx-icon-arrow-bottom-selected-bootstrap
+{
+  background-image: url('images/icon-bottom.png');
+}
+.jqx-calendar-bootstrap .jqx-icon-arrow-up-bootstrap, .jqx-tabs-header-bootstrap .jqx-icon-arrow-up-bootstrap
+{
+}
+.jqx-calendar-bootstrap .jqx-icon-arrow-left-bootstrap, .jqx-tabs-header-bootstrap .jqx-icon-arrow-left-bootstrap
+{
+}
+.jqx-calendar-bootstrap .jqx-icon-arrow-right-bootstrap, .jqx-tabs-header-bootstrap .jqx-icon-arrow-right-bootstrap
+{
+}
+.jqx-calendar-bootstrap .jqx-icon-arrow-bottom-bootstrap, .jqx-tabs-header-bootstrap .jqx-icon-arrow-bottom-bootstrap
+{
+}
+.jqx-widget-bootstrap .jqx-grid-cell-bootstrap, .jqx-listitem-state-normal-bootstrap, .jqx-menu-item-normal-bootstrap, .jqx-tree-item-normal-bootstrap, .jqx-calendar-cell-bootstrap, .jqx-grid-cell-bootstrap,.jqx-menu-vertical-bootstrap .jqx-menu-item-top-normal-bootstrap, .jqx-input-popup-bootstrap .jqx-fill-state-normal-bootstrap,
+{
+  color: #0088CC;
+  text-shadow: none;
+  font-family:  'Droid-Sans', sans-serif;
+}
+.jqx-widget-bootstrap .jqx-grid-cell-hover-bootstrap, .jqx-listitem-state-hover-bootstrap, .jqx-menu-item-hover-bootstrap, .jqx-tree-item-hover-bootstrap, .jqx-calendar-cell-hover-bootstrap, .jqx-grid-cell-hover-bootstrap,.jqx-menu-vertical-bootstrap .jqx-menu-item-top-hover-bootstrap, .jqx-input-popup-bootstrap .jqx-fill-state-hover-bootstrap,.jqx-input-button-header-bootstrap, .jqx-input-popup-bootstrap .jqx-fill-state-pressed-bootstrap,.jqx-input-button-header-bootstrap
+{
+  color: #333333 !important;
+  text-shadow: none;
+  border-color: #ebebeb !important;
+  background-color: #ebebeb !important;
+  background-image: -moz-linear-gradient(top, #ebebeb, #ebebeb) !important;
+  background-image: -ms-linear-gradient(top, #ebebeb, #ebebeb) !important;
+  background-image: -o-linear-gradient(top, #ebebeb, #ebebeb) !important;
+  background-image: -webkit-gradient(linear, center top, center bottom, from(#ebebeb), to(#ebebeb)) !important;
+  background-image: -webkit-linear-gradient(top, #ebebeb, #ebebeb) !important;
+  background-image: linear-gradient(top, #ebebeb, #ebebeb) !important;
+  background-image: linear-gradient(to bottom, #ebebeb, #ebebeb) !important;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  font-family:  'Droid-Sans', sans-serif;
+}
+.jqx-widget-bootstrap  .jqx-grid-cell-selected-bootstrap, .jqx-listitem-state-selected-bootstrap, .jqx-menu-item-selected-bootstrap, .jqx-tree-item-selected-bootstrap, .jqx-calendar-cell-selected-bootstrap, .jqx-grid-cell-selected-bootstrap,.jqx-menu-vertical-bootstrap .jqx-menu-item-top-selected-bootstrap, .jqx-grid-selectionarea-bootstrap
+{
+  color: #ffffff !important;
+  text-shadow: none;
+  border-color: #357ebd !important;
+  background-color: #428bca !important;
+  background-image: -moz-linear-gradient(top, #428bca, #428bca) !important;
+  background-image: -ms-linear-gradient(top, #428bca, #428bca) !important;
+  background-image: -o-linear-gradient(top, #428bca, #428bca) !important;
+  background-image: -webkit-gradient(linear, center top, center bottom, from(#428bca), to(#428bca)) !important;
+  background-image: -webkit-linear-gradient(top, #428bca, #428bca) !important;
+  background-image: linear-gradient(top, #428bca, #428bca) !important;
+  background-image: linear-gradient(to bottom, #428bca, #428bca) !important;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  font-family:  'Droid-Sans', sans-serif;
+}
+.jqx-slider-rangebar-bootstrap
+{
+  background-color: #428bca !important;
+}
+.jqx-progressbar-value-bootstrap
+{
+  background-color: #428bca !important;
+  background-image: -moz-linear-gradient(top, #428bca, #428bca) !important;
+  background-image: -ms-linear-gradient(top, #428bca, #428bca) !important;
+  background-image: -o-linear-gradient(top, #428bca, #428bca) !important;
+  background-image: -webkit-gradient(linear, center top, center bottom, from(#428bca), to(#428bca)) !important;
+  background-image: -webkit-linear-gradient(top, #428bca, #428bca) !important;
+  background-image: linear-gradient(top, #428bca, #428bca) !important;
+  background-image: linear-gradient(to bottom, #428bca, #428bca) !important;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+}
+.jqx-progressbar-value-vertical-bootstrap
+{
+  background-color: #428bca !important;
+  background-image: -moz-linear-gradient(left, #428bca, #428bca) !important;
+  background-image: -ms-linear-gradient(left, #428bca, #428bca) !important;
+  background-image: -o-linear-gradient(left, #428bca, #428bca) !important;
+  background-image: -webkit-gradient(linear, left top, right top, from(#428bca), to(#428bca)) !important;
+  background-image: -webkit-linear-gradient(left, #428bca, #428bca) !important;
+  background-image: linear-gradient(left, #428bca, #428bca) !important;
+  background-image: linear-gradient(left right, #428bca, #428bca) !important;
+}
+.jqx-splitter-collapse-button-horizontal-bootstrap
+{
+  background-color: #428bca !important;
+}
+.jqx-splitter-collapse-button-vertical-bootstrap
+{
+  background-color: #428bca !important;
+}
+.jqx-tabs-title-bootstrap, .jqx-tabs-title-bottom-bootstrap, .jqx-expander-header-bootstrap
+{
+  color: #0088CC !important;
+  text-shadow: none;
+}
+.jqx-tabs-title-hover-top-bootstrap, .jqx-tabs-title-hover-bottom-bootstrap, .jqx-expander-header-bootstrap:hover
+{
+  color: #333333;
+  text-shadow: none;
+}
+.jqx-tabs-title-selected-top-bootstrap, jqx-tabs-selection-tracker-top-bootstrap.jqx-tabs-title-selected-bottom-bootstrap, jqx-tabs-selection-tracker-bottom-bootstrap, jqx-expander-header-expanded-bootstrap
+{
+  color: #0088CC !important;
+  text-shadow: none;
+}
+.jqx-icon-calendar-bootstrap
+{
+  background-image: url('images/icon-calendar.png');
+}
+.jqx-icon-calendar-hover-bootstrap
+{
+  background-image: url('images/icon-calendar.png');
+}
+.jqx-icon-calendar-pressed-bootstrap
+{
+  background-image: url('images/icon-calendar.png');
+}
+.jqx-icon-first-bootstrap
+{
+  background-image: url('images/icon-first.png');
+}
+.jqx-icon-first-hover-bootstrap
+{
+  background-image: url('images/icon-first.png');
+}
+.jqx-icon-first-selected-bootstrap
+{
+  background-image: url('images/icon-first.png');
+}
+.jqx-icon-last-bootstrap
+{
+  background-image: url('images/icon-last.png');
+}
+.jqx-icon-last-hover-bootstrap
+{
+  background-image: url('images/icon-last.png');
+}
+.jqx-icon-last-selected-bootstrap
+{
+  background-image: url('images/icon-last.png');
+}
+.jqx-grid-cell-bootstrap.jqx-grid-cell-bootstrap>.jqx-grid-group-expand-bootstrap
+{
+  background-image: url('images/icon-down.png');
+}
+.jqx-grid-cell-bootstrap.jqx-grid-cell-hover-bootstrap>.jqx-grid-group-expand-bootstrap
+{
+  background-image: url('images/icon-down.png');
+}
+.jqx-grid-cell-bootstrap.jqx-grid-cell-selected-bootstrap>.jqx-grid-group-expand-bootstrap
+{
+  background-image: url('images/icon-down-white.png');
+}
+.jqx-grid-cell-bootstrap.jqx-grid-cell-bootstrap>.jqx-grid-group-collapse-bootstrap
+{
+  background-image: url('images/icon-right.png');
+}
+.jqx-grid-cell-bootstrap.jqx-grid-cell-hover-bootstrap>.jqx-grid-group-collapse-bootstrap
+{
+  background-image: url('images/icon-right.png');
+}
+.jqx-grid-cell-bootstrap.jqx-grid-cell-selected-bootstrap>.jqx-grid-group-collapse-bootstrap
+{
+  background-image: url('images/icon-right-white.png');
+}
+.jqx-grid-cell-bootstrap.jqx-grid-cell-bootstrap>.jqx-grid-group-expand-rtl-bootstrap
+{
+  background-image: url('images/icon-down.png');
+}
+.jqx-grid-cell-bootstrap.jqx-grid-cell-hover-bootstrap>.jqx-grid-group-expand-rtl-bootstrap
+{
+  background-image: url('images/icon-down.png');
+}
+.jqx-grid-cell-bootstrap.jqx-grid-cell-selected-bootstrap>.jqx-grid-group-expand-rtl-bootstrap
+{
+  background-image: url('images/icon-down-white.png');
+}
+.jqx-grid-cell-bootstrap.jqx-grid-cell-bootstrap>.jqx-grid-group-collapse-rtl-bootstrap
+{
+  background-image: url('images/icon-left.png');
+}
+.jqx-grid-cell-bootstrap.jqx-grid-cell-hover-bootstrap>.jqx-grid-group-collapse-rtl-bootstrap
+{
+  background-image: url('images/icon-left.png');
+}
+.jqx-grid-cell-bootstrap.jqx-grid-cell-selected-bootstrap>.jqx-grid-group-collapse-rtl-bootstrap
+{
+  background-image: url('images/icon-left-white.png');
+}
+.jqx-grid-column-menubutton-bootstrap, .jqx-grid-column-sortdescbutton-bootstrap
+{
+  background-image: url('images/icon-down.png');
+}
+.jqx-grid-column-sortascbutton-bootstrap
+{
+  background-image: url('images/icon-up.png');
+}
+.jqx-icon-delete-bootstrap
+{
+  background-image: url('images/icon-delete.png');
+}
+.jqx-icon-edit-bootstrap
+{
+  background-image: url('images/icon-edit.png');
+}
+.jqx-icon-save-bootstrap
+{
+  background-image: url('images/icon-save.png');
+}
+.jqx-icon-cancel-bootstrap
+{
+  background-image: url('images/icon-cancel.png');
+}
+.jqx-icon-search-bootstrap
+{
+  background-image: url('images/icon-search.png');
+}
+.jqx-icon-plus-bootstrap
+{
+  background-image: url('images/icon-plus.png');
+}

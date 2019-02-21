@@ -1,0 +1,119 @@
+﻿#titleHeader {
+        font-size: 4.9rem;
+        margin-left: 30%;
+    }
+
+#titleHeaderNOA {
+    font-size: 4.3rem;
+    margin-left: 30%;
+    margin-top: 2.5%;
+}
+
+@media (max-width: 480px) {
+    #heading-bienvenidos-current-date {
+        visibility: collapse;
+    }
+
+    #text-footer-serca {
+        text-align:center;
+    }
+
+    #ambulancia-serca {
+        visibility: collapse;
+    }
+
+    .login-center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:15px;
+ }
+
+    #titleHeader {
+        font-size: 3.3rem;
+        margin-left: 30%;
+    }
+
+    #titleHeaderNOA {
+        font-size: 3rem;
+        margin-left: 30%;
+        margin-top: 2.2%;
+    }
+}
+
+@media (max-width: 420px) {
+    #heading-bienvenidos-current-date {
+        visibility: collapse;
+    }
+
+    #text-footer-serca {
+        text-align:center !important;
+    }
+
+    #ambulancia-serca {
+        visibility: collapse;
+    }
+
+    .login-center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:15px;
+    }
+
+    #titleHeader {
+        font-size: 2.5rem;
+        margin-left: 0%;
+    }
+
+    #titleHeaderNOA {
+        font-size: 2.1rem;
+        margin-left: 0%;
+        margin-top: 2%;
+    }
+ 
+    .tile-container {
+      padding: 0 0 0em 0em !important;
+  }
+
+    .tile-wide {
+        width: 287px !important;
+        margin-top: 5px !important;
+        margin-right: 10px !important;
+        margin-bottom: 5px !important;
+    }
+}
+
+.tile-container {
+    margin-top: 5em;
+    margin-bottom: 8em;
+}
+
+.bg-sercaTile {
+    background-color: #f4a347 !important;
+}
+
+.notify-container {
+    z-index: 9999;
+}
+
+#loadingdiv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background-color: lightgray;
+    opacity: .8;
+}
+
+.dropdown-toggle:before {
+    border-color: #FFF;
+    margin-left: -0.7rem;
+}
+
+hr.thin {
+    height: 1px;
+    background-color: #88b9e3 !important;
+}

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:s0="http://tempuri.org" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org">
+      <s:element name="GetClientesUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientesUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetClientesUsuarioResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DataSet">
+        <s:sequence>
+          <s:element ref="s:schema" />
+          <s:any />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDenuncias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pDes" type="s:string" />
+            <s:element minOccurs="0" name="pHas" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDenunciasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetDenunciasResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetErroresAutorizacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pDes" type="s:long" />
+            <s:element minOccurs="0" name="pHas" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetErroresAutorizacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetErroresAutorizacionResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFinalizados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pDes" type="s:long" />
+            <s:element minOccurs="0" name="pHas" type="s:long" />
+            <s:element minOccurs="0" name="pCli" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFinalizadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetFinalizadosResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperativaEnCurso">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOperativaEnCursoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetOperativaEnCursoResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsuarioValidacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsuarioValidacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetUsuarioValidacionResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsReclamado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pInc" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsReclamadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="IsReclamadoResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCorreccion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pInc" type="s:long" />
+            <s:element minOccurs="0" name="pOrd" type="s:string" />
+            <s:element minOccurs="0" name="pAfl" type="s:string" />
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetCorreccionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="SetCorreccionResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetReclamo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pInc" type="s:long" />
+            <s:element minOccurs="0" name="pObs" type="s:string" />
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetReclamoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="SetReclamoResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetClientesUsuarioSoapIn">
+    <wsdl:part name="parameters" element="s0:GetClientesUsuario" />
+  </wsdl:message>
+  <wsdl:message name="GetClientesUsuarioSoapOut">
+    <wsdl:part name="parameters" element="s0:GetClientesUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDenunciasSoapIn">
+    <wsdl:part name="parameters" element="s0:GetDenuncias" />
+  </wsdl:message>
+  <wsdl:message name="GetDenunciasSoapOut">
+    <wsdl:part name="parameters" element="s0:GetDenunciasResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetErroresAutorizacionSoapIn">
+    <wsdl:part name="parameters" element="s0:GetErroresAutorizacion" />
+  </wsdl:message>
+  <wsdl:message name="GetErroresAutorizacionSoapOut">
+    <wsdl:part name="parameters" element="s0:GetErroresAutorizacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFinalizadosSoapIn">
+    <wsdl:part name="parameters" element="s0:GetFinalizados" />
+  </wsdl:message>
+  <wsdl:message name="GetFinalizadosSoapOut">
+    <wsdl:part name="parameters" element="s0:GetFinalizadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOperativaEnCursoSoapIn">
+    <wsdl:part name="parameters" element="s0:GetOperativaEnCurso" />
+  </wsdl:message>
+  <wsdl:message name="GetOperativaEnCursoSoapOut">
+    <wsdl:part name="parameters" element="s0:GetOperativaEnCursoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsuarioValidacionSoapIn">
+    <wsdl:part name="parameters" element="s0:GetUsuarioValidacion" />
+  </wsdl:message>
+  <wsdl:message name="GetUsuarioValidacionSoapOut">
+    <wsdl:part name="parameters" element="s0:GetUsuarioValidacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsReclamadoSoapIn">
+    <wsdl:part name="parameters" element="s0:IsReclamado" />
+  </wsdl:message>
+  <wsdl:message name="IsReclamadoSoapOut">
+    <wsdl:part name="parameters" element="s0:IsReclamadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetCorreccionSoapIn">
+    <wsdl:part name="parameters" element="s0:SetCorreccion" />
+  </wsdl:message>
+  <wsdl:message name="SetCorreccionSoapOut">
+    <wsdl:part name="parameters" element="s0:SetCorreccionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetReclamoSoapIn">
+    <wsdl:part name="parameters" element="s0:SetReclamo" />
+  </wsdl:message>
+  <wsdl:message name="SetReclamoSoapOut">
+    <wsdl:part name="parameters" element="s0:SetReclamoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ClientesOperativosSoap">
+    <wsdl:operation name="GetClientesUsuario">
+      <wsdl:input message="s0:GetClientesUsuarioSoapIn" />
+      <wsdl:output message="s0:GetClientesUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDenuncias">
+      <wsdl:input message="s0:GetDenunciasSoapIn" />
+      <wsdl:output message="s0:GetDenunciasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetErroresAutorizacion">
+      <wsdl:input message="s0:GetErroresAutorizacionSoapIn" />
+      <wsdl:output message="s0:GetErroresAutorizacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFinalizados">
+      <wsdl:input message="s0:GetFinalizadosSoapIn" />
+      <wsdl:output message="s0:GetFinalizadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperativaEnCurso">
+      <wsdl:input message="s0:GetOperativaEnCursoSoapIn" />
+      <wsdl:output message="s0:GetOperativaEnCursoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuarioValidacion">
+      <wsdl:input message="s0:GetUsuarioValidacionSoapIn" />
+      <wsdl:output message="s0:GetUsuarioValidacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsReclamado">
+      <wsdl:input message="s0:IsReclamadoSoapIn" />
+      <wsdl:output message="s0:IsReclamadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetCorreccion">
+      <wsdl:input message="s0:SetCorreccionSoapIn" />
+      <wsdl:output message="s0:SetCorreccionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetReclamo">
+      <wsdl:input message="s0:SetReclamoSoapIn" />
+      <wsdl:output message="s0:SetReclamoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClientesOperativosSoap" type="s0:ClientesOperativosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetClientesUsuario">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ClientesOperativos.GetClientesUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDenuncias">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ClientesOperativos.GetDenuncias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetErroresAutorizacion">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ClientesOperativos.GetErroresAutorizacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFinalizados">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ClientesOperativos.GetFinalizados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperativaEnCurso">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ClientesOperativos.GetOperativaEnCurso" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuarioValidacion">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ClientesOperativos.GetUsuarioValidacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsReclamado">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ClientesOperativos.IsReclamado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetCorreccion">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ClientesOperativos.SetCorreccion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetReclamo">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ClientesOperativos.SetReclamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClientesOperativos">
+    <wsdl:port name="ClientesOperativosSoap" binding="s0:ClientesOperativosSoap">
+      <soap:address location="http://remote.omnisaludsa.com.ar:57772/csp/shaman/WebServices.ClientesOperativos.cls" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,178 @@
+﻿<div class="modal fade" id="popupRevisar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-app="app">
+    <div class="modal-dialog" style="width:618px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-title">
+                    <span>
+                        <i class="fa fa-search big-icon naranja"></i>
+                        <span style="font-size:18px;margin-left:5px">{{data.revisar.titulo}}</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <form method="POST" ng-submit="GuardarReclamo" name="frmGuardarReclamo">
+                    <div class="row row-show-grid">
+                        <!-- CONFORME -->
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-check-circle big-icon icon-right-margin verde"></i>
+                                    <input type="radio" name="Conforme" value="1" ng-model="data.revisar.flgConforme" ng-disabled="acceso != 1 || data.revisar.conformidad != 1 || data.revisar.cerrado == 1">
+                                </span>
+                                <input type="text" readonly class="form-control" value="ESTOY CONFORME" />
+                            </div>
+                        </div>
+                        <!-- NO CONFORME -->
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-times-circle big-icon icon-right-margin rojo"></i>
+                                    <input type="radio" name="Conforme" value="0" ng-model="data.revisar.flgConforme" ng-disabled="acceso != 1 || data.revisar.cerrado == 1">
+                                </span>
+                                <input type="text" readonly class="form-control" value="NO ESTOY CONFORME" />
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <!--MOTIVO-->
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="ftrMotivoReclamoGuardias">Seleccione motivo de Reclamo:</label>
+                                <select style="width:100%" class="form-control" ng-options="motivo as motivo.Descripcion for motivo in data.motivos" ng-model="data.revisar.motivoSeleccionado"
+                                        ng-disabled="!(acceso == 1 && data.revisar.conformidad == 1 && data.revisar.flgConforme == 0) || data.revisar.cerrado == 1"
+                                        ng-change="data.revisar.TerLiqMotivoReclamoId = data.revisar.motivoSeleccionado.ID.toString()" required></select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="popupGrdEntradaReclamo">Su Entrada:*</label>
+                                <input type="time" placeholder="HH:mm"
+                                       style="text-align:right; width: 117px; padding-right: 0px;"
+                                       ng-model="data.revisar.EntradaReclamo"
+                                       name="popupGrdEntradaReclamo"
+                                       id="popupGrdEntradaReclamo"
+                                       class="form-control"
+                                       required
+                                       ng-disabled="(!(acceso == 1 && data.revisar.conformidad==1 && data.revisar.flgConforme == 0) || data.revisar.cerrado == 1)" />
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="popupGrdSalidaReclamo">Su Salida:*</label>
+                                <input type="time" placeholder="HH:mm"
+                                       style="text-align:right; width: 117px; padding-right: 0px;"
+                                       ng-model="data.revisar.SalidaReclamo"
+                                       name="popupGrdSalidaReclamo"
+                                       id="popupGrdSalidaReclamo"
+                                       class="form-control" required
+                                       ng-disabled="(!(acceso == 1 && data.revisar.conformidad==1 && data.revisar.flgConforme == 0) || data.revisar.cerrado == 1)" />
+                            </div>
+                        </div>
+                        <!--OBSERVACIONES-->
+                        <div class="row row-show-grid">
+                            @*<div class="form-group col-md-12">
+                                <p>frmGuardarReclamo.popupGrdObservaciones.$touched = {{frmGuardarReclamo.popupGrdObservaciones.$touched}}</p>
+                                <p>frmGuardarReclamo.popupGrdObservaciones.error.minlength = {{frmGuardarReclamo.popupGrdObservaciones.$error.minlength}}</p>
+                                <p>frmGuardarReclamo.popupGrdObservaciones.error.required =  {{frmGuardarReclamo.popupGrdObservaciones.$error.required == true}}</p>
+                            </div>*@
+                        </div>
+                        <div class="row row-show-grid">
+                            <div class="form-group col-md-12">
+                                <label for="popupGrdObservaciones">Observaciones:*</label>
+                                <textarea class="form-control" name="popupGrdObservaciones" ng-model="data.revisar.Observaciones" ng-disabled="!(acceso == 1 && data.revisar.conformidad==1 && data.revisar.flgConforme == 0) || data.revisar.cerrado == 1" required ng-minlength=5></textarea>
+                                <span class="messages">
+                                    <span style="color:red" ng-show="frmGuardarReclamo.popupGrdObservaciones.$touched
+                                      && frmGuardarReclamo.popupGrdObservaciones.$error.minlength
+                                      && !(frmGuardarReclamo.popupGrdObservaciones.$error.required)">Ingrese una observacion valida.</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="row" id="rowEstadoForMedico" ng-show="acceso == 1 && data.revisar.conformidad != 1">
+                            <div class="col-md-12" style="padding-bottom:15px;">
+                                <strong ng-show="data.revisar.flgRespuesta=='0'"><span class="fa fa-exclamation-circle color-yellow icon-right-margin big-icon"></span> Su reclamo está pendiente de aprobación.</strong>
+                                <strong ng-show="data.revisar.flgRespuesta=='1'"><span class="glyphicon glyphicon-ok-circle verde icon-right-margin big-icon"></span> Su reclamo ha sido aceptado.</strong>
+                                <strong ng-show="data.revisar.flgRespuesta=='2'"><span class="glyphicon glyphicon-remove-circle rojo icon-right-margin big-icon "></span> Su reclamo ha sido rechazado.</strong>
+                            </div>
+                        </div>
+
+                        <div class="row row-show-grid" id="rowResolucionForAdmin">
+                            <!--PENDIENTE-->
+                            <div class="col-md-4" style="padding-right:10px">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-exclamation-circle big-icon icon-right-margin amarillo"></i>
+                                        <input type="radio" name="Estado" value="0" ng-model="data.revisar.flgRespuesta" checked ng-disabled="!(acceso == 3 && data.revisar.conformidad != 1) || data.revisar.cerrado == 1">
+                                    </span>
+                                    <input type="text" readonly class="form-control" value="Pendiente" />
+                                </div>
+                            </div>
+                            <!--ACEPTADO-->
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-check-circle big-icon icon-right-margin azul"></i>
+                                        <input type="radio" name="Estado" value="1" ng-model="data.revisar.flgRespuesta" ng-disabled="!(acceso == 3 && data.revisar.conformidad != 1) || data.revisar.cerrado == 1">
+                                    </span>
+                                    <input type="text" readonly class="form-control" value="Aceptado" />
+                                </div>
+                            </div>
+                            <!--RECHAZADO-->
+                            <div class="col-md-4" style="padding-left:10px">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-times-circle big-icon icon-right-margin naranja"></i>
+                                        <input type="radio" name="Estado" value="2" ng-model="data.revisar.flgRespuesta" ng-disabled="!(acceso == 3 && data.revisar.conformidad != 1) || data.revisar.cerrado == 1">
+                                    </span>
+                                    <input type="text" readonly class="form-control" value="Rechazado" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="popupGrdRespuesta">Respuesta recibida:</label>
+                                <textarea class="form-control" name="popupGrdRespuesta" ng-model="data.revisar.Respuesta" ng-disabled="!(acceso == 3 && data.revisar.conformidad != 1) || data.revisar.cerrado == 1" required ng-minlength="5"></textarea>
+                                <span class="messages">
+                                    <span style="color:red" ng-show="data.revisar.flgRespuesta=='2' &&
+                                            frmGuardarReclamo.popupGrdRespuesta.$touched &&
+                                            frmGuardarReclamo.popupGrdRespuesta.$error.minlength &&
+                                            !(frmGuardarReclamo.popupGrdRespuesta.$error.required)">Ingrese una respuesta valida.</span>
+                                </span>
+                                @*<h3>Visualizacion de Validaciones</h3>
+                                <p>condiciones previas: {{acceso == 2 || data.revisar.cerrado == 1 || data.revisar.flgConforme == 1 || (acceso == 1 && data.revisar.conformidad != 1)}}</p>
+                                <p>frmGuardarReclamo.$invalid:{{frmGuardarReclamo.$invalid}} </p>
+                                <p>acceso:{{acceso}} </p>
+                                <p>data.revisar.conformidad: {{data.revisar.conformidad}}</p>
+                                <p>frmGuardarReclamo.popupGrdObservaciones.$invalid: {{frmGuardarReclamo.popupGrdObservaciones.$invalid}}</p>
+                                <p>frmGuardarReclamo.popupGrdEntradaReclamo.$invalid: {{frmGuardarReclamo.popupGrdEntradaReclamo.$invalid}}</p>
+                                <p>frmGuardarReclamo.popupGrdSalidaReclamo.$invalid: {{frmGuardarReclamo.popupGrdSalidaReclamo.$invalid}}</p>
+                                <p>frmGuardarReclamo.popupGrdRespuesta.$invalid:{{frmGuardarReclamo.popupGrdRespuesta.$invalid}} </p>
+                                <p>data.revisar.flgRespuesta:{{data.revisar.flgRespuesta}}</p>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="btn-group col-md-offset-4">
+                            <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary btn-lg"
+                                    ng-disabled="acceso == 2 ||
+                                    data.revisar.cerrado == 1 ||
+                                    data.revisar.flgConforme == 1 ||
+                                    (acceso == 1 &&
+                                        (data.revisar.conformidad != 1 ||
+                                         frmGuardarReclamo.popupGrdObservaciones.$invalid ||
+                                         frmGuardarReclamo.popupGrdEntradaReclamo.$invalid ||
+                                         frmGuardarReclamo.popupGrdSalidaReclamo.$invalid))
+                                    ||
+                                    (acceso == 3 && data.revisar.flgRespuesta == 2 &&
+                                        (frmGuardarReclamo.popupGrdRespuesta.$invalid))"
+                                    ng-click="GuardarReclamo()">
+                                Enviar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

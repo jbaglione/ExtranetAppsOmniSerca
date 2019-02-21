@@ -1,0 +1,122 @@
+﻿<style>
+	.blanco{
+		color: black;
+		background-color: white;
+	}
+	.amarillo{
+		color: black;
+		background-color: yellow;
+	}
+    .jqx-grid-cell-hover-arctic {
+        color: #ffffff !important;
+        background-color: #0081c2 !important;
+        /*border-color: #316293 #316293 #29547E !important;
+        text-decoration: none !important;
+        background-repeat: repeat-x;
+        outline: 0;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+        background: #2f7eb6 !important; /* Old browsers */
+    }
+    .jqx-grid-cell-selected-arctic{
+        color: #ffffff !important;
+        background-color: #003399 !important;
+        /*text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !important;
+        *background-color: #003399 !important;
+        background-repeat: repeat-x;
+        border-color: #316293 #316293 #29547E !important;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;*/
+    }
+</style>
+<div class="row">
+    <div class="col-md-12">
+        <div>
+            <div class="row" style="margin-top: -10px; margin-bottom: 10px">
+                <div class="col-md-2" id="colMedicoResumen">
+                    <div id="ftrMedicoResumen"></div>
+                </div>
+                <div class="col-md-2">
+                    <div id="ftrPeriodoResumen"></div>
+                </div>
+                <div class="col-md-2">
+                    <div id="ftrCoordResumen"></div>
+                </div>
+                <div class="col-md-2">
+                    <input type="submit" value="Consultar" id="btnConsultarResumen" class="background-blue color-white"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="height: 380px">
+    <div class="col-md-6">
+        <div class="offer offer-primary" style="height: 370px">
+            <div class="shape">
+                <div class="shape-text">
+                </div>
+            </div>
+            <div class="offer-content">
+                <p class="p-offer">
+                    <i class="fa fa-exchange azul icon-right-margin big-icon"></i>
+                    <span id="txtResumenPeriodo" style="font-weight:bold"></span>
+                </p>
+                <div id="grdResumen"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="offer offer-primary" style="height: 370px">
+            <div class="shape">
+                <div class="shape-text">
+                </div>
+            </div>
+            <div class="offer-content">
+                <p class="p-offer">
+                    <i class="fa fa-exchange azul icon-right-margin big-icon"></i>
+                    <b>Horarios</b>
+                </p>
+                <div id="grdHorarios"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="diaNumero" value="" />
+<div class="modal fade" id="popupHorario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<div class="modal-title">
+					<span>
+						<i class="fa fa-search big-icon naranja"></i>
+						<span id="titlePopupGuardias" style="font-size:18px;margin-left:5px">Ingrese su disponibilidad</span>
+					</span>
+				</div>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="form-group col-md-6">
+						<label for="popupHorarioEntrada">Su entrada</label>
+						<div id="popupHorarioEntrada" class="popupGrdHorario" name="Entrada"></div>
+					</div>
+
+					<div class="form-group col-md-6">
+						<label for="popupHorarioSalida">Su salida</label>
+						<div id="popupHorarioSalida" class="popupGrdHorario" name="Salida"></div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<div class="btn-group btn-group-lg" role="group">
+							<button type="button" class="btn btn-default" style="width:127px;" data-dismiss="modal">Cerrar</button>
+							<button type="button" class="btn btn-primary" style="width:127px;" id="popupHorariook">Guardar</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

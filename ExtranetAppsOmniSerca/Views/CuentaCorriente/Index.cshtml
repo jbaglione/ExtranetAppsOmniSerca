@@ -1,0 +1,45 @@
+﻿<style>
+.app-modal-window .modal-dialog {
+  width: 85%;
+}
+.app-modal-window50 .modal-dialog {
+  width: 50%;
+}
+</style>
+<div ng-app="app" style="margin-top:50px">
+    <!--<div class="container">-->
+    <div class="row" style="margin-top:20px">
+        <div class="col-md-9">
+            <ui-view>Cargando</ui-view>
+            <div class="row">
+                <div style="padding: 15px;">
+                    <h6>
+                        La información a la que Ud. tiene acceso es confidencial y está dirigida solamente a las personas que posee el usuario y contraseña correspondiente para el ingreso al sistema.
+                        Dicha información solo debe ser considerada a título informativo.
+                        Todo acceso no autorizado, uso, reproducción, o divulgación está prohibido.
+                        SERCA no asumirá responsabilidad ni obligación legal alguna por cualquier información incorrecta o alterada contenida en el sistema.
+                    </h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3" style="margin-top:-70px">
+            <div class="list-group" id="listInstruccionesUso">
+                <a href="#" class="list-group-item active">Instrucciones de uso</a>
+                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-exclamation-sign rojo icon-right-margin big-icon"></span>Nueva OP sin factura</a>
+                 <!--Factura subida-->
+                <!--
+                <a href="#" class="list-group-item"><span class="fa fa-check-circle-o verde verde icon-right-margin big-icon "></span>La factura ya se encuentra cargada</a>
+                -->
+                <!--bajada-->
+                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-download amarillo icon-right-margin big-icon "></span>Descarga el certificado de retención de ARBA</a>
+                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-download rojo icon-right-margin big-icon "></span>Descarga el certificado de retención de AGIP</a>
+                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-download verde icon-right-margin big-icon "></span>Descarga el certificado de retención de GANANCIAS</a>
+                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-download naranja icon-right-margin big-icon "></span>Descarga el certificado de retención de Caja Previsional de Médicos de la Provincia de Bs As</a>
+                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-download azul icon-right-margin big-icon "></span>Descarga el certificado de retención de IVA</a>
+                <!--subida-->
+                <a href="#" class="list-group-item"><span class="glyphicon glyphicon-upload verde icon-right-margin big-icon "></span>Puede subir su factura</a>
+            </div>
+        </div>
+    </div>
+</div>
+

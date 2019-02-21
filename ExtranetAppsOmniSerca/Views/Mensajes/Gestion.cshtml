@@ -1,0 +1,23 @@
+﻿<div class="row">
+	<div class="col-md-12">
+		<input type="button" value="Nuevo" id='btnNuevoMensaje' padre="@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()"/>
+		<input type="button" value="Borrar" id='btnBorrarMensaje' />
+	</div>
+</div>
+<div class="row" style="height: 410px">
+	<div class="col-md-12">
+		<div class="offer offer-primary" style="height: 380px">
+			<div class="shape">
+				<div class="shape-text">
+				</div>
+			</div>
+			<div class="offer-content">
+				<p class="p-offer">
+					<i class="fa fa-exchange azul icon-right-margin big-icon"></i>
+					Mensajes enviados
+				</p>
+				<div id="grdNotificacionesEnviadas"></div>
+			</div>
+		</div>
+	</div>
+</div>

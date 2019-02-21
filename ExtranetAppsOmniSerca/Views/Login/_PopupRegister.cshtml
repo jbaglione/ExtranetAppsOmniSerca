@@ -1,0 +1,65 @@
+﻿<div class="modal fade" id="popupRegister" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-app="app">
+    <div class="modal-dialog" style="width:450px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-title">
+                    <span>
+                        <span style="font-size:18px;">Solicitar Usuario</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="login-form padding20 block-shadow bg-grayLighter" style="padding: 1.25em 1.25em 3.85em 1.25em;">
+                <div ng-show="errorRegister" class="alert alert-danger">{{errorRegister}}</div>
+                <div ng-show="okRegister" class="alert alert-success">{{okRegister}}</div>
+                <form name="registerForm" ng-submit="enviarRegistro()" role="form" enctype="multipart/form-data">
+                    
+                    <div class="input-control text full-size" data-role="input">
+                        <label for="usuario">Nombre / Razón Social:</label>
+                        <div class="inner-addon left-addon">
+                            <i class="glyphicon glyphicon-user"></i>
+                            <input type="text" class="form-control" name="nombre" id="nombre" ng-model="nombre" required/>
+                        </div>
+                        <span ng-show="registerForm.nombre.$dirty && registerForm.nombre.$error.required" class="help-block" style="color: red;">El campo Nombre es requerido</span>
+                    </div>
+                    <br />
+                    <div class="input-control text full-size" data-role="input">
+                        <label for="usuario">Relación:</label>
+                        <select type="text" class="form-control" name="relacion" id="relacion" ng-model="relacion" required ng-change="RelacionChange()">
+                            <option value="">Seleccionar Opción</option>
+                            <option value="Cliente">Cliente</option>
+                            <option value="EmpresaPrestadora">Empresa Prestadora</option>
+                            <option value="PrestadorDeMovil">Prestador de Movil</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Otros">Otros</option>
+                        </select>
+                        <span ng-show="registerForm.relacion.$dirty && registerForm.relacion.$error.required" class="help-block" style="color: red;">El campo Relación es requerido</span>
+                    </div>
+                    <br />
+                    <div class="input-control text full-size" data-role="input">
+                        <label for="usuario">Email:</label>
+                        <div class="inner-addon left-addon">
+                            <i class="glyphicon glyphicon-envelope"></i>
+                            <input  type="email" class="form-control" name="emailCliente" id="emailCliente" ng-model="emailCliente" required />
+                        </div>
+                        <span ng-show="registerForm.emailCliente.$dirty && registerForm.emailCliente.$error.required" class="help-block" style="color: red;">El campo E-mail es requerido</span>
+                    </div>
+                    <br />
+                    <div class="input-control text full-size" data-role="input">
+                        <label for="cliente" >{{labelCliente}}:</label>
+                        <div class="inner-addon left-addon">
+                            <i class="glyphicon glyphicon-asterisk"></i>
+                            <input type="text" class="form-control" name="cliente" id="cliente" ng-model="cliente" required>
+                        </div>
+                        <span ng-show="registerForm.cliente.$dirty && registerForm.cliente.$error.required" class="help-block" style="color: red;">El campo {{labelCliente}} es requerido</span>
+                    </div>
+                    <br />
+                    <div class="form-actions">
+                        <button ng-click="registerUser()" ng-disabled="registerForm.$invalid" class="btn btn-primary place-right" ><span class="glyphicon glyphicon-send"></span>  Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

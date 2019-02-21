@@ -1,0 +1,833 @@
+﻿<div class="container">
+    <div class="row">
+        <form method="POST" ng-submit="GuardarSolicitudDigitalizada" name="frmSolicitudDigitalizada" autocomplete="on">
+            <fieldset ng-disabled="acceso != 'Vendedor'  || data.bloquear.solicitud">
+                <div name="SolicitudDigitalizadaBasico">
+                    <div class="clearfix"></div>
+
+                    <div ng-show="acceso != 'Vendedor' && !data.bloquear.solicitud">
+                        <h4 ng-disabled="true" style="text-align: center; color: #eee; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: #ccc;">Formulario de solo lectura, solo los vendedores pueden modificar.</h4>
+                    </div>
+                    <div ng-show="data.bloquear.solicitud && !(data.habilitar.afiliar)">
+                        <h4 ng-disabled="true" style="text-align: center; color: #eee; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: #ccc;">Formulario de solo lectura, para realizar cambios solicite modificaciones al sector de facturación.</h4>
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <label for="txtFecha">Fecha:</label>
+                        <div>
+                            <p class="input-group">
+                                <input name="txtFecha" type="text" class="form-control"
+                                        uib-datepicker-popup="{{format}}"
+                                        ng-model="dt" is-open="popup1.opened"
+                                        datepicker-options="dateOptions"
+                                        ng-required="true"
+                                        current-text="Hoy"
+                                        clear-text="Limpiar"
+                                        close-text="Hecho"
+                                        alt-input-formats="altInputFormats"
+                                        ng-disabled="(data.bloquear.CamposGrales)" />
+
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default"
+                                            ng-click="open1()"
+                                            ng-disabled="(data.bloquear.CamposGrales)">
+                                        <i class="glyphicon glyphicon-calendar"></i>
+                                    </button>
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <label for="txtNroSolicitud">N°:</label>
+                        <input class="form-control" type="text" style="text-align:right;" ng-model="data.solicitudDigitalizada.SolicitudDigitalizadaBasico.NroSolicitud"
+                                name="txtNroSolicitud" ng-disabled="true" numbers-only />
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                        <label for="txtArea">Nro de Cliente:</label>
+                        <input class="form-control" type="text" style="text-align:right;" ng-model="data.solicitudDigitalizada.SolicitudDigitalizadaBasico.NroArea"
+                                name="txtArea" ng-disabled="true" numbers-only />
+                    </div>
+                    <div class="clearfix"></div>
+                    <div>
+                        <p>{{data.informacionVisual.Descripcion}}</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </fieldset>
+
+            <div class="demo-block" style="margin-right: -18px;margin-left: -18px;">
+                <dl id="accordionGroup"
+                    role="presentation"
+                    class="Accordion">
+
+                    <dt role="heading" aria-level="6">
+                        <button aria-expanded="false"
+                                class="Accordion-trigger"
+                                aria-controls="sect1"
+                                id="accordion1id"
+                                type="button">
+                            <span class="Accordion-title">
+                                DATOS DE LA ENTIDAD
+                            </span>
+                            <span class="Accordion-icon"></span>
+                        </button>
+                    </dt>
+                    <dd id="sect1"
+                        role="region"
+                        aria-labelledby="accordion1id"
+                        class="Accordion-panel"
+                        hidden="">
+                        <div>
+                            <!-- Variable content within section, may include any type of markup or interactive widgets. -->
+                            <fieldset ng-disabled="acceso != 'Vendedor' || data.bloquear.solicitud">
+                                <div class="clearfix"></div>
+                                <!--MOTIVO-->
+                                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <label for="txtNombreComercial">Nombre Comercial:*</label>
+                                    <input style="text-transform:uppercase" class="form-control" type="text" ng-model="data.solicitudDigitalizada.EntidadCliente.NombreComercial"
+                                            name="txtNombreComercial" ng-disabled="(data.bloquear.CamposCliente)" required />
+                                </div>
+                                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <label for="txtRazonSocial">Razón Social:*</label>
+                                    <input style="text-transform:uppercase" class="form-control" type="text" ng-model="data.solicitudDigitalizada.EntidadCliente.RazonSocial"
+                                            name="txtRazonSocial" ng-disabled="(data.bloquear.CamposCliente)" required />
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group col-xs-12 col-sm-5 col-md-5 col-lg-5">
+                                    <label for="txtCuit">CUIT:*</label>
+                                    <input class="form-control" type="text" style="text-align:right;" ng-model="data.solicitudDigitalizada.EntidadCliente.Cuit"
+                                            name="txtCuit" ng-disabled="(data.bloquear.CamposCliente)" mask="99-99999999-9" required />
+                                    @*<input class="form-control"type="number" ng-model="data.solicitudDigitalizada.EntidadCliente.Cuit"
+                                    name="txtCuit" ng-disabled="(data.bloquear.CamposCliente)" min="10000000000" max="99999999999"/>*@
+                                </div>
+                                <div class="form-group col-xs-12 col-sm-1 col-md-1 col-lg-1">
+                                    <div ng-show="frmSolicitudDigitalizada.txtCuit.$valid && !data.bloquear.solicitud">
+                                        <label for="btnValidarCuit">Validar:</label>
+                                        <button type="button" id="ValidarCuit" name="ValidarCuit" class="form-control" style="width: 40px;"
+                                                ng-click="validarCuit(data.solicitudDigitalizada.EntidadCliente.Cuit, true)" ng-disabled="(data.bloquear.CamposCliente)">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <label for="ftrRubro">Seleccione Rubro:</label>
+                                    <select class="form-control" ng-options="rubro as rubro.Descripcion for rubro in data.rubros"
+                                            ng-model="data.solicitudDigitalizada.rubroSeleccionado"
+                                            ng-disabled="(data.bloquear.CamposCliente)"
+                                            ng-change="data.solicitudDigitalizada.EntidadCliente.Rubro = data.solicitudDigitalizada.rubroSeleccionado"></select>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <label for="ftrCondicionIVA">Seleccione Condicion de IVA:</label>
+                                    <select class="form-control" ng-options="condicionIVA as condicionIVA.Descripcion for condicionIVA in data.condicionIVAs"
+                                            ng-model="data.solicitudDigitalizada.condicionIVASeleccionado"
+                                            ng-disabled="(data.bloquear.CamposCliente)"
+                                            ng-change="data.solicitudDigitalizada.EntidadCliente.CondicionIVA = data.solicitudDigitalizada.condicionIVASeleccionado"></select>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div>
+                                    <p>Domicilio Legal</p>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <label for="txtCalleCliente">Calle:*</label>
+                                    <input style="text-transform:uppercase" class="form-control" type="text" ng-model="data.solicitudDigitalizada.EntidadCliente.Calle"
+                                            name="txtCalleCliente" ng-disabled="(data.bloquear.CamposCliente)" ng-change="setCoordinatesClienteColor('red')" required />
+                                    @*<span class="help-block" ng-show="!frmSolicitudDigitalizada.txtCalle.$valid">
+                                            Ingrese una Calle
+                                        </span>*@
+                                </div>
+                                <div class="form-group col-xs-6 col-sm-2 col-md-2 col-lg-2">
+                                    <label for="txtAlturaCliente">N°:*</label>
+                                    <input style="text-align:right; width: 80px;" class="form-control" type="text" name="txtAlturaCliente" maxlength="7"
+                                            ng-disabled="(data.bloquear.CamposCliente)" ng-model="data.solicitudDigitalizada.EntidadCliente.Altura" ng-change="setCoordinatesClienteColor('red')" numbers-only required />
+                                </div>
+                                <div class="form-group col-xs-6 col-sm-2 col-md-2 col-lg-2">
+                                    <label for="txtPisoCliente">Piso:</label>
+                                    <input style="text-align:right; width: 45px;" class="form-control" type="text" name="txtPisoCliente" maxlength="2"
+                                            ng-model="data.solicitudDigitalizada.EntidadCliente.Piso" ng-disabled="(data.bloquear.CamposCliente)" numbers-only />
+                                </div>
+                                <div class="form-group col-xs-6 col-sm-2 col-md-2 col-lg-2">
+                                    <label for="txtDeptoCliente">Depto:</label>
+                                    <input style="text-align:right; width: 65px;" class="form-control" type="text"
+                                            name="txtDeptoCliente" ng-disabled="(data.bloquear.CamposCliente)" maxlength="5"
+                                            ng-model="data.solicitudDigitalizada.EntidadCliente.Depto" />
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                    <label for="txtLocalidadCliente">Localidad:*</label>
+                                    <input style="text-transform:uppercase" id="txtLocalidadCliente" class="form-control" type="text" name="txtLocalidadCliente"
+                                            ng-model="data.solicitudDigitalizada.ClienteContacto.Localidad.label"
+                                            ng-disabled="(data.bloquear.CamposCliente)" ng-change="setCoordinatesClienteColor('red')" />@*required />*@
+                                    </div>
+                                    <div class="form-group col-xs-6 col-sm-2 col-md-2 col-lg-2">
+                                        <label for="btnMapaCliente">Mapa:</label>
+                                        <button type="button" id="btnMapCliente" name="btnMapaCliente" class="form-control" style="width: 40px;"
+                                                ng-click="openmapaCliente()" ng-disabled="(data.bloquear.CamposCliente)">
+                                            <span class="glyphicon glyphicon-map-marker"></span>
+                                        </button>
+                                    </div>
+                                    <div class="form-group col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                                        <label for="lblMapaClienteLat">Coordenadas:*</label>
+                                        <div style="display: block; width: 100%;">
+                                            <label id="lblMapaClienteLat" style="width: 70px; overflow: hidden; margin-right: 15px;">{{data.solicitudDigitalizada.EntidadCliente.Latitud}}</label>
+                                            <label id="lblMapaClienteLong" style="width: 70px; overflow: hidden;">{{data.solicitudDigitalizada.EntidadCliente.Longitud}}</label>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="form-group col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                        <label for="txtCPCliente">C.P:*</label>
+                                        <input style="text-transform:uppercase" class="form-control" type="text" ng-model="data.solicitudDigitalizada.EntidadCliente.CP"
+                                                name="txtCPCliente" ng-disabled="(data.bloquear.CamposCliente)" required />
+                                    </div>
+                                    <div class="form-group col-xs-6 col-sm-9 col-md-9 col-lg-9">
+                                        <label for="txtReferenciaCliente">Referencia:</label>
+                                        <input style="text-transform:uppercase" class="form-control" type="text" ng-model="data.solicitudDigitalizada.EntidadCliente.Referencia"
+                                                name="txtReferenciaCliente" ng-disabled="(data.bloquear.CamposCliente)" />
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <label for="txtEntreCalleCliente">Entre Calle 1:</label>
+                                        <input style="text-transform:uppercase" class="form-control" type="text" ng-model="data.solicitudDigitalizada.EntidadCliente.EntreCalle1"
+                                                name="txtEntreCalleCliente" ng-disabled="(data.bloquear.CamposCliente)" />
+                                    </div>
+                                    <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <label for="txtEntreCalle2Cliente">Entre Calle 2:</label>
+                                        <input style="text-transform:uppercase" class="form-control" type="text" ng-model="data.solicitudDigitalizada.EntidadCliente.EntreCalle2"
+                                                name="txtEntreCalle2Cliente" ng-disabled="(data.bloquear.CamposCliente)" />
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <label for="txtNombreCompleto">Responsable:*</label>
+                                        <input style="text-transform:uppercase" class="form-control" type="text" ng-model="data.solicitudDigitalizada.ClienteContacto.NombreCompleto"
+                                                name="txtNombreCompleto" ng-disabled="(data.bloquear.CamposCliente)" ng-required="true" />
+                                    </div>
+                                    <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <label for="txtCargo">Cargo:*</label>
+                                        <input style="text-transform:uppercase" class="form-control" type="text" ng-model="data.solicitudDigitalizada.ClienteContacto.Cargo"
+                                                name="txtCargo" ng-disabled="(data.bloquear.CamposCliente)" required />
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <label for="txtTelefonoCliente">Teléfono:*</label>
+                                        <input class="form-control" type="tel" style="text-align:right;" ng-model="data.solicitudDigitalizada.ClienteContacto.Telefono"
+                                                name="txtTelefonoCliente" ng-disabled="(data.bloquear.CamposCliente)" numbers-only required maxlength="14" pattern="^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$" />
+                                    </div>
+                                    <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <label for="txtTelefonoAlternativo">Teléfono alternativo:</label>
+                                        <input class="form-control" type="text" style="text-align:right;" ng-model="data.solicitudDigitalizada.ClienteContacto.TelefonoAlternativo"
+                                                name="txtTelefonoAlternativo" ng-disabled="(data.bloquear.CamposCliente)" numbers-only maxlength="14" />
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <label for="txtEmail">E-mail:*</label>
+                                        <input style="text-transform:uppercase" class="form-control" type="email" ng-model="data.solicitudDigitalizada.ClienteContacto.Email"
+                                                name="txtEmail" ng-disabled="(data.bloquear.CamposCliente)" required />
+                                    </div>
+                                    <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <label for="txtEmailAlternativo">E-mail alternativo:</label>
+                                        <input style="text-transform:uppercase" class="form-control" type="email" ng-model="data.solicitudDigitalizada.ClienteContacto.EmailAlternativo"
+                                                name="txtEmailAlternativo" ng-disabled="(data.bloquear.CamposCliente)" />
+                                    </div>
+                                    <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </fieldset>
+                            </div>
+                        </dd>
+
+                        <dt role="heading" aria-level="6">
+                            <button aria-expanded="false"
+                                    class="Accordion-trigger"
+                                    aria-controls="sect2"
+                                    id="accordion2id"
+                                    type="button">
+                                <span class="Accordion-title">
+                                    DOMICILIO DE COBERTURA/CONTACTO
+                                </span>
+                                <span class="Accordion-icon"></span>
+                            </button>
+                        </dt>
+                        <dd id="sect2"
+                            role="region"
+                            aria-labelledby="accordion2id"
+                            class="Accordion-panel"
+                            hidden="">
+                            <div>
+                                <fieldset ng-disabled="acceso != 'Vendedor' || data.bloquear.solicitud ">
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                                        <input type="checkbox" id="chkFlgDomicilioLegalCobertura" ng-model="data.solicitudDigitalizada.AreaProtegida.FlgDomicilioLegalCobertura" ng-change="copyAdress()" />Utilizar el domicilio Legal
+                                        <br />
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <label for="txtCalleArea">Calle:*</label>
+                                        <input style="text-transform:uppercase;" class="form-control" type="text" ng-model="data.solicitudDigitalizada.AreaProtegida.Calle" ng-change="setCoordinatesAreaColor('red')"
+                                                name="txtCalleArea" ng-disabled="(data.bloquear.CamposGrales || data.solicitudDigitalizada.AreaProtegida.FlgDomicilioLegalCobertura)" />
+                                    </div>
+                                    <div class="form-group col-xs-6 col-sm-2 col-md-2 col-lg-2">
+                                        <label for="txtAlturaArea">N°:*</label>
+                                        <input style="text-align:right; width: 80px;" class="form-control" type="text" ng-model="data.solicitudDigitalizada.AreaProtegida.Altura" ng-change="setCoordinatesAreaColor('red')"
+                                                name="txtAlturaArea" ng-disabled="(data.bloquear.CamposGrales || data.solicitudDigitalizada.AreaProtegida.FlgDomicilioLegalCobertura)" numbers-only maxlength="7" />
+                                    </div>
+                                    <div class="form-group col-xs-6 col-sm-2 col-md-2 col-lg-2">
+                                        <label for="txtPisoArea">Piso:</label>
+                                        <input style="text-align:right; width: 45px;" class="form-control" type="text" ng-model="data.solicitudDigitalizada.AreaProtegida.Piso"
+                                                name="txtPisoArea" ng-disabled="(data.bloquear.CamposGrales || data.solicitudDigitalizada.AreaProtegida.FlgDomicilioLegalCobertura)" numbers-only maxlength="2" />
+                                    </div>
+                                    <div class="form-group col-xs-6 col-sm-2 col-md-2 col-lg-2">
+                                        <label for="txtDeptoArea">Depto:</label>
+                                        <input style="text-align:right; width: 65px;" class="form-control" type="text" ng-model="data.solicitudDigitalizada.AreaProtegida.Depto"
+                                                name="txtDeptoArea" ng-disabled="(data.bloquear.CamposGrales || data.solicitudDigitalizada.AreaProtegida.FlgDomicilioLegalCobertura)" maxlength="5" />
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <label for="txtLocalidadArea">Localidad:</label>
+                                        <input style="text-transform:uppercase;" id="txtLocalidadArea" class="form-control" type="text" name="txtLocalidadArea" ng-disabled="(data.bloquear.CamposGrales || data.solicitudDigitalizada.AreaProtegida.FlgDomicilioLegalCobertura)"
+                                                ng-model="data.solicitudDigitalizada.AreaProtegida.Localidad.label"
+                                                ng-change="setCoordinatesAreaColor('red')" />
+                                    </div>
+                                    <div class="form-group col-xs-6 col-sm-2 col-md-2 col-lg-2">
+                                        <label for="btnMapaArea">Mapa:</label>
+                                        <button type="button" id="btnMapArea" name="btnMapaArea" class="form-control" style="width: 40px;"
+                                                ng-click="openmapaArea()" ng-disabled="(data.bloquear.CamposGrales || data.solicitudDigitalizada.AreaProtegida.FlgDomicilioLegalCobertura)">
+                                            <span class="glyphicon glyphicon-map-marker"></span>
+                                        </button>
+                                    </div>
+                                    <div class="form-group col-xs-6 col-sm-4 col-md-4 col-lg-4">
+                                        <label for="lblMapaAreaLat">Coordenadas:*</label>
+                                        <div style="display: block; width: 100%;">
+                                            <label id="lblMapaAreaLat" style="width: 70px; overflow: hidden; margin-right: 15px;">{{data.solicitudDigitalizada.AreaProtegida.Latitud}}</label>
+                                            <label id="lblMapaAreaLong" style="width: 70px; overflow: hidden;">{{data.solicitudDigitalizada.AreaProtegida.Longitud}}</label>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="form-group col-xs-6 col-sm-3 col-md-3 col-lg-3">
+                                        <label for="txtCPArea">C.P:*</label>
+                                        <input style="text-transform:uppercase" class="form-control" type="text" ng-model="data.solicitudDigitalizada.AreaProtegida.CP"
+                                                name="txtCPArea" ng-disabled="(data.bloquear.CamposGrales || data.solicitudDigitalizada.AreaProtegida.FlgDomicilioLegalCobertura)" required />
+                                    </div>
+                                    <div class="form-group col-xs-6 col-sm-9 col-md-9 col-lg-9">
+                                        <label for="txtReferencia">Referencia:</label>
+                                        <input style="text-transform:uppercase" class="form-control" type="text" ng-model="data.solicitudDigitalizada.AreaProtegida.Referencia"
+                                                name="txtReferencia" ng-disabled="(data.bloquear.CamposGrales || data.solicitudDigitalizada.AreaProtegida.FlgDomicilioLegalCobertura)" />
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <label for="txtEntreCalle">Entre Calle 1:</label>
+                                        <input style="text-transform:uppercase" class="form-control" type="text" ng-model="data.solicitudDigitalizada.AreaProtegida.EntreCalle1"
+                                                name="txtEntreCalle" ng-disabled="(data.bloquear.CamposGrales || data.solicitudDigitalizada.AreaProtegida.FlgDomicilioLegalCobertura)" />
+                                    </div>
+                                    <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <label for="txtEntreCalle2">Entre Calle 2:</label>
+                                        <input style="text-transform:uppercase" class="form-control" type="text" ng-model="data.solicitudDigitalizada.AreaProtegida.EntreCalle2"
+                                                name="txtEntreCalle2" ng-disabled="(data.bloquear.CamposGrales || data.solicitudDigitalizada.AreaProtegida.FlgDomicilioLegalCobertura)" />
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <label for="txtTelefonoArea">Teléfono:</label>
+                                        <input style="text-align:right;" class="form-control" type="tel" ng-model="data.solicitudDigitalizada.AreaProtegida.Telefono"
+                                                name="txtTelefonoArea" ng-disabled="(data.bloquear.CamposGrales)" numbers-only maxlength="14" pattern="^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$" />
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                    <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <label for="txaObservaciones">Observaciones:</label>
+                                        <textarea class="form-control" ng-model="data.solicitudDigitalizada.AreaProtegida.Observaciones"
+                                                    name="txaObservaciones" style="text-transform:uppercase"
+                                                    ng-disabled="(data.bloquear.CamposGrales)"></textarea>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </fieldset>
+                            </div>
+                        </dd>
+
+                        <dt role="heading" aria-level="6">
+                            <button aria-expanded="false"
+                                    class="Accordion-trigger"
+                                    aria-controls="sect3"
+                                    id="accordion3id"
+                                    type="button">
+                                <span class="Accordion-title">
+                                    PRODUCTOS
+                                </span>
+                                <span class="Accordion-icon"></span>
+                            </button>
+                        </dt>
+                        <dd id="sect3"
+                            role="region"
+                            aria-labelledby="accordion3id"
+                            class="Accordion-panel"
+                            hidden="">
+                            <div>
+                                <fieldset ng-disabled="acceso != 'Vendedor' || data.bloquear.solicitud">
+                                    <div id="no-more-tables" style="padding-left: 12px !important;padding-right: 12px !important;">
+                                        <table border="1" class="table table-bordered"
+                                                style="border-color: #ccc !important;font-family: 'Droid Sans' , sans-serif !important; font-weight: 400 !important; font-size: 13px !important;">
+                                            <thead style="background-color: rgb(232, 232, 232) !important; font-style: normal !important; ">
+                                                <tr>
+                                                    <th ng-show="false">ProductoId</th>
+                                                    <th ng-show="false">ClienteProductoId</th>
+                                                    <th ng-show="false">PrecioLista</th>
+                                                    <th>Descripción</th>
+                                                    <th>Cant</th>
+                                                    <th ng-show="false">Bonif</th>
+                                                    <th>Final</th>
+                                                    <th>Observaciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="producto in data.solicitudDigitalizada.Productos">
+                                                    <td ng-show="false"><div class="col" ng-repeat="i in producto.ProductoId">{{i}}</div></td>
+                                                    <td ng-show="false">{{producto.ClienteProductoId}}</td>
+                                                    <td ng-show="false">{{producto.PrecioLista}}</td>
+                                                    <td data-title="Descripcion" class="title-color">{{producto.Descripcion}}</td>
+
+                                                    @*TODO: Sin uso, por indefinicion de precio unitario
+                                                    <td data-title="Cant" style="width:40px;"><input class="input-table" type="text" data-ng-model="producto.Cantidad" data-ng-required numbers-only ng-change="CalularFinalProducto(producto)" /></td>
+                                                    <td data-title="Bonif" style="width:40px;"><input type="text" class="input-table" data-ng-model="producto.Bonificacion" data-ng-required numbers-only ng-change="CalularFinalProducto(producto)" ui-percentage-mask /></td>
+                                                    <td data-title="Final" style="width:60px;">{{producto.Final}}</td>*@
+
+                                                    <td data-title="Cant" style="width:40px;"><input class="input-table" type="text" data-ng-model="producto.Cantidad" data-ng-required numbers-only /></td>
+                                                    <td ng-show="false" data-title="Bonif" style="width:40px;"></td>
+                                                    <td data-title="Final" style="width:60px;"><input type="text" class="input-table" data-ng-model="producto.Final" data-ng-required numbers-only ng-change="ActualizarFinal()"/></td>
+
+
+                                                    <td data-title="Observaciones" style="width:100%;">
+                                                        <textarea style="width:100%; height:100%; text-transform:uppercase; resize: vertical;" class="input-table"
+                                                                    ng-model="producto.Observaciones" data-ng-required></textarea>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </dd>
+
+                        <dt role="heading" aria-level="6">
+                            <button aria-expanded="false"
+                                    class="Accordion-trigger"
+                                    aria-controls="sect4"
+                                    id="accordion4id"
+                                    type="button">
+                                <span class="Accordion-title">
+                                    DATOS ADMINISTRATIVOS
+                                </span>
+                                <span class="Accordion-icon"></span>
+                            </button>
+                        </dt>
+                        <dd id="sect4"
+                            role="region"
+                            aria-labelledby="accordion4id"
+                            class="Accordion-panel"
+                            hidden="">
+                            <div>
+                                <!-- Variable content within section, may include any type of markup or interactive widgets. -->
+                                <fieldset ng-disabled="acceso != 'Vendedor' || data.bloquear.solicitud">
+                                    <div class="clearfix"></div>
+                                    <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <label for="txtImporteMensual">Importe Mensual:</label>
+                                        <input class="form-control" type="text" style="text-align:right;"
+                                                ng-model="data.solicitudDigitalizada.DatosAdministrativos.ImporteMensual" price
+                                                name="txtImporteMensual" id="txtImporteMensual" ng-disabled="true" required/>
+                                    </div>
+                                    <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <label for="txtAdelanto">Adelanto:</label>
+                                        <input class="form-control" type="text" style="text-align:right;"
+                                                ng-model="data.solicitudDigitalizada.DatosAdministrativos.Adelanto" price
+                                                name="txtAdelanto" id="txtAdelanto" ng-disabled="(data.bloquear.CamposGrales)" smart-float/> 
+                                    </div>
+                                    <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                                        <label for="txtProximoPago">Proximo Pago:</label>
+                                        <input style="text-align:right;" class="form-control" type="text"
+                                                ng-model="data.solicitudDigitalizada.DatosAdministrativos.ProximoPago"
+                                                mask="19/2999"
+                                                ng-change="ProximoPagoChange()"
+                                                name="txtProximoPago" ng-disabled="(data.bloquear.CamposGrales)" required />
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <div>
+                                        <p>Ninguno de los valores expresados en la presente solicitud incluye I.V.A. </p>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </fieldset>
+                            </div>
+                        </dd>
+
+                        <dt role="heading" aria-level="6">
+                            <button aria-expanded="false"
+                                    class="Accordion-trigger"
+                                    aria-controls="sect5"
+                                    id="accordion5id"
+                                    type="button">
+                                <span class="Accordion-title">
+                                    FORMAS DE PAGO
+                                </span>
+                                <span class="Accordion-icon"></span>
+                            </button>
+                        </dt>
+                        <dd id="sect5"
+                            role="region"
+                            aria-labelledby="accordion5id"
+                            class="Accordion-panel"
+                            hidden="">
+                            <div>
+                                <!-- Variable content within section, may include any type of markup or interactive widgets. -->
+                                <fieldset ng-disabled="acceso != 'Vendedor' || data.bloquear.solicitud">
+                                    <div class="clearfix"></div>
+                                    <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                        <label for="selFormaDePago">Seleccione un medio de pago:*</label>
+                                        <select class="form-control" ng-options="formaDePago as formaDePago.Descripcion for formaDePago in data.formaDePagos"
+                                                ng-model="data.solicitudDigitalizada.formaDePagoSeleccionado"
+                                                ng-disabled="(data.bloquear.CamposGrales)"
+                                                name="selFormaDePago"
+                                                ng-change="data.solicitudDigitalizada.DatosAdministrativos.FormaDePago = data.solicitudDigitalizada.formaDePagoSeleccionado" required></select>
+                                    </div>
+                                    <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-show="data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion === data.constantesFacturacion.tarjetaDeCredito">
+                                        <label for="selTipoDeTarjeta">Seleccione tipo de tarjeta:*</label>
+                                        <select class="form-control" ng-options="tipoDeTarjeta as tipoDeTarjeta.Descripcion for tipoDeTarjeta in data.tipoDeTarjetas"
+                                                ng-model="data.solicitudDigitalizada.tipoDeTarjetaSeleccionado"
+                                                ng-disabled="(data.bloquear.CamposGrales)"
+                                                name="selTipoDeTarjeta"
+                                                ng-required="data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion === data.constantesFacturacion.tarjetaDeCredito"
+                                                ng-change="data.solicitudDigitalizada.DatosAdministrativos.TarjetaDeCredito.TipoDeTarjeta = data.solicitudDigitalizada.tipoDeTarjetaSeleccionado"></select> @*TODO: REVISAR data.solicitudDigitalizada.TipoDeTarjetaId*@
+                                            </div>
+                                            <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-show="data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion !== data.constantesFacturacion.tarjetaDeCredito">
+
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div name="CamposTarjeta" ng-show="data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion === data.constantesFacturacion.tarjetaDeCredito">
+                                                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                                    <label for="txtNombreTitularTarjeta">Nombre completo del titular:*</label>
+                                                    <input style="text-transform:uppercase" class="form-control" type="text" name="txtNombreTitularTarjeta"
+                                                            ng-model="data.solicitudDigitalizada.DatosAdministrativos.TarjetaDeCredito.NombreTitular"
+                                                            ng-required="data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion === data.constantesFacturacion.tarjetaDeCredito"
+                                                            ng-disabled="(data.bloquear.CamposGrales)" />
+                                                </div>
+                                                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                                    <label for="txtNumeroDniTarjeta">N° de DNI/CUIT:*</label>
+                                                    <input style="text-align:right;" class="form-control" type="text" name="txtNumeroDniTarjeta" maxlength="11" numbers-only
+                                                            ng-model="data.solicitudDigitalizada.DatosAdministrativos.TarjetaDeCredito.NroDNI"
+                                                            ng-required="data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion === data.constantesFacturacion.tarjetaDeCredito"
+                                                            ng-disabled="(data.bloquear.CamposGrales)" />
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-show="data.solicitudDigitalizada.tipoDeTarjetaSeleccionado.MascaraIngreso == '9999-999999-99999'">
+                                                    <label for="txtNumeroTarjetaAmerican">N° de Tarjeta:*</label>
+                                                    <input class="form-control" type="text" style="text-align:right;"
+                                                            name="txtNumeroTarjetaAmerican"
+                                                            ng-model="data.solicitudDigitalizada.DatosAdministrativos.TarjetaDeCredito.NumeroAmerican"
+                                                            ng-required="data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion === data.constantesFacturacion.tarjetaDeCredito && (data.solicitudDigitalizada.tipoDeTarjetaSeleccionado.MascaraIngreso == '9999-999999-99999')"
+                                                            ng-disabled="(data.bloquear.CamposGrales)" mask="9999-999999-99999"
+                                                            />
+                                                </div>
+                                                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-show="data.solicitudDigitalizada.tipoDeTarjetaSeleccionado.MascaraIngreso != '9999-999999-99999'">
+                                                    <label for="txtNumeroTarjeta">N° de Tarjeta:*</label>
+                                                    <input class="form-control" type="text" style="text-align:right;"
+                                                            name="txtNumeroTarjeta"
+                                                            ng-model="data.solicitudDigitalizada.DatosAdministrativos.TarjetaDeCredito.Numero"
+                                                            ng-required="data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion === data.constantesFacturacion.tarjetaDeCredito && (data.solicitudDigitalizada.tipoDeTarjetaSeleccionado.MascaraIngreso != '9999-999999-99999')"
+                                                            ng-disabled="(data.bloquear.CamposGrales)" mask="9999-9999-9999-9999"
+                                                            />
+                                                </div>
+                                                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                                    <label for="txtVencimiento">Vencimiento:*</label>
+                                                    <input style="text-align:right;" class="form-control" type="text" name="txtVencimiento"
+                                                            ng-model="data.solicitudDigitalizada.DatosAdministrativos.TarjetaDeCredito.Vencimiento"
+                                                            mask="19/99"
+                                                            ng-disabled="(data.bloquear.CamposGrales)"
+                                                            ng-change="TarjetaVencimientoChange()"
+                                                            ng-required="data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion === data.constantesFacturacion.tarjetaDeCredito"
+                                                            no-dirty />
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div name="CamposDebitoEnCuenta" ng-show="data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion ===  data.constantesFacturacion.debitoAutomatico">
+                                                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                                    <label for="txtNombreTitularDebito">Nombre completo del titular:*</label>
+                                                    <input style="text-transform:uppercase" class="form-control" type="text" name="txtNombreTitularDebito"
+                                                            ng-model="data.solicitudDigitalizada.DatosAdministrativos.DebitoEnCuenta.NombreTitular"
+                                                            ng-required="data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion === data.constantesFacturacion.debitoAutomatico"
+                                                            ng-disabled="(data.bloquear.CamposGrales)" />
+                                                </div>
+                                                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                                    <label for="txtNumeroDniDebito">N° de DNI/CUIT:*</label>
+                                                    <input style="text-align:right;" class="form-control" type="text" name="txtNumeroDniDebito" maxlength="11" numbers-only
+                                                            ng-model="data.solicitudDigitalizada.DatosAdministrativos.DebitoEnCuenta.NroDNI"
+                                                            ng-required="data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion === data.constantesFacturacion.debitoAutomatico"
+                                                            ng-disabled="(data.bloquear.CamposGrales)" />
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                                    <label for="ftrBanco">Seleccione un banco:*</label>
+                                                    <select class="form-control" ng-options="banco as banco.Descripcion for banco in data.bancos" name="selBanco"
+                                                            ng-model="data.solicitudDigitalizada.bancoSeleccionado"
+                                                            ng-disabled="(data.bloquear.CamposGrales)"
+                                                            ng-required="data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion === data.constantesFacturacion.debitoAutomatico"
+                                                            ng-change="data.solicitudDigitalizada.DatosAdministrativos.DebitoEnCuenta.Banco = data.solicitudDigitalizada.bancoSeleccionado">
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                                    <label for="ftrTipoCuenta">Seleccione un tipo de cuenta:*</label>
+                                                    <select class="form-control" ng-options="tipoCuenta as tipoCuenta.Descripcion for tipoCuenta in data.tipoCuentas" name="selTipoCuenta"
+                                                            ng-model="data.solicitudDigitalizada.tipoCuentaSeleccionado"
+                                                            ng-disabled="(data.bloquear.CamposGrales)"
+                                                            ng-required="data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion === data.constantesFacturacion.debitoAutomatico"
+                                                            ng-change="data.solicitudDigitalizada.DatosAdministrativos.DebitoEnCuenta.TipoCuenta = data.solicitudDigitalizada.tipoCuentaSeleccionado"></select>
+                                                </div>
+                                                        <div class="clearfix"></div>
+                                                        <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                                            <label for="txtNroCuenta">Cuenta N°:*</label>
+                                                            <input style="text-align:right;" class="form-control" type="text" name="txtNroCuenta" maxlength="20" numbers-only
+                                                                    ng-model="data.solicitudDigitalizada.DatosAdministrativos.DebitoEnCuenta.NroCuenta"
+                                                                    ng-required="data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion === data.constantesFacturacion.debitoAutomatico"
+                                                                    ng-disabled="(data.bloquear.CamposGrales)" />
+                                                        </div>
+                                                        <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                                                            <label for="txtCBU">CBU:*</label>
+                                                            <input style="text-align:right;" class="form-control" type="text" name="txtCBU"
+                                                                    maxlength="22"
+                                                                    numbers-only
+                                                                    ng-maxlength="22"
+                                                                    ng-minlength="22"
+                                                                    ng-model="data.solicitudDigitalizada.DatosAdministrativos.DebitoEnCuenta.CBU"
+                                                                    ng-required="data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion === data.constantesFacturacion.debitoAutomatico"
+                                                                    ng-disabled="(data.bloquear.CamposGrales)" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearfix"></div>
+                                                </fieldset>
+                                            </div>
+                                        </dd>
+
+                                        <dt role="heading" aria-level="6"> @*ng-show="!data.bloquear.Firma">*@
+                                            <button aria-expanded="false"
+                                                    class="Accordion-trigger"
+                                                    aria-controls="sect6"
+                                                    id="accordion6id"
+                                                    type="button">
+                                                <span class="Accordion-title">
+                                                    FIRMAR
+                                                </span>
+                                                <span class="Accordion-icon"></span>
+                                            </button>
+                                        </dt>
+                                        <dd id="sect6"
+                                            role="region"
+                                            aria-labelledby="accordion6id"
+                                            class="Accordion-panel"
+                                            hidden="">
+                                            <div>
+                                                <fieldset ng-disabled="acceso != 'Vendedor' || data.bloquear.solicitud">
+                                                    <div id="signature">
+                                                        <div class="contentSignature">
+                                                            <signature-pad id="signature-pad" accept="accept" clean="clean" height="220" width="568" disabled="!(acceso == 'Vendedor')" style="min-height:90px !important;"></signature-pad>
+                                                            <button type="button" class="btn btn-sm" style="float: right;" ng-click="clean()">Borrar</button>
+                                                            @*<button type="button" class="btn btn-sm" style="float: right;" ng-click="guardarFirma()">Guardar</button>*@
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </dd>
+
+                                        <dt role="heading" aria-level="6">
+                                            <button aria-expanded="false"
+                                                    class="Accordion-trigger"
+                                                    aria-controls="sect7"
+                                                    id="accordion7id"
+                                                    type="button">
+                                                <span class="Accordion-title">
+                                                    CONDICIONES DE LA PRESTACIÓN
+                                                </span>
+                                                <span class="Accordion-icon"></span>
+                                            </button>
+                                        </dt>
+                                        <dd id="sect7"
+                                            role="region"
+                                            aria-labelledby="accordion7id"
+                                            class="Accordion-panel"
+                                            hidden="">
+                                            <div>
+                                                <fieldset ng-disabled="acceso != 'Vendedor' || data.bloquear.solicitud">
+                                                    <div id="condiciones">
+                                                        <p>
+                                                            1.Grupo Serca, en adelante “Serca” brindara a la entidad contratante, los servicios que le correspondieran al Plan “Área Protegida” solicitado, cuyo características y alcances se especifican a continuación.
+                                                        </p>
+                                                        <p>
+                                                            2. <b>Área Protegida</b>: se define como tal, al predio que la entidad contratante declare al momento del ingreso al Plan “Área Protegida”, para ser cubierto ante cualquier necesidad de Emergencia Médica que pudiera suscitarse dentro del mismo. La cobertura incluye tanto al personal estable, terceros ocasionales o público en general, siempre que se encuentren dentro de área de cobertura. El servicio estará disponible las 24 hs. Del día, los 365 días del año.
+                                                        </p>
+                                                        <p>
+                                                            3. <b>Emergencia Médica</b>: se entiende por emergencia médica, a toda aquella situación en que la vida de una persona pueda encontrarse seriamente comprometida, corriendo riesgo de no mediar una rápida asistencia médica.
+                                                        </p>
+                                                        <p>
+                                                            4. El servicio comprenderá: a) La presencia en el lugar solicitado de un profesional médico con el instrumental apto para estas circunstancias, a bordo de una unidad polivalente de alta complejidad. B) Eventual traslado del paciente al establecimiento médico que corresponda por su Cobertura Médica o aquel que el profesional interviniente considere conveniente por la gravedad del cuadro que presente el paciente en el momento de la atención. En estos casos la presentación y responsabilidad de Serca cesara con la transferencia del paciente a la institución receptora.
+                                                        </p>
+                                                        <p>
+                                                            <b>Procedimiento operativo</b>: Los pedidos de servicio ingresaran al Call Center de Serca al número telefónico 5777-5550 o al 0810-999-0911; se recepcionará el servicio y se asignara la unidad que corresponda a la zona, el abonado se identificara mediante el número que se le fuera asignado al momento de su incorporación al sistema, expresando la sintomatología que presenta el paciente, confirmando domicilio y entre calles, y algún otro dato que requiera el operador de Serca. Ante cualquier inquietud se podrá comunicar a nuestro departamento de atención personalizada de Lunes a Viernes, de 9 a 17 hs. Al teléfono 0810-333-0911.
+                                                        </p>
+                                                        <p>
+                                                            5. La condición de abonado al Plan “Área Protegida” se adquiere a las 72 hs hábiles de la fecha de firma de la presente solicitud de cobertura y se mantendrá con el pago mensual y puntual de las cuotas, por parte de la entidad contratante. La mora en el pago de las cuotas será automática y generará un interés punitorio del 2% mensual, el que se calculará por cada día de retardo, hasta su efectivo pago.
+                                                        </p>
+                                                        <p>
+                                                            6. El pago en término, es condición esencial para la formulación de presente contrato, motivo por el cual la falta de pago de 2 (dos) meses consecutivos, producirá la mora y la caducidad automática del Plan contratado, como asi también de aquellos servicios que se hubiera requerido en forma adicional, quedando Serca desobligado de toda prestación, sin necesidad de notificación previa. Para su rehabilitación será condición indispensable el pago total de las cuotas, servicios e intereses devengados hasta ese momento.
+                                                        </p>
+                                                        <p>
+                                                            7. <b>Servicios adicionales</b>: Serca deja expresamente aclarado que no se obliga a prestar dentro del abono de Área Protegida, ningún tipo de servicios adicionales, como ser: prácticas de enfermería (tomas de presión, aplicación de inyecciones, curaciones, cambios de sondas, etc.) ni consultas médicas (visitas médicas, visita médica laboral o control de ausentismo, etc.) Este tipo de servicios adicionales podrán ser brindados siempre con cargo fijo por prestación, el que deberá ser abonado finalizando la asistencia o en su defecto se incluirá en la factura mensual correspondiente, con el concepto de servicios adicionales, siempre y cuando su prestación hubiera sido convenida en la solicitud de adhesión. De requerir otros servicios no contemplados en este plan, los mismo serán realizados según lista de aranceles vigentes, consúltenos.
+                                                        </p>
+                                                        <p>
+                                                            8. Si los costos inherentes a la prestación contratada sufrieran incremento (salarios, insumos, combustibles, etc.), o la tasa de utilización del servicio por parte de la empresa usuaria excede los parámetros estándares para su actividad, Serca, podrá modificar los valores pactados en el presente convenio, informando de tal circunstancia a la entidad contratante.
+                                                        </p>
+                                                        <p>
+                                                            9. Tanto la entidad contratante del sistema asistencial de área protegida como Serca, podrán poner fin a la presente contratación sin necesidad de expresión de causa, mediante notificación escrita con 30 días de anticipación, salvo que tal situación se origine por lo descripto en el punto número seis.
+                                                        </p>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </div>
+            <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <input type="checkbox" id="chkEsPreparado"
+                        @*ng-model="data.solicitudDigitalizada.EntidadCliente.Estado"
+                        ng-change="setEsPreparado()"*@
+                        ng-click="setEsPreparado(true)"
+                        ng-disabled="acceso != 'Vendedor' ||
+                                data.bloquear.solicitud ||
+                                frmSolicitudDigitalizada.txtNombreComercial.$valid == false ||
+                                frmSolicitudDigitalizada.txtRazonSocial.$valid == false ||
+                                frmSolicitudDigitalizada.txtCuit.$valid == false ||
+                                frmSolicitudDigitalizada.txtCalleCliente.$valid == false ||
+                                frmSolicitudDigitalizada.txtAlturaCliente.$valid == false ||
+                                data.solicitudDigitalizada.EntidadCliente.Latitud == '0' ||
+                                data.solicitudDigitalizada.EntidadCliente.Longitud == '0' ||
+                                frmSolicitudDigitalizada.txtCalleArea.$valid == false ||
+                                frmSolicitudDigitalizada.txtAlturaCliente.$valid == false ||
+                                data.solicitudDigitalizada.AreaProtegida.Latitud == '0' ||
+                                data.solicitudDigitalizada.AreaProtegida.Longitud == '0' ||
+                                frmSolicitudDigitalizada.txtNombreCompleto.$valid == false ||
+                                frmSolicitudDigitalizada.txtCargo.$valid == false ||
+                                frmSolicitudDigitalizada.txtCPCliente.$valid == false ||
+                                frmSolicitudDigitalizada.txtTelefonoCliente.$valid == false ||
+                                frmSolicitudDigitalizada.txtEmail.$valid == false ||
+                                data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion === data.constantesFacturacion.tarjetaDeCredito && (
+                                    frmSolicitudDigitalizada.txtNombreTitularTarjeta.$valid == false ||
+                                    frmSolicitudDigitalizada.txtNumeroDniTarjeta.$valid == false ||
+
+                                    frmSolicitudDigitalizada.txtVencimiento.$valid == false) ||
+                                frmSolicitudDigitalizada.txtNombreTitularDebito.$valid == false ||
+                                frmSolicitudDigitalizada.txtNumeroDniDebito.$valid == false ||
+                                frmSolicitudDigitalizada.selBanco.$valid == false ||
+                                frmSolicitudDigitalizada.selTipoCuenta.$valid == false ||
+                                frmSolicitudDigitalizada.txtNroCuenta.$valid == false ||
+                                frmSolicitudDigitalizada.txtCBU.$valid == false" />   Confirmado para afiliar<br />
+                <div ng-show="data.habilitar.afiliar">
+                    <input type="checkbox" id="chkEnviarEmailContrato"
+                            ng-show="data.habilitar.afiliar" />   Enviar contrato por E-Mail al cliente<br />
+                </div>
+            </div>
+
+            <div style="display:none">
+                <tt>Email</tt><br />
+                <tt>value = {{$scope.data.solicitudDigitalizada.ClienteContacto.Email.value}}</tt><br />
+                <tt>viewValue = {{$scope.data.solicitudDigitalizada.ClienteContacto.Email.viewValue}}</tt><br />
+                <tt>frmSolicitudDigitalizada.txtEmail.$valid = {{frmSolicitudDigitalizada.txtEmail.$valid}}</tt><br />
+                <tt>frmSolicitudDigitalizada.txtEmail.$error = {{frmSolicitudDigitalizada.txtEmail.$error}}</tt><br />
+                <br />
+                <tt>Cuit</tt><br />
+                <tt>value = {{$scope.data.solicitudDigitalizada.ClienteContacto.Cuit.value}}</tt><br />
+                <tt>viewValue = {{$scope.data.solicitudDigitalizada.ClienteContacto.Cuit.viewValue}}</tt><br />
+                <tt>frmSolicitudDigitalizada.txtCuit.$valid = {{frmSolicitudDigitalizada.txtCuit.$valid}}</tt><br />
+                <tt>frmSolicitudDigitalizada.txtCuit.$error = {{frmSolicitudDigitalizada.txtCuit.$error}}</tt><br />
+
+                <tt>frmSolicitudDigitalizada</tt><br />
+                <tt>frmSolicitudDigitalizada.$valid = {{frmSolicitudDigitalizada.$valid}}</tt><br />
+                <tt>frmSolicitudDigitalizada.$error = {{frmSolicitudDigitalizada.$error}}</tt><br />
+                <tt>formaDePagoSeleccionado = {{data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion}}</tt><br />
+                <tt>frmSolicitudDigitalizada.txtNombreTitularTarjeta.$error = {{frmSolicitudDigitalizada.txtNombreTitularTarjeta.$error}}</tt><br />
+            </div>
+            @*TODO: REVISAR FECHAVENCIMIENTO*@
+            <div class="row-buttons" style="margin: auto;">
+                <div class="row">
+                    <div class="col-md-offset-4">
+                        @*Solo funciona para modo directo desde ExtranetAngular*@
+                        <button type="button" class="btn btn-default btn-lg" ng-click="GetContrato()" ng-show="ShowGetContrato"><i class="fa fa-cloud-download"></i> Contrato</button>
+                        <button type="button" class="btn btn-default btn-lg" data-dismiss="modal" id="btnCerrarSolicitud" ng-show="acceso != 'Visualizador'">Cerrar</button>
+                        <button type="button" class="btn btn-primary btn-lg" id="btnGuardar"
+                                ng-show="acceso == 'Vendedor' && !data.bloquear.solicitud"
+                                ng-disabled="frmSolicitudDigitalizada.txtNombreComercial.$valid == false ||
+                                frmSolicitudDigitalizada.txtRazonSocial.$valid == false ||
+                                frmSolicitudDigitalizada.txtCuit.$valid == false ||
+                                frmSolicitudDigitalizada.txtCalleCliente.$valid == false ||
+                                frmSolicitudDigitalizada.txtAlturaCliente.$valid == false ||
+                                data.solicitudDigitalizada.EntidadCliente.Latitud == '0' ||
+                                data.solicitudDigitalizada.EntidadCliente.Longitud == '0' ||
+                                frmSolicitudDigitalizada.txtCalleArea.$valid == false ||
+                                frmSolicitudDigitalizada.txtAlturaCliente.$valid == false ||
+                                data.solicitudDigitalizada.AreaProtegida.Latitud == '0' ||
+                                data.solicitudDigitalizada.AreaProtegida.Longitud == '0' ||
+                                frmSolicitudDigitalizada.txtNombreCompleto.$valid == false ||
+                                frmSolicitudDigitalizada.txtCargo.$valid == false ||
+                                frmSolicitudDigitalizada.txtCPCliente.$valid == false || acceso == 'Administrador' ||
+                                frmSolicitudDigitalizada.txtTelefonoCliente.$valid == false ||
+                                frmSolicitudDigitalizada.txtEmail.$valid == false ||
+                                (bloquearCamposCliente && bloquearCamposGrales) ||
+                                data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion === data.constantesFacturacion.tarjetaDeCredito && (
+                                    frmSolicitudDigitalizada.txtNombreTitularTarjeta.$valid == false ||
+                                    frmSolicitudDigitalizada.txtNumeroDniTarjeta.$valid == false ||
+
+                                    frmSolicitudDigitalizada.txtVencimiento.$valid == false) ||
+                                frmSolicitudDigitalizada.txtNombreTitularDebito.$valid == false ||
+                                frmSolicitudDigitalizada.txtNumeroDniDebito.$valid == false ||
+                                frmSolicitudDigitalizada.selBanco.$valid == false ||
+                                frmSolicitudDigitalizada.selTipoCuenta.$valid == false ||
+                                frmSolicitudDigitalizada.txtNroCuenta.$valid == false ||
+                                frmSolicitudDigitalizada.txtCBU.$valid == false" ng-click="GuardarSolicitud()">
+                                                Guardar
+                                            </button>
+                                            @*<button type="button" class="btn btn-primary btn-lg"
+                                                ng-click="Afiliar()">
+                                                Afiliar fake
+                                                </button>*@
+                                            <button type="button" class="btn btn-primary btn-lg"
+                                                    ng-show="data.habilitar.afiliar"
+                                                    ng-disabled="frmSolicitudDigitalizada.txtNombreComercial.$valid == false ||
+                        frmSolicitudDigitalizada.txtRazonSocial.$valid == false ||
+                        frmSolicitudDigitalizada.txtCuit.$valid == false ||
+                        frmSolicitudDigitalizada.txtCalleCliente.$valid == false ||
+                        frmSolicitudDigitalizada.txtAlturaCliente.$valid == false ||
+                        data.solicitudDigitalizada.EntidadCliente.Latitud == '0' ||
+                        data.solicitudDigitalizada.EntidadCliente.Longitud == '0' ||
+                        frmSolicitudDigitalizada.txtNombreCompleto.$valid == false ||
+                        frmSolicitudDigitalizada.txtCargo.$valid == false ||
+                        frmSolicitudDigitalizada.txtCPCliente.$valid == false ||
+                        frmSolicitudDigitalizada.txtTelefonoCliente.$valid == false ||
+                        frmSolicitudDigitalizada.txtEmail.$valid == false ||
+                        (bloquearCamposCliente && bloquearCamposGrales) ||
+                        frmSolicitudDigitalizada.txtAdelanto.$valid == false ||
+                        frmSolicitudDigitalizada.txtProximoPago.$valid == false ||
+                        frmSolicitudDigitalizada.txtImporteMensual.$valid == false ||
+
+                        data.solicitudDigitalizada.formaDePagoSeleccionado.Descripcion === data.constantesFacturacion.tarjetaDeCredito && (
+                            frmSolicitudDigitalizada.selTipoDeTarjeta.$valid == false ||
+                            frmSolicitudDigitalizada.txtNombreTitularTarjeta.$valid == false ||
+                            frmSolicitudDigitalizada.txtNumeroDniTarjeta.$valid == false ||
+                
+                            frmSolicitudDigitalizada.txtVencimiento.$valid == false) ||
+
+                        frmSolicitudDigitalizada.selBanco.$valid == false ||
+                        frmSolicitudDigitalizada.selTipoCuenta.$valid == false ||
+                        frmSolicitudDigitalizada.txtNombreTitularDebito.$valid == false ||
+                        frmSolicitudDigitalizada.txtNumeroDniDebito.$valid == false ||
+                        frmSolicitudDigitalizada.txtNroCuenta.$valid == false ||
+                        frmSolicitudDigitalizada.txtCBU.$valid == false"
+                                                    ng-click="Afiliar()">
+                                                Afiliar
+                                            </button>
+                                            @*<button type="button" class="btn btn-primary btn-lg" ng-disabled="bloquearCamposCliente && bloquearCamposGrales" ng-click="Firmar()">Firmar</button>*@
+                                        </div>
+                                    </div>
+                                </div>
+            </form>
+        </div>
+</div>

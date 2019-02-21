@@ -1,0 +1,28 @@
+﻿<div ng-controller="afiliacionesPopUpCtrl" class="row" id="displayTabs">
+    <div class="row" style="padding-top: 10px;">
+        @Html.Partial("../Mapa/_Mapa")
+    </div>
+    <div class="row">
+        <div class="col-md-12" id="divClientesPotenciales">
+        @Html.Partial("../Afiliaciones/_Solicitud")
+    </div>
+    </div>
+</div>
+<style>
+    #popupMapa {
+        padding-bottom: 0px !important;
+        position: fixed !important;
+    }
+    #btnCerrarSolicitud{
+        display: none !important;
+    }
+    @@media (max-width: 580px) {
+        #divClientesPotenciales {
+            margin-left:28px  !important; margin-right:38px !important;
+        }
+        #popupMapa {
+            overflow-y: auto;
+        }
+    }
+</style>
+                    

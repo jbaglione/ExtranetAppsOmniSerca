@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:s0="http://tempuri.org" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org">
+      <s:element name="DeleteMensaje">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pMsgId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMensajeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="DeleteMensajeResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DataSet">
+        <s:sequence>
+          <s:element ref="s:schema" />
+          <s:any />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetGruposGerencias">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGruposGerenciasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetGruposGerenciasResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGruposUsuarios">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGruposUsuariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetGruposUsuariosResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMensaje">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pMsgId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMensajeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetMensajeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMensajesEmitidos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMensajesEmitidosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetMensajesEmitidosResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMensajesRecibidos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMensajesRecibidosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetMensajesRecibidosResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsuarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pGrp" type="s:long" />
+            <s:element minOccurs="0" name="pNotExcId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsuariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetUsuariosResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsuariosGerencias">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pGer" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsuariosGerenciasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetUsuariosGerenciasResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsuariosNotificados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pNotId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsuariosNotificadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetUsuariosNotificadosResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsuariosPrestadores">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pGrp" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsuariosPrestadoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetUsuariosPrestadoresResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetEstadoMensajeUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pMsgId" type="s:long" />
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pEst" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetEstadoMensajeUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="SetEstadoMensajeUsuarioResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMensaje">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pMsgId" type="s:long" />
+            <s:element minOccurs="0" name="pMsg" type="s:string" />
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pMail" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMensajeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="SetMensajeResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMensajeUsuarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pMsgId" type="s:long" />
+            <s:element minOccurs="0" name="pUsrList" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMensajeUsuariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="SetMensajeUsuariosResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMensajeV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pMsgId" type="s:long" />
+            <s:element minOccurs="0" name="pMsgRtf" type="s:string" />
+            <s:element minOccurs="0" name="pMsgTxt" type="s:string" />
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pMail" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetMensajeV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="SetMensajeV2Result" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DeleteMensajeSoapIn">
+    <wsdl:part name="parameters" element="s0:DeleteMensaje" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMensajeSoapOut">
+    <wsdl:part name="parameters" element="s0:DeleteMensajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGruposGerenciasSoapIn">
+    <wsdl:part name="parameters" element="s0:GetGruposGerencias" />
+  </wsdl:message>
+  <wsdl:message name="GetGruposGerenciasSoapOut">
+    <wsdl:part name="parameters" element="s0:GetGruposGerenciasResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGruposUsuariosSoapIn">
+    <wsdl:part name="parameters" element="s0:GetGruposUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="GetGruposUsuariosSoapOut">
+    <wsdl:part name="parameters" element="s0:GetGruposUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMensajeSoapIn">
+    <wsdl:part name="parameters" element="s0:GetMensaje" />
+  </wsdl:message>
+  <wsdl:message name="GetMensajeSoapOut">
+    <wsdl:part name="parameters" element="s0:GetMensajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMensajesEmitidosSoapIn">
+    <wsdl:part name="parameters" element="s0:GetMensajesEmitidos" />
+  </wsdl:message>
+  <wsdl:message name="GetMensajesEmitidosSoapOut">
+    <wsdl:part name="parameters" element="s0:GetMensajesEmitidosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMensajesRecibidosSoapIn">
+    <wsdl:part name="parameters" element="s0:GetMensajesRecibidos" />
+  </wsdl:message>
+  <wsdl:message name="GetMensajesRecibidosSoapOut">
+    <wsdl:part name="parameters" element="s0:GetMensajesRecibidosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsuariosSoapIn">
+    <wsdl:part name="parameters" element="s0:GetUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="GetUsuariosSoapOut">
+    <wsdl:part name="parameters" element="s0:GetUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsuariosGerenciasSoapIn">
+    <wsdl:part name="parameters" element="s0:GetUsuariosGerencias" />
+  </wsdl:message>
+  <wsdl:message name="GetUsuariosGerenciasSoapOut">
+    <wsdl:part name="parameters" element="s0:GetUsuariosGerenciasResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsuariosNotificadosSoapIn">
+    <wsdl:part name="parameters" element="s0:GetUsuariosNotificados" />
+  </wsdl:message>
+  <wsdl:message name="GetUsuariosNotificadosSoapOut">
+    <wsdl:part name="parameters" element="s0:GetUsuariosNotificadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsuariosPrestadoresSoapIn">
+    <wsdl:part name="parameters" element="s0:GetUsuariosPrestadores" />
+  </wsdl:message>
+  <wsdl:message name="GetUsuariosPrestadoresSoapOut">
+    <wsdl:part name="parameters" element="s0:GetUsuariosPrestadoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetEstadoMensajeUsuarioSoapIn">
+    <wsdl:part name="parameters" element="s0:SetEstadoMensajeUsuario" />
+  </wsdl:message>
+  <wsdl:message name="SetEstadoMensajeUsuarioSoapOut">
+    <wsdl:part name="parameters" element="s0:SetEstadoMensajeUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetMensajeSoapIn">
+    <wsdl:part name="parameters" element="s0:SetMensaje" />
+  </wsdl:message>
+  <wsdl:message name="SetMensajeSoapOut">
+    <wsdl:part name="parameters" element="s0:SetMensajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetMensajeUsuariosSoapIn">
+    <wsdl:part name="parameters" element="s0:SetMensajeUsuarios" />
+  </wsdl:message>
+  <wsdl:message name="SetMensajeUsuariosSoapOut">
+    <wsdl:part name="parameters" element="s0:SetMensajeUsuariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetMensajeV2SoapIn">
+    <wsdl:part name="parameters" element="s0:SetMensajeV2" />
+  </wsdl:message>
+  <wsdl:message name="SetMensajeV2SoapOut">
+    <wsdl:part name="parameters" element="s0:SetMensajeV2Response" />
+  </wsdl:message>
+  <wsdl:portType name="NotificacionesSoap">
+    <wsdl:operation name="DeleteMensaje">
+      <wsdl:input message="s0:DeleteMensajeSoapIn" />
+      <wsdl:output message="s0:DeleteMensajeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGruposGerencias">
+      <wsdl:input message="s0:GetGruposGerenciasSoapIn" />
+      <wsdl:output message="s0:GetGruposGerenciasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGruposUsuarios">
+      <wsdl:input message="s0:GetGruposUsuariosSoapIn" />
+      <wsdl:output message="s0:GetGruposUsuariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMensaje">
+      <wsdl:input message="s0:GetMensajeSoapIn" />
+      <wsdl:output message="s0:GetMensajeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMensajesEmitidos">
+      <wsdl:input message="s0:GetMensajesEmitidosSoapIn" />
+      <wsdl:output message="s0:GetMensajesEmitidosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMensajesRecibidos">
+      <wsdl:input message="s0:GetMensajesRecibidosSoapIn" />
+      <wsdl:output message="s0:GetMensajesRecibidosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuarios">
+      <wsdl:input message="s0:GetUsuariosSoapIn" />
+      <wsdl:output message="s0:GetUsuariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuariosGerencias">
+      <wsdl:input message="s0:GetUsuariosGerenciasSoapIn" />
+      <wsdl:output message="s0:GetUsuariosGerenciasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuariosNotificados">
+      <wsdl:input message="s0:GetUsuariosNotificadosSoapIn" />
+      <wsdl:output message="s0:GetUsuariosNotificadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuariosPrestadores">
+      <wsdl:input message="s0:GetUsuariosPrestadoresSoapIn" />
+      <wsdl:output message="s0:GetUsuariosPrestadoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetEstadoMensajeUsuario">
+      <wsdl:input message="s0:SetEstadoMensajeUsuarioSoapIn" />
+      <wsdl:output message="s0:SetEstadoMensajeUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMensaje">
+      <wsdl:input message="s0:SetMensajeSoapIn" />
+      <wsdl:output message="s0:SetMensajeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMensajeUsuarios">
+      <wsdl:input message="s0:SetMensajeUsuariosSoapIn" />
+      <wsdl:output message="s0:SetMensajeUsuariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetMensajeV2">
+      <wsdl:input message="s0:SetMensajeV2SoapIn" />
+      <wsdl:output message="s0:SetMensajeV2SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NotificacionesSoap" type="s0:NotificacionesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DeleteMensaje">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Notificaciones.DeleteMensaje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGruposGerencias">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Notificaciones.GetGruposGerencias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGruposUsuarios">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Notificaciones.GetGruposUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMensaje">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Notificaciones.GetMensaje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMensajesEmitidos">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Notificaciones.GetMensajesEmitidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMensajesRecibidos">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Notificaciones.GetMensajesRecibidos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuarios">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Notificaciones.GetUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuariosGerencias">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Notificaciones.GetUsuariosGerencias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuariosNotificados">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Notificaciones.GetUsuariosNotificados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuariosPrestadores">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Notificaciones.GetUsuariosPrestadores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetEstadoMensajeUsuario">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Notificaciones.SetEstadoMensajeUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMensaje">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Notificaciones.SetMensaje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMensajeUsuarios">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Notificaciones.SetMensajeUsuarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetMensajeV2">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Notificaciones.SetMensajeV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Notificaciones">
+    <wsdl:port name="NotificacionesSoap" binding="s0:NotificacionesSoap">
+      <soap:address location="remote.omnisaludsa.com.ar:57772/csp/shaman/WebServices.Notificaciones.cls" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

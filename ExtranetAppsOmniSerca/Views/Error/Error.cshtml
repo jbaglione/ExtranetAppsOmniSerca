@@ -1,0 +1,75 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Error en la solicitud</title>
+
+    <style>
+        body {
+            background: #f9fee8;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            color: #666666;
+        }
+
+        .error_page {
+            width: 600px;
+            padding: 50px;
+            margin: auto;
+        }
+
+            .error_page h1 {
+                margin: 20px 0 0;
+            }
+
+            .error_page p {
+                margin: 10px 0;
+                padding: 0;
+            }
+
+        a {
+            color: #9caa6d;
+            text-decoration: none;
+        }
+
+            a:hover {
+                color: #9caa6d;
+                text-decoration: underline;
+            }
+    </style>
+
+</head>
+
+<body class="login">
+    <div class="error_page">
+        <img alt="Kidmondo_face_sad" src="~/Content/img/404.gif" />
+        <h1>Disculpe...</h1>
+        <p>La p&aacute;gina que est&aacute; buscando no se encuentra disponible.</p>
+        
+        @if (System.Configuration.ConfigurationManager.AppSettings["SiteLocation"] == "Salta")
+        {
+            <p><a href="http://remote.omnisaludsa.com.ar:59885/Login">Volver a Intraserca</a></p>
+        }
+        else if (System.Configuration.ConfigurationManager.AppSettings["SiteLocation"] == "Cordoba")
+        {
+            <p><a href="http://remote.omnisaludsa.com.ar:60885/Login">Volver a Intraserca</a></p>
+        }
+        else
+        {
+            <p><a href="http://remote.omnisaludsa.com.ar:58885/Login">Volver a Intraserca</a></p>
+        }
+        @ViewBag.Error
+    </div>
+</body>
+</html>

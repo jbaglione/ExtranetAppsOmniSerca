@@ -1,0 +1,39 @@
+﻿<div class="modal fade" id="popupResumenDetalle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-title">
+                    <span>
+                        <i class="fa fa-search big-icon naranja"></i>
+                        <span style="font-size:18px;margin-left:5px">{{data.resumenDetalle.item.Descripcion}}</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <table class="table table-striped">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col" ng-style="(data.resumenDetalle.item.Link > 2) ? style.Descripcion2 : style.Descripcion"><i>Descripción</i></th>
+                            <th scope="col" ng-style="style.Cantidad" ng-show="data.resumenDetalle.item.Link > 2"><i>Cantidad</i></th>
+                            <th scope="col" ng-style="style.Importe"><i>Importe</i></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in data.resumenDetalle.list">
+                            <td scope="row" ng-style="(data.resumenDetalle.item.Link > 2) ? style.Descripcion2 : style.Descripcion">
+                                <div>{{item.Descripcion}}</div>
+                            </td>
+                            <td scope="row" ng-style="style.Cantidad" ng-show="data.resumenDetalle.item.Link > 2">
+                                <div>{{item.Cantidad}}{{item.Referencia}}</div>
+                            </td>
+                            <td ng-style="style.Importe">{{item.Importe.toFixed(2)}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,29 @@
+﻿<jqx-grid id="incidentesGrid" jqx-instance="data.incidentes.grid" jqx-settings="data.incidentes.settings"></jqx-grid>
+@Html.Partial("_RevisarPrestacion")
+@Html.Partial("_DetalleIncidente")
+<!-- Subir Orden de Servicio -->
+<div class="modal fade" id="popupOrdenServicio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" >&times;</button>
+                <div class="modal-title">
+                    <span>
+                        <i class="fa fa-medkit big-icon naranja"></i>
+                        <span style="font-size:18px;margin-left:5px">Subir Orden de Servicio</span>
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="row" align="center" style="width: 100%;margin-right: 0px;margin-left: 0px;">
+                        <jqx-file-upload id="fileUpload" jqx-settings="ordenServicioSettings">{{ordenServicio.nombre}}</jqx-file-upload>
+                    </div>
+                    <div class="row" align="center" style="width: 100%;margin-right: 0px;margin-left: 0px;" ng-show="ordenServicio.existeArchivo" >
+                        <img src="{{ordenServicio.rutaArchivo}}" ng-show="ordenServicio.rutaArchivo" class="zoom"  />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

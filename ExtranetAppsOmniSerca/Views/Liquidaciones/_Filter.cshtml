@@ -1,0 +1,88 @@
+﻿<div class="col-md-10">
+    <div class="col-md-8 padding-0">
+        <div class="col-md-4 padding-5">
+            <div class="alert alert-warning" style="padding-top: 8px;padding-bottom: 8px;">
+                <div class="row">
+                    <div class="col-md-4" style="line-height: 28px">
+                        <strong>Periodo:</strong>
+                    </div>
+                    <div class="col-md-8">
+                        <select style="width:100%" class="form-control padding-5" ng-model="filter.periodo" ng-change="PeriodoChange()">
+                            <option ng-repeat="periodo in data.periodos" value="{{periodo.ID}}">{{periodo.Descripcion}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 padding-0">
+            <div class="col-md-8 padding-0" ng-show="solapa=='prestaciones'">
+                <div class="col-md-5 padding-5">
+                    <div class="alert alert-warning" style="padding: 8px;">
+                        <div class="row">
+                            <div class="col-md-3" style="line-height: 28px">
+                                <strong>Dia:</strong>
+                            </div>
+                            <div class="col-md-9">
+                                <select style="width:100%" class="form-control padding-5" ng-model="filter.dia">
+                                    <option ng-repeat="dia in data.dias" value="{{dia.ID}}">{{dia.Descripcion}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 padding-5">
+                    <div class="alert alert-warning" style="padding: 8px;">
+                        <div class="row">
+                            <div class="col-md-4" style="line-height: 28px">
+                                <strong>Estado:</strong>
+                            </div>
+                            <div class="col-md-8">
+                                <select style="width:100%" class="form-control padding-5" ng-model="filter.estado" ng-change="EstadoChange()">
+                                    <option ng-repeat="estado in data.estados" value="{{estado.ID}}">{{estado.Descripcion}}</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 padding-5" ng-show="acceso==3 && esEmpresa">
+                <div class="alert alert-warning" style="padding: 8px;">
+                    <div class="row">
+                        <div class="col-md-3" style="line-height: 28px">
+                            <strong>Tipo:</strong>
+                        </div>
+                        <div class="col-md-9">
+                            <select style="width:100%" class="form-control padding-5" ng-model="filter.tipo" ng-change="TipoChange()">
+                                <option ng-repeat="tipo in data.tipos" value="{{tipo.ID}}">{{tipo.Descripcion}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 padding-5">
+        <div class="alert alert-warning" style="padding: 8px;">
+            <div class="row">
+                <div class="col-md-3" style="line-height: 28px">
+                    <strong ng-show="!esEmpresa">Movil:</strong>
+                    <strong ng-show="esEmpresa">Empresa:</strong>
+                </div>
+                <div class="col-md-9">
+                    <select style="width:100%" class="form-control padding-5" ng-model="filter.pLiqId" id="selMoviles">
+                        <option ng-repeat="movil in data.moviles" value="{{movil.ID}}">{{movil.Descripcion}}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-2 padding-5">
+    <div class="col-md-6" style="padding-bottom: 8px; padding-top: 8px; padding-right: 3px; padding-left: 3px;">
+        <button class="btn btn-default btn-primary btn-block" ng-click="GetData()"><span class="glyphicon glyphicon-filter" style="margin-right:10px;"></span>Consultar</button>
+    </div>
+    <div class="col-md-6" style="padding-bottom: 8px; padding-top: 8px; padding-left: 3px; padding-right: 3px;">
+        <button class="btn btn-default btn-primary" ng-click="Reliquidar()" ng-class="{'btn-block': acceso==3}" ng-show="acceso==3"><span class="glyphicon glyphicon-list" style="margin-right:10px;"></span>Reliquidar</button>
+        <button id="exportarAExcel" class="btn btn-default btn-success btn-block" ng-click="Reliquidar()" ng-show="acceso!=3"><span class="glyphicon glyphicon-download" style="margin-right:10px;"></span>Excel</button>
+    </div>
+</div>

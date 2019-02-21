@@ -1,0 +1,90 @@
+﻿<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4" ng-show="!data.enableSites">
+    <div class="login-form block-shadow bg-grayLighter" style="padding: 1.25em 1.25em 4.25em 1.25em;">
+        <div ng-show="error" class="alert alert-danger">{{error}}</div>
+        <form name="loginForm" ng-submit="login()" role="form" enctype="multipart/form-data">
+            <h1 class="text-light">Ingreso</h1>
+            <hr class="thin" />
+            <br />
+            <div class="form-group">
+                <label for="usuario">Usuario o E-mail:</label>
+                <div class="inner-addon left-addon">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <input type="text" class="form-control" name="username" id="username" ng-model="username" required />
+                    <span ng-show="loginForm.username.$dirty && loginForm.username.$error.required" class="help-block">El Usuario o E-mail es requerido</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="usuario">Contraseña:</label>
+                <div class="inner-addon left-addon">
+                    <i class="glyphicon glyphicon-lock"></i>
+                    <input class="form-control" type="password" name="password" id="password" ng-model="password" required>
+                    <span ng-show="loginForm.password.$dirty && loginForm.password.$error.required" class="help-block">La Contraseña es requerida</span>
+                </div>
+            </div>
+            <div class="form-actions" style="float:right">
+                <a class="button link place-left button-metro" ng-click="forgot()" style="padding-left: 0 !important;">Olvidé mi contraseña</a> @*href="/#/forgot"*@
+                <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-primary">Ingresar</button>
+                @*<button type="submit" ng-disabled="loginForm.$invalid" class="button rounded primary place-right"><span class="mif-enter"></span> Ingresar</button>*@
+            </div>
+        </form>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8" style="margin-top:15px;" ng-show="!data.enableSites">
+    <div class="panel">
+        <div class="heading">
+            <span style="margin-left:10px;" class="glyphicon glyphicon-home"></span>
+            <span class="title">{{homeWelcome}}</span>
+            <span class="place-right" style="margin-right: 0.5rem;" id="heading-bienvenidos-current-date">{{currentDateStr}}</span>
+        </div>
+    </div>
+    <div>
+        <p style="padding: 0.1em 1.5em 0 1.5em;">
+            Los servicios aquí disponibles son sólo accesibles para personal autorizado. <br />Para ingresar usted deberá identificarse como tal con el correspondiente nombre de usuario y contraseña.
+        </p>
+        <div class="tile-container" style="padding: 0 0 0em 0.4em; margin-top: 1em;">
+            <div>
+                <a ng-click="register()" class="tile-wide bg-sercaTile fg-white" data-role="tile" style="opacity: 1; transform: scale(1); transition: 0.3s;">
+                    <div class="tile-content iconic">
+                        <span class="icon mif-user-plus"></span>
+                    </div>
+                    <span class="tile-label">Solicitar Usuario</span>
+                </a>
+                <a href="http://www.serca.com.ar/" target="_blank" class="tile-wide bg-sercaTile fg-white" data-role="tile" style="opacity: 1; transform: scale(1); transition: 0.3s;">
+                    <div class="tile-content iconic">
+                        <span class="icon mif-headphones"></span>
+                    </div>
+                    <span class="tile-label">Telefonos utiles</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="tile-container" style="padding: 0 0 2em 2em; margin-top: 1em;" ng-show="data.enableSites">
+        <div class="tile-area no-padding">
+            <h3 class="fg-orange text-light" style="margin-left: 0.2em;">APLICACIONES<span class="mif-chevron-right mif-2x" style="vertical-align: top !important; font-size: 2.5rem !important;" ></span></h3>
+            <div class="tile-group no-padding">
+                <div class="tile-wide bg-sercaTile fg-white" data-role="tile" ng-repeat="accion in data.acciones" ng-click="redireccionarAccion(accion)">
+                    <div class="tile-content iconic">
+                        <a href="javascript:void(0);" class="fg-white" target="_blank">
+                            <span class="icon mif-{{accion.Icono}}"></span>
+                            <span class="tile-label">{{accion.Titulo}}</span>
+                        </a>
+                    </div>
+                </div>
+                <a ng-click="showChangePassword()" class="tile-wide bg-sercaTile fg-white" data-role="tile" style="opacity: 1; transform: scale(1); transition: 0.3s;">
+                    <div class="tile-content iconic">
+                        <span class="icon mif-lock"></span>
+                    </div>
+                    <span class="tile-label">Cambiar Contraseña</span>
+                </a>
+                <a ng-click="showChangeSettings()" class="tile-wide bg-sercaTile fg-white" data-role="tile" style="opacity: 1; transform: scale(1); transition: 0.3s;">
+                    <div class="tile-content iconic">
+                        <span class="icon mif-mail"></span>
+                    </div>
+                    <span class="tile-label">Cambiar Email</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

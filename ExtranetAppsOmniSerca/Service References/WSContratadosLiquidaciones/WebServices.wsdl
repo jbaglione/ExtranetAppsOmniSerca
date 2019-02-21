@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:s0="http://tempuri.org" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org">
+      <s:element name="DelHorarioGrilla">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pId" type="s:long" />
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelHorarioGrillaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="DelHorarioGrillaResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DataSet">
+        <s:sequence>
+          <s:element ref="s:schema" />
+          <s:any />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DelHorariosDisponibilidad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pDia" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DelHorariosDisponibilidadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="DelHorariosDisponibilidadResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCoordinaciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCoordinacionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetCoordinacionesResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEstadoReclamo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pItm" type="s:string" />
+            <s:element minOccurs="0" name="pMode" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEstadoReclamoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetEstadoReclamoResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGrillaCoordinaciones">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGrillaCoordinacionesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetGrillaCoordinacionesResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGrillaCoordinacionesHorarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pCoo" type="s:long" />
+            <s:element minOccurs="0" name="pDes" type="s:long" />
+            <s:element minOccurs="0" name="pHas" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGrillaCoordinacionesHorariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetGrillaCoordinacionesHorariosResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGuardiasDetalle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pPer" type="s:long" />
+            <s:element minOccurs="0" name="pCoo" type="s:long" />
+            <s:element minOccurs="0" name="pVis" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGuardiasDetalleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetGuardiasDetalleResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGuardiasPotenciales">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGuardiasPotencialesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetGuardiasPotencialesResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHorarios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pPer" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHorariosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetHorariosResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHorarios2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pPer" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHorarios2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetHorarios2Result" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIncidentes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pPer" type="s:long" />
+            <s:element minOccurs="0" name="pCoo" type="s:long" />
+            <s:element minOccurs="0" name="pVis" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIncidentesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetIncidentesResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMedicos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pPer" type="s:long" />
+            <s:element minOccurs="0" name="pVis" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMedicosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetMedicosResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMotivosReclamo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pClf" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMotivosReclamoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetMotivosReclamoResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResumen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pPer" type="s:long" />
+            <s:element minOccurs="0" name="pCoo" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResumenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetResumenResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsuarioValidacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsuarioValidacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetUsuarioValidacionResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetHorarioGrilla">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pId" type="s:long" />
+            <s:element minOccurs="0" name="pLeg" type="s:string" />
+            <s:element minOccurs="0" name="pFEnt" type="s:long" />
+            <s:element minOccurs="0" name="pHEnt" type="s:string" />
+            <s:element minOccurs="0" name="pFSal" type="s:long" />
+            <s:element minOccurs="0" name="pHSal" type="s:string" />
+            <s:element minOccurs="0" name="pMov" type="s:string" />
+            <s:element minOccurs="0" name="pSit" type="s:long" />
+            <s:element minOccurs="0" name="pObs" type="s:string" />
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetHorarioGrillaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="SetHorarioGrillaResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetHorariosDisponibilidad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pDia" type="s:long" />
+            <s:element minOccurs="0" name="pHDes" type="s:string" />
+            <s:element minOccurs="0" name="pHHas" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetHorariosDisponibilidadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="SetHorariosDisponibilidadResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetReclamo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pItm" type="s:string" />
+            <s:element minOccurs="0" name="pMode" type="s:long" />
+            <s:element minOccurs="0" name="pCnf" type="s:long" />
+            <s:element minOccurs="0" name="pMot" type="s:long" />
+            <s:element minOccurs="0" name="pHEnt" type="s:string" />
+            <s:element minOccurs="0" name="pMEnt" type="s:string" />
+            <s:element minOccurs="0" name="pHSal" type="s:string" />
+            <s:element minOccurs="0" name="pMSal" type="s:string" />
+            <s:element minOccurs="0" name="pObs" type="s:string" />
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetReclamoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="SetReclamoResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetRespuesta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pItm" type="s:string" />
+            <s:element minOccurs="0" name="pMode" type="s:long" />
+            <s:element minOccurs="0" name="pSta" type="s:long" />
+            <s:element minOccurs="0" name="pRta" type="s:string" />
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetRespuestaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="SetRespuestaResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetRespuestaV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pLiq" type="s:long" />
+            <s:element minOccurs="0" name="pDetId" type="s:long" />
+            <s:element minOccurs="0" name="pMod" type="s:long" />
+            <s:element minOccurs="0" name="pSta" type="s:long" />
+            <s:element minOccurs="0" name="pRta" type="s:string" />
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetRespuestaV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="SetRespuestaV2Result" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateMovil">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pMov" type="s:string" />
+            <s:element minOccurs="0" name="pFec" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateMovilResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="ValidateMovilResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DelHorarioGrillaSoapIn">
+    <wsdl:part name="parameters" element="s0:DelHorarioGrilla" />
+  </wsdl:message>
+  <wsdl:message name="DelHorarioGrillaSoapOut">
+    <wsdl:part name="parameters" element="s0:DelHorarioGrillaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DelHorariosDisponibilidadSoapIn">
+    <wsdl:part name="parameters" element="s0:DelHorariosDisponibilidad" />
+  </wsdl:message>
+  <wsdl:message name="DelHorariosDisponibilidadSoapOut">
+    <wsdl:part name="parameters" element="s0:DelHorariosDisponibilidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCoordinacionesSoapIn">
+    <wsdl:part name="parameters" element="s0:GetCoordinaciones" />
+  </wsdl:message>
+  <wsdl:message name="GetCoordinacionesSoapOut">
+    <wsdl:part name="parameters" element="s0:GetCoordinacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEstadoReclamoSoapIn">
+    <wsdl:part name="parameters" element="s0:GetEstadoReclamo" />
+  </wsdl:message>
+  <wsdl:message name="GetEstadoReclamoSoapOut">
+    <wsdl:part name="parameters" element="s0:GetEstadoReclamoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGrillaCoordinacionesSoapIn">
+    <wsdl:part name="parameters" element="s0:GetGrillaCoordinaciones" />
+  </wsdl:message>
+  <wsdl:message name="GetGrillaCoordinacionesSoapOut">
+    <wsdl:part name="parameters" element="s0:GetGrillaCoordinacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGrillaCoordinacionesHorariosSoapIn">
+    <wsdl:part name="parameters" element="s0:GetGrillaCoordinacionesHorarios" />
+  </wsdl:message>
+  <wsdl:message name="GetGrillaCoordinacionesHorariosSoapOut">
+    <wsdl:part name="parameters" element="s0:GetGrillaCoordinacionesHorariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGuardiasDetalleSoapIn">
+    <wsdl:part name="parameters" element="s0:GetGuardiasDetalle" />
+  </wsdl:message>
+  <wsdl:message name="GetGuardiasDetalleSoapOut">
+    <wsdl:part name="parameters" element="s0:GetGuardiasDetalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGuardiasPotencialesSoapIn">
+    <wsdl:part name="parameters" element="s0:GetGuardiasPotenciales" />
+  </wsdl:message>
+  <wsdl:message name="GetGuardiasPotencialesSoapOut">
+    <wsdl:part name="parameters" element="s0:GetGuardiasPotencialesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHorariosSoapIn">
+    <wsdl:part name="parameters" element="s0:GetHorarios" />
+  </wsdl:message>
+  <wsdl:message name="GetHorariosSoapOut">
+    <wsdl:part name="parameters" element="s0:GetHorariosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHorarios2SoapIn">
+    <wsdl:part name="parameters" element="s0:GetHorarios2" />
+  </wsdl:message>
+  <wsdl:message name="GetHorarios2SoapOut">
+    <wsdl:part name="parameters" element="s0:GetHorarios2Response" />
+  </wsdl:message>
+  <wsdl:message name="GetIncidentesSoapIn">
+    <wsdl:part name="parameters" element="s0:GetIncidentes" />
+  </wsdl:message>
+  <wsdl:message name="GetIncidentesSoapOut">
+    <wsdl:part name="parameters" element="s0:GetIncidentesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMedicosSoapIn">
+    <wsdl:part name="parameters" element="s0:GetMedicos" />
+  </wsdl:message>
+  <wsdl:message name="GetMedicosSoapOut">
+    <wsdl:part name="parameters" element="s0:GetMedicosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMotivosReclamoSoapIn">
+    <wsdl:part name="parameters" element="s0:GetMotivosReclamo" />
+  </wsdl:message>
+  <wsdl:message name="GetMotivosReclamoSoapOut">
+    <wsdl:part name="parameters" element="s0:GetMotivosReclamoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResumenSoapIn">
+    <wsdl:part name="parameters" element="s0:GetResumen" />
+  </wsdl:message>
+  <wsdl:message name="GetResumenSoapOut">
+    <wsdl:part name="parameters" element="s0:GetResumenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsuarioValidacionSoapIn">
+    <wsdl:part name="parameters" element="s0:GetUsuarioValidacion" />
+  </wsdl:message>
+  <wsdl:message name="GetUsuarioValidacionSoapOut">
+    <wsdl:part name="parameters" element="s0:GetUsuarioValidacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetHorarioGrillaSoapIn">
+    <wsdl:part name="parameters" element="s0:SetHorarioGrilla" />
+  </wsdl:message>
+  <wsdl:message name="SetHorarioGrillaSoapOut">
+    <wsdl:part name="parameters" element="s0:SetHorarioGrillaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetHorariosDisponibilidadSoapIn">
+    <wsdl:part name="parameters" element="s0:SetHorariosDisponibilidad" />
+  </wsdl:message>
+  <wsdl:message name="SetHorariosDisponibilidadSoapOut">
+    <wsdl:part name="parameters" element="s0:SetHorariosDisponibilidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetReclamoSoapIn">
+    <wsdl:part name="parameters" element="s0:SetReclamo" />
+  </wsdl:message>
+  <wsdl:message name="SetReclamoSoapOut">
+    <wsdl:part name="parameters" element="s0:SetReclamoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetRespuestaSoapIn">
+    <wsdl:part name="parameters" element="s0:SetRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="SetRespuestaSoapOut">
+    <wsdl:part name="parameters" element="s0:SetRespuestaResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetRespuestaV2SoapIn">
+    <wsdl:part name="parameters" element="s0:SetRespuestaV2" />
+  </wsdl:message>
+  <wsdl:message name="SetRespuestaV2SoapOut">
+    <wsdl:part name="parameters" element="s0:SetRespuestaV2Response" />
+  </wsdl:message>
+  <wsdl:message name="ValidateMovilSoapIn">
+    <wsdl:part name="parameters" element="s0:ValidateMovil" />
+  </wsdl:message>
+  <wsdl:message name="ValidateMovilSoapOut">
+    <wsdl:part name="parameters" element="s0:ValidateMovilResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ContratadosLiquidacionesSoap">
+    <wsdl:operation name="DelHorarioGrilla">
+      <wsdl:input message="s0:DelHorarioGrillaSoapIn" />
+      <wsdl:output message="s0:DelHorarioGrillaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DelHorariosDisponibilidad">
+      <wsdl:input message="s0:DelHorariosDisponibilidadSoapIn" />
+      <wsdl:output message="s0:DelHorariosDisponibilidadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCoordinaciones">
+      <wsdl:input message="s0:GetCoordinacionesSoapIn" />
+      <wsdl:output message="s0:GetCoordinacionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEstadoReclamo">
+      <wsdl:input message="s0:GetEstadoReclamoSoapIn" />
+      <wsdl:output message="s0:GetEstadoReclamoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGrillaCoordinaciones">
+      <wsdl:input message="s0:GetGrillaCoordinacionesSoapIn" />
+      <wsdl:output message="s0:GetGrillaCoordinacionesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGrillaCoordinacionesHorarios">
+      <wsdl:input message="s0:GetGrillaCoordinacionesHorariosSoapIn" />
+      <wsdl:output message="s0:GetGrillaCoordinacionesHorariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuardiasDetalle">
+      <wsdl:input message="s0:GetGuardiasDetalleSoapIn" />
+      <wsdl:output message="s0:GetGuardiasDetalleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGuardiasPotenciales">
+      <wsdl:input message="s0:GetGuardiasPotencialesSoapIn" />
+      <wsdl:output message="s0:GetGuardiasPotencialesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHorarios">
+      <wsdl:input message="s0:GetHorariosSoapIn" />
+      <wsdl:output message="s0:GetHorariosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHorarios2">
+      <wsdl:input message="s0:GetHorarios2SoapIn" />
+      <wsdl:output message="s0:GetHorarios2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentes">
+      <wsdl:input message="s0:GetIncidentesSoapIn" />
+      <wsdl:output message="s0:GetIncidentesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMedicos">
+      <wsdl:input message="s0:GetMedicosSoapIn" />
+      <wsdl:output message="s0:GetMedicosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMotivosReclamo">
+      <wsdl:input message="s0:GetMotivosReclamoSoapIn" />
+      <wsdl:output message="s0:GetMotivosReclamoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResumen">
+      <wsdl:input message="s0:GetResumenSoapIn" />
+      <wsdl:output message="s0:GetResumenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuarioValidacion">
+      <wsdl:input message="s0:GetUsuarioValidacionSoapIn" />
+      <wsdl:output message="s0:GetUsuarioValidacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetHorarioGrilla">
+      <wsdl:input message="s0:SetHorarioGrillaSoapIn" />
+      <wsdl:output message="s0:SetHorarioGrillaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetHorariosDisponibilidad">
+      <wsdl:input message="s0:SetHorariosDisponibilidadSoapIn" />
+      <wsdl:output message="s0:SetHorariosDisponibilidadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetReclamo">
+      <wsdl:input message="s0:SetReclamoSoapIn" />
+      <wsdl:output message="s0:SetReclamoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetRespuesta">
+      <wsdl:input message="s0:SetRespuestaSoapIn" />
+      <wsdl:output message="s0:SetRespuestaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetRespuestaV2">
+      <wsdl:input message="s0:SetRespuestaV2SoapIn" />
+      <wsdl:output message="s0:SetRespuestaV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateMovil">
+      <wsdl:input message="s0:ValidateMovilSoapIn" />
+      <wsdl:output message="s0:ValidateMovilSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ContratadosLiquidacionesSoap" type="s0:ContratadosLiquidacionesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DelHorarioGrilla">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.DelHorarioGrilla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelHorariosDisponibilidad">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.DelHorariosDisponibilidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCoordinaciones">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.GetCoordinaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEstadoReclamo">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.GetEstadoReclamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGrillaCoordinaciones">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.GetGrillaCoordinaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGrillaCoordinacionesHorarios">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.GetGrillaCoordinacionesHorarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuardiasDetalle">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.GetGuardiasDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGuardiasPotenciales">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.GetGuardiasPotenciales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHorarios">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.GetHorarios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHorarios2">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.GetHorarios2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentes">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.GetIncidentes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMedicos">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.GetMedicos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMotivosReclamo">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.GetMotivosReclamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResumen">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.GetResumen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuarioValidacion">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.GetUsuarioValidacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetHorarioGrilla">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.SetHorarioGrilla" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetHorariosDisponibilidad">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.SetHorariosDisponibilidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetReclamo">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.SetReclamo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRespuesta">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.SetRespuesta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRespuestaV2">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.SetRespuestaV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateMovil">
+      <soap:operation soapAction="http://tempuri.org/WebServices.ContratadosLiquidaciones.ValidateMovil" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ContratadosLiquidaciones">
+    <wsdl:port name="ContratadosLiquidacionesSoap" binding="s0:ContratadosLiquidacionesSoap">
+      <soap:address location="http://remote.omnisaludsa.com.ar:57772/csp/shaman/WebServices.ContratadosLiquidaciones.cls" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

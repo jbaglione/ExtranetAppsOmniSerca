@@ -1,0 +1,56 @@
+﻿<div class="row">
+    <div class="col-md-6">
+        <table class="table table-striped" >
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col" ng-style="style.Descripcion"><i>Total Trabajado</i></th>
+                    <th scope="col" ng-style="style.HoraDia"><i>Horas/Dias</i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in data.resumen.Trabajado">
+                    <td scope="row" ng-style="style.Descripcion">
+                        <div>{{item.Descripcion}}</div>
+                    </td>
+                    <td ng-style="style.HoraDia">{{item.Valor}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-md-6">
+        <table class="table table-striped">
+            <thead class="thead-light">
+                <tr >
+                    <th scope="col" ng-style="style.Descripcion"><i>Esperado</i></th>
+                    <th scope="col" ng-style="style.HoraDia"><i>Horas/Dias</i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in data.resumen.Esperado">
+                    <td scope="row" ng-style="style.Descripcion">
+                        <div>{{item.Descripcion}}</div>
+                    </td>
+                    <td ng-style="style.HoraDia">{{item.Valor}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col" ng-style="style.Descripcion"><i>Incumplimientos</i></th>
+                    <th scope="col" ng-style="style.HoraDia"><i>Horas/Dias</i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in data.resumen.Incumplimientos">
+                    <td scope="row" ng-style="style.Descripcion">
+                        <div>{{item.Descripcion}}</div>
+                    </td>
+                    <td ng-style="style.HoraDia">{{item.Valor}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

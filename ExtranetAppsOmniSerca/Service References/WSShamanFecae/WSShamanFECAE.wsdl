@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetPDF_Cache">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pDocId" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="pUsrId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPDF_CacheResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPDF_CacheResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportsIncidente_Cache">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pInc" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="pUsrId" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReportsIncidente_CacheResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetReportsIncidente_CacheResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCuentaCorriene">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pUsr" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCuentaCorrieneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCuentaCorrieneResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCertificadoRetencion_Tango">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pNroOp" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pRetId" type="tns:Certificado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="Certificado">
+        <s:restriction base="s:string">
+          <s:enumeration value="crtArba" />
+          <s:enumeration value="crtAgip" />
+          <s:enumeration value="crtGanancias" />
+          <s:enumeration value="crtIVA" />
+          <s:enumeration value="crtCajaPrevisional" />
+          <s:enumeration value="crtContratoVenta" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetCertificadoRetencion_TangoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCertificadoRetencion_TangoResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContratoVenta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pClienteId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContratoVentaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContratoVentaResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetPDF_CacheSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPDF_Cache" />
+  </wsdl:message>
+  <wsdl:message name="GetPDF_CacheSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPDF_CacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReportsIncidente_CacheSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReportsIncidente_Cache" />
+  </wsdl:message>
+  <wsdl:message name="GetReportsIncidente_CacheSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReportsIncidente_CacheResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCuentaCorrieneSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCuentaCorriene" />
+  </wsdl:message>
+  <wsdl:message name="GetCuentaCorrieneSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCuentaCorrieneResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCertificadoRetencion_TangoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCertificadoRetencion_Tango" />
+  </wsdl:message>
+  <wsdl:message name="GetCertificadoRetencion_TangoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCertificadoRetencion_TangoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContratoVentaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContratoVenta" />
+  </wsdl:message>
+  <wsdl:message name="GetContratoVentaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContratoVentaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSShamanFECAESoap">
+    <wsdl:operation name="GetPDF_Cache">
+      <wsdl:input message="tns:GetPDF_CacheSoapIn" />
+      <wsdl:output message="tns:GetPDF_CacheSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsIncidente_Cache">
+      <wsdl:input message="tns:GetReportsIncidente_CacheSoapIn" />
+      <wsdl:output message="tns:GetReportsIncidente_CacheSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCuentaCorriene">
+      <wsdl:input message="tns:GetCuentaCorrieneSoapIn" />
+      <wsdl:output message="tns:GetCuentaCorrieneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCertificadoRetencion_Tango">
+      <wsdl:input message="tns:GetCertificadoRetencion_TangoSoapIn" />
+      <wsdl:output message="tns:GetCertificadoRetencion_TangoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContratoVenta">
+      <wsdl:input message="tns:GetContratoVentaSoapIn" />
+      <wsdl:output message="tns:GetContratoVentaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSShamanFECAESoap" type="tns:WSShamanFECAESoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPDF_Cache">
+      <soap:operation soapAction="http://tempuri.org/GetPDF_Cache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsIncidente_Cache">
+      <soap:operation soapAction="http://tempuri.org/GetReportsIncidente_Cache" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCuentaCorriene">
+      <soap:operation soapAction="http://tempuri.org/GetCuentaCorriene" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCertificadoRetencion_Tango">
+      <soap:operation soapAction="http://tempuri.org/GetCertificadoRetencion_Tango" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContratoVenta">
+      <soap:operation soapAction="http://tempuri.org/GetContratoVenta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSShamanFECAESoap12" type="tns:WSShamanFECAESoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPDF_Cache">
+      <soap12:operation soapAction="http://tempuri.org/GetPDF_Cache" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReportsIncidente_Cache">
+      <soap12:operation soapAction="http://tempuri.org/GetReportsIncidente_Cache" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCuentaCorriene">
+      <soap12:operation soapAction="http://tempuri.org/GetCuentaCorriene" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCertificadoRetencion_Tango">
+      <soap12:operation soapAction="http://tempuri.org/GetCertificadoRetencion_Tango" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContratoVenta">
+      <soap12:operation soapAction="http://tempuri.org/GetContratoVenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSShamanFECAE">
+    <wsdl:port name="WSShamanFECAESoap" binding="tns:WSShamanFECAESoap">
+      <soap:address location="http://remote.omnisaludsa.com.ar:59991/WSShamanFECAE.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSShamanFECAESoap12" binding="tns:WSShamanFECAESoap12">
+      <soap12:address location="http://remote.omnisaludsa.com.ar:59991/WSShamanFECAE.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

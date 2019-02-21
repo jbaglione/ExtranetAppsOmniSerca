@@ -1,0 +1,39 @@
+﻿<div class="modal fade" id="popupForgot" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-app="app">
+    <div class="modal-dialog" style="width:450px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-title">
+                    <span>
+                        <span style="font-size:18px;">Recuperar contraseña</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <div class="login-form padding20 block-shadow bg-grayLighter" style="padding: 1.25em 1.25em 4.85em 1.25em;">
+                    <div ng-show="errorForgot" class="alert alert-danger">{{errorForgot}}</div>
+                    <div ng-show="okForgot" class="alert alert-success">{{okForgot}}</div>
+                    <form name="forgotForm" ng-submit="enviarOlvido()" role="form" enctype="multipart/form-data">
+                        <div class="input-control text full-size" data-role="input">
+                            <br />
+                            <label for="usuario">Email:</label>
+                            <div class="inner-addon left-addon">
+                                <i class="glyphicon glyphicon-user" style="z-index: 100;"></i>
+                                <input type="text" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" name="email" id="email" ng-model="email" required>
+                                <span ng-show="forgotForm.email.$dirty && forgotForm.email.$error.required" class="help-block">El E-mail es requerido</span>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button ng-click="forgotPassword(email)" ng-disabled="forgotForm.$invalid" class="btn btn-primary place-right" style="margin-top: 20px; margin-bottom:20px;"><span class="glyphicon glyphicon-send"></span>  Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,50 @@
+﻿<div class="col-md-2">
+    <div class="alert alert-warning" style="padding: 4px;">
+        <div class="row">
+            <div class="col-md-4" style="line-height: 28px">
+                <strong>Periodo:</strong>
+            </div>
+            <div class="col-md-8">
+                <select style="width:100%" class="form-control" ng-model="filter.periodo" ng-change="PeriodoChange()">
+                    <option ng-repeat="periodo in data.periodos" value="{{periodo.Periodo}}">{{periodo.Descripcion}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-2"  ng-show="solapa=='liquidaciones'">
+    <div class="alert alert-warning" style="padding: 4px;">
+        <div class="row">
+            <div class="col-md-4" style="line-height: 28px">
+                <strong>Estado:</strong>
+            </div>
+            <div class="col-md-8">
+                <select style="width:100%" class="form-control" ng-model="filter.estado"  ng-change="EstadoChange()">
+                    <option ng-repeat="estado in data.estados" value="{{estado.ID}}">{{estado.Descripcion}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="alert alert-warning" style="padding: 4px;" ng-show="acceso==3">
+        <div class="row" ng-show="acceso==3">@*TODO: esAdmin=>esAdmin*@
+            <div class="col-md-3" style="line-height: 28px">
+                <strong>Empleado:</strong>
+            </div>
+            <div class="col-md-9">
+                <select style="width:100%" class="form-control" ng-model="filter.LiqId" ng-options="empleado.LiqId as empleado.Nombre for empleado in data.empleados"></select>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-3">
+    <div class="row">
+        <div class="col-md-6" style="padding: 8px;">
+            <button class="btn btn-default btn-primary btn-block" ng-click="GetData()"><span class="glyphicon glyphicon-filter" style="margin-right:10px;"></span>Consultar</button>
+        </div>
+        <div class="col-md-6" style="padding: 8px;">
+            <button class="btn btn-default btn-primary btn-block" ng-click="Reliquidar()" ng-show="acceso==3"><span class="glyphicon glyphicon-list" style="margin-right:10px;"></span>Reliquidar</button>
+        </div>
+    </div>
+</div>

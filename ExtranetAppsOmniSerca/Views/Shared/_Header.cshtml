@@ -1,0 +1,48 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="navbar-top-serca">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand title-serca" href="#"><img src="@Url.Content("~/content/img/serca.png")" id="logo-serca" style="height:40px;"/></a>
+            <p class="navbar-text title-serca" style="color:#357ebd">@ViewBag.Title</p>
+        </div>
+
+        <div class="navbar-collapse collapse">
+            <div class="navbar-text pull-right">
+                <span style="display:block">
+                    <i class="fa fa-user azul"></i>
+                    <span id="user-serca">@Session["UserName"]</span>
+                    <span id="icons-top-separator">
+                        |<span>
+                             <a title="Salir de extranet" class="btn btn-default btn-xs" id="navbar-top-logout" href="#"><span class="fa fa-power-off color-white"></span></a>
+                        </span>
+                    </span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#navbar-top-logout').click(function () { sessionStorage.currentUser = 'undefined'; location.href = '/login'; return false; });
+
+    var checkSessionStorage = function () {
+        if (sessionStorage.currentUser == undefined || sessionStorage.currentUser == 'undefined')
+            $window.location.href = '/login';
+        else
+            getSessionNet();
+    };
+
+    var getSessionNet = function () {
+        @*var usuarioExtranetId = '@Session["UsuarioExtranetId"]'; No se actualiza*@
+        $.getJSON("/login/GetSession", function (response) {
+            if (parseInt(response) <= 0) {
+                delete sessionStorage.currentUser;
+                window.location.href = '/login';
+            }
+        });
+    };
+</script>

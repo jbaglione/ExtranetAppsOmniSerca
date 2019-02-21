@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:s0="http://tempuri.org" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org">
+      <s:element name="GetBancos">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBancosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetBancosResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DataSet">
+        <s:sequence>
+          <s:element ref="s:schema" />
+          <s:any />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetClienteById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pCliID" type="s:long" />
+            <s:element minOccurs="0" name="pAcc" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClienteByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetClienteByIdResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pAcc" type="s:long" />
+            <s:element minOccurs="0" name="pVis" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetClientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetClientesResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCondicionesIva">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCondicionesIvaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetCondicionesIvaResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirma">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFirmaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetFirmaResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormasPago">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormasPagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetFormasPagoResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetProductosResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRubros">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRubrosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetRubrosResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSolicitudDigitalizada">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSolicitudDigitalizadaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetSolicitudDigitalizadaResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTarjetasCredito">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTarjetasCreditoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetTarjetasCreditoResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTiposCuentas">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTiposCuentasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetTiposCuentasResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsuarioValidacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsuarioValidacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetUsuarioValidacionResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVendedores">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVendedoresResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetVendedoresResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVendedoresV2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetVendedoresV2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetVendedoresV2Result" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetClienteActivo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pPotId" type="s:long" />
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetClienteActivoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="SetClienteActivoResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetClientePotencial">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pId" type="s:long" />
+            <s:element minOccurs="0" name="pCodCli" type="s:string" />
+            <s:element minOccurs="0" name="pTitRaz" type="s:string" />
+            <s:element minOccurs="0" name="pTitFan" type="s:string" />
+            <s:element minOccurs="0" name="pCuit" type="s:string" />
+            <s:element minOccurs="0" name="pActCli" type="s:long" />
+            <s:element minOccurs="0" name="pSitIva" type="s:string" />
+            <s:element minOccurs="0" name="pNroDoc" type="s:long" />
+            <s:element minOccurs="0" name="pFecIng" type="s:long" />
+            <s:element minOccurs="0" name="pFecVto" type="s:long" />
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pNroCto" type="s:string" />
+            <s:element minOccurs="0" name="pTitDm1" type="s:string" />
+            <s:element minOccurs="0" name="pTitDm2" type="s:long" />
+            <s:element minOccurs="0" name="pTitDm3" type="s:long" />
+            <s:element minOccurs="0" name="pTitDm4" type="s:string" />
+            <s:element minOccurs="0" name="pTitRef" type="s:string" />
+            <s:element minOccurs="0" name="pTitEt1" type="s:string" />
+            <s:element minOccurs="0" name="pTitEt2" type="s:string" />
+            <s:element minOccurs="0" name="pTitLat" type="s:string" />
+            <s:element minOccurs="0" name="pTitLon" type="s:string" />
+            <s:element minOccurs="0" name="pTitCP" type="s:string" />
+            <s:element minOccurs="0" name="pTitLoc" type="s:long" />
+            <s:element minOccurs="0" name="pTitTel" type="s:string" />
+            <s:element minOccurs="0" name="pccNom" type="s:string" />
+            <s:element minOccurs="0" name="pccCar" type="s:string" />
+            <s:element minOccurs="0" name="pccTel" type="s:string" />
+            <s:element minOccurs="0" name="pccMail" type="s:string" />
+            <s:element minOccurs="0" name="pccTel2" type="s:string" />
+            <s:element minOccurs="0" name="pccMail2" type="s:string" />
+            <s:element minOccurs="0" name="pFacDm1" type="s:string" />
+            <s:element minOccurs="0" name="pFacDm2" type="s:long" />
+            <s:element minOccurs="0" name="pFacDm3" type="s:long" />
+            <s:element minOccurs="0" name="pFacDm4" type="s:string" />
+            <s:element minOccurs="0" name="pFacRef" type="s:string" />
+            <s:element minOccurs="0" name="pFacEt1" type="s:string" />
+            <s:element minOccurs="0" name="pFacEt2" type="s:string" />
+            <s:element minOccurs="0" name="pFacLat" type="s:string" />
+            <s:element minOccurs="0" name="pFacLon" type="s:string" />
+            <s:element minOccurs="0" name="pFacCP" type="s:string" />
+            <s:element minOccurs="0" name="pFacLoc" type="s:long" />
+            <s:element minOccurs="0" name="pImpMen" type="s:decimal" />
+            <s:element minOccurs="0" name="pImpAdl" type="s:decimal" />
+            <s:element minOccurs="0" name="pPrxPag" type="s:long" />
+            <s:element minOccurs="0" name="pFpg" type="s:long" />
+            <s:element minOccurs="0" name="pTarId" type="s:string" />
+            <s:element minOccurs="0" name="pTarNro" type="s:string" />
+            <s:element minOccurs="0" name="pTarVto" type="s:long" />
+            <s:element minOccurs="0" name="pTarTit" type="s:string" />
+            <s:element minOccurs="0" name="pTarDoc" type="s:string" />
+            <s:element minOccurs="0" name="pCtaBco" type="s:string" />
+            <s:element minOccurs="0" name="pCtaTip" type="s:long" />
+            <s:element minOccurs="0" name="pCtaNro" type="s:string" />
+            <s:element minOccurs="0" name="pCtaRaz" type="s:string" />
+            <s:element minOccurs="0" name="pCtaCti" type="s:string" />
+            <s:element minOccurs="0" name="pCtaCbu" type="s:string" />
+            <s:element minOccurs="0" name="pDomLegCob" type="s:long" />
+            <s:element minOccurs="0" name="pPrep" type="s:long" />
+            <s:element minOccurs="0" name="pLisPro" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetClientePotencialResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="SetClientePotencialResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetFirma">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pId" type="s:long" />
+            <s:element minOccurs="0" name="pVal" type="s:string" />
+            <s:element minOccurs="0" name="pExt" type="s:string" />
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetFirmaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="SetFirmaResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateCUIT">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pCti" type="s:string" />
+            <s:element minOccurs="0" name="pCli" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateCUITResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="ValidateCUITResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetBancosSoapIn">
+    <wsdl:part name="parameters" element="s0:GetBancos" />
+  </wsdl:message>
+  <wsdl:message name="GetBancosSoapOut">
+    <wsdl:part name="parameters" element="s0:GetBancosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClienteByIdSoapIn">
+    <wsdl:part name="parameters" element="s0:GetClienteById" />
+  </wsdl:message>
+  <wsdl:message name="GetClienteByIdSoapOut">
+    <wsdl:part name="parameters" element="s0:GetClienteByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetClientesSoapIn">
+    <wsdl:part name="parameters" element="s0:GetClientes" />
+  </wsdl:message>
+  <wsdl:message name="GetClientesSoapOut">
+    <wsdl:part name="parameters" element="s0:GetClientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCondicionesIvaSoapIn">
+    <wsdl:part name="parameters" element="s0:GetCondicionesIva" />
+  </wsdl:message>
+  <wsdl:message name="GetCondicionesIvaSoapOut">
+    <wsdl:part name="parameters" element="s0:GetCondicionesIvaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFirmaSoapIn">
+    <wsdl:part name="parameters" element="s0:GetFirma" />
+  </wsdl:message>
+  <wsdl:message name="GetFirmaSoapOut">
+    <wsdl:part name="parameters" element="s0:GetFirmaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormasPagoSoapIn">
+    <wsdl:part name="parameters" element="s0:GetFormasPago" />
+  </wsdl:message>
+  <wsdl:message name="GetFormasPagoSoapOut">
+    <wsdl:part name="parameters" element="s0:GetFormasPagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductosSoapIn">
+    <wsdl:part name="parameters" element="s0:GetProductos" />
+  </wsdl:message>
+  <wsdl:message name="GetProductosSoapOut">
+    <wsdl:part name="parameters" element="s0:GetProductosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRubrosSoapIn">
+    <wsdl:part name="parameters" element="s0:GetRubros" />
+  </wsdl:message>
+  <wsdl:message name="GetRubrosSoapOut">
+    <wsdl:part name="parameters" element="s0:GetRubrosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSolicitudDigitalizadaSoapIn">
+    <wsdl:part name="parameters" element="s0:GetSolicitudDigitalizada" />
+  </wsdl:message>
+  <wsdl:message name="GetSolicitudDigitalizadaSoapOut">
+    <wsdl:part name="parameters" element="s0:GetSolicitudDigitalizadaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTarjetasCreditoSoapIn">
+    <wsdl:part name="parameters" element="s0:GetTarjetasCredito" />
+  </wsdl:message>
+  <wsdl:message name="GetTarjetasCreditoSoapOut">
+    <wsdl:part name="parameters" element="s0:GetTarjetasCreditoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTiposCuentasSoapIn">
+    <wsdl:part name="parameters" element="s0:GetTiposCuentas" />
+  </wsdl:message>
+  <wsdl:message name="GetTiposCuentasSoapOut">
+    <wsdl:part name="parameters" element="s0:GetTiposCuentasResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsuarioValidacionSoapIn">
+    <wsdl:part name="parameters" element="s0:GetUsuarioValidacion" />
+  </wsdl:message>
+  <wsdl:message name="GetUsuarioValidacionSoapOut">
+    <wsdl:part name="parameters" element="s0:GetUsuarioValidacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVendedoresSoapIn">
+    <wsdl:part name="parameters" element="s0:GetVendedores" />
+  </wsdl:message>
+  <wsdl:message name="GetVendedoresSoapOut">
+    <wsdl:part name="parameters" element="s0:GetVendedoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVendedoresV2SoapIn">
+    <wsdl:part name="parameters" element="s0:GetVendedoresV2" />
+  </wsdl:message>
+  <wsdl:message name="GetVendedoresV2SoapOut">
+    <wsdl:part name="parameters" element="s0:GetVendedoresV2Response" />
+  </wsdl:message>
+  <wsdl:message name="SetClienteActivoSoapIn">
+    <wsdl:part name="parameters" element="s0:SetClienteActivo" />
+  </wsdl:message>
+  <wsdl:message name="SetClienteActivoSoapOut">
+    <wsdl:part name="parameters" element="s0:SetClienteActivoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetClientePotencialSoapIn">
+    <wsdl:part name="parameters" element="s0:SetClientePotencial" />
+  </wsdl:message>
+  <wsdl:message name="SetClientePotencialSoapOut">
+    <wsdl:part name="parameters" element="s0:SetClientePotencialResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetFirmaSoapIn">
+    <wsdl:part name="parameters" element="s0:SetFirma" />
+  </wsdl:message>
+  <wsdl:message name="SetFirmaSoapOut">
+    <wsdl:part name="parameters" element="s0:SetFirmaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateCUITSoapIn">
+    <wsdl:part name="parameters" element="s0:ValidateCUIT" />
+  </wsdl:message>
+  <wsdl:message name="ValidateCUITSoapOut">
+    <wsdl:part name="parameters" element="s0:ValidateCUITResponse" />
+  </wsdl:message>
+  <wsdl:portType name="VendedoresSoap">
+    <wsdl:operation name="GetBancos">
+      <wsdl:input message="s0:GetBancosSoapIn" />
+      <wsdl:output message="s0:GetBancosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClienteById">
+      <wsdl:input message="s0:GetClienteByIdSoapIn" />
+      <wsdl:output message="s0:GetClienteByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientes">
+      <wsdl:input message="s0:GetClientesSoapIn" />
+      <wsdl:output message="s0:GetClientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCondicionesIva">
+      <wsdl:input message="s0:GetCondicionesIvaSoapIn" />
+      <wsdl:output message="s0:GetCondicionesIvaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFirma">
+      <wsdl:input message="s0:GetFirmaSoapIn" />
+      <wsdl:output message="s0:GetFirmaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormasPago">
+      <wsdl:input message="s0:GetFormasPagoSoapIn" />
+      <wsdl:output message="s0:GetFormasPagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductos">
+      <wsdl:input message="s0:GetProductosSoapIn" />
+      <wsdl:output message="s0:GetProductosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRubros">
+      <wsdl:input message="s0:GetRubrosSoapIn" />
+      <wsdl:output message="s0:GetRubrosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSolicitudDigitalizada">
+      <wsdl:input message="s0:GetSolicitudDigitalizadaSoapIn" />
+      <wsdl:output message="s0:GetSolicitudDigitalizadaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTarjetasCredito">
+      <wsdl:input message="s0:GetTarjetasCreditoSoapIn" />
+      <wsdl:output message="s0:GetTarjetasCreditoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposCuentas">
+      <wsdl:input message="s0:GetTiposCuentasSoapIn" />
+      <wsdl:output message="s0:GetTiposCuentasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuarioValidacion">
+      <wsdl:input message="s0:GetUsuarioValidacionSoapIn" />
+      <wsdl:output message="s0:GetUsuarioValidacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVendedores">
+      <wsdl:input message="s0:GetVendedoresSoapIn" />
+      <wsdl:output message="s0:GetVendedoresSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVendedoresV2">
+      <wsdl:input message="s0:GetVendedoresV2SoapIn" />
+      <wsdl:output message="s0:GetVendedoresV2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetClienteActivo">
+      <wsdl:input message="s0:SetClienteActivoSoapIn" />
+      <wsdl:output message="s0:SetClienteActivoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetClientePotencial">
+      <wsdl:input message="s0:SetClientePotencialSoapIn" />
+      <wsdl:output message="s0:SetClientePotencialSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetFirma">
+      <wsdl:input message="s0:SetFirmaSoapIn" />
+      <wsdl:output message="s0:SetFirmaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCUIT">
+      <wsdl:input message="s0:ValidateCUITSoapIn" />
+      <wsdl:output message="s0:ValidateCUITSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VendedoresSoap" type="s0:VendedoresSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetBancos">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Vendedores.GetBancos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClienteById">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Vendedores.GetClienteById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientes">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Vendedores.GetClientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCondicionesIva">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Vendedores.GetCondicionesIva" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFirma">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Vendedores.GetFirma" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormasPago">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Vendedores.GetFormasPago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductos">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Vendedores.GetProductos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRubros">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Vendedores.GetRubros" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSolicitudDigitalizada">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Vendedores.GetSolicitudDigitalizada" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTarjetasCredito">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Vendedores.GetTarjetasCredito" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTiposCuentas">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Vendedores.GetTiposCuentas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuarioValidacion">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Vendedores.GetUsuarioValidacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVendedores">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Vendedores.GetVendedores" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVendedoresV2">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Vendedores.GetVendedoresV2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetClienteActivo">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Vendedores.SetClienteActivo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetClientePotencial">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Vendedores.SetClientePotencial" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetFirma">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Vendedores.SetFirma" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCUIT">
+      <soap:operation soapAction="http://tempuri.org/WebServices.Vendedores.ValidateCUIT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Vendedores">
+    <wsdl:port name="VendedoresSoap" binding="s0:VendedoresSoap">
+      <soap:address location="http://remote.omnisaludsa.com.ar:57772/csp/DESA/WebServices.Vendedores.cls" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

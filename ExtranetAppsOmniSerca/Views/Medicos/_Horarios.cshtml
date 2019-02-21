@@ -1,0 +1,169 @@
+﻿
+<div style="margin-top: -10px; margin-bottom: 10px; display: -webkit-box">
+    <div id="ftrCoordinacion" style="margin-right:5px"></div>
+    <input type="button" value="Consultar" id='btnHorarioCoordinacionConsultar' />
+    <input type="button" value="Semana Ant." id='btnHorarioCoordinacionAnterior' />
+    <input type="button" value="Semana Sig." id='btnHorarioCoordinacionSiguiente' />
+</div>
+
+
+<div class="row" style="height: 360px">
+    <div class="col-md-12 " style="margin-top: -5px">
+        <div id="grdHorarioCoordinacion"></div>
+    </div>
+</div>
+<div id='Menu'>
+    <ul>
+        <li>Borrar</li>
+    </ul>
+</div>
+
+<div class="modal fade" id="popupEditarHorario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-title">
+                    <span>
+                        <i class="fa fa-search big-icon naranja"></i>
+                        <span id="titlePopupGuardias" style="font-size:18px;margin-left:5px">Modificar horario</span>
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="popupCHId" value="0" />
+                <input type="hidden" id="popupCHPersonalId" value="0" />
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label for="">Fecha</label>
+                        <input type="text" id="popupCHFecha" class="form-control" readonly />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label for="popupCHEntrada">Entrada</label>
+                        <div id="popupCHEntrada" class="popupGrdHorario" name="Entrada"></div>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="popupCHSalida">Salida</label>
+                        <div id="popupCHSalida" class="popupGrdHorario" name="Salida"></div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="">Fecha</label>
+                        <input type="text" id="popupCHFechaSalida" class="form-control" readonly />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label for="popupCHMovil">Movil</label>
+                        <input type="text" id="popupCHMovil" class="form-control" />
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="">&nbsp;</label>
+                        <input type="text" id="popupCHMovilDescripcion" class="form-control" readonly />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="btn-group btn-group-lg" role="group">
+                            <button type="button" class="btn btn-default" style="width:127px;" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary" style="width:127px;" id="popupCHok">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="popupBorrarHorario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-title">
+                    <span>
+                        <i class="fa fa-search big-icon naranja"></i>
+                        <span id="titlePopupGuardias" style="font-size:18px;margin-left:5px">Eliminar horario</span>
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="popupBCHId" value="0" />
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label for="">Fecha</label>
+                        <input type="text" id="popupBCHFecha" class="form-control" readonly />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label for="popupCHEntrada">Entrada</label>
+                        <input type="text" id="popupBCHEntrada" class="form-control" readonly />
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label for="popupCHSalida">Salida</label>
+                        <input type="text" id="popupBCHSalida" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="">Fecha</label>
+                        <input type="text" id="popupBCHFechaSalida" class="form-control" readonly />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label for="popupCHMovil">Movil</label>
+                        <input type="text" id="popupBCHMovil" class="form-control" readonly />
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="">&nbsp;</label>
+                        <input type="text" id="popupCHFechaSalida" class="form-control" readonly />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="btn-group btn-group-lg" role="group">
+                            <button type="button" class="btn btn-default" style="width:127px;" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary" style="width:127px;" id="popupBCHok">Confirmar</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="popupHorarioNotAllowed" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-title">
+                    <span>
+                        <i class="fa fa-times-circle big-icon naranja"></i>
+                        <span id="titlePopupGuardias" style="font-size:18px;margin-left:5px">Operacion no permitida</span>
+                    </span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="alert alert-warning" role="alert">
+                            Solo se pueden editar/agregar días posteriores a la fecha actual
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <button type="button" class="btn btn-default" style="width:127px;" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

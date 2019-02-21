@@ -1,0 +1,123 @@
+﻿<div class="modal fade" id="popupRevisarGuardias" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-title">
+                    <span>
+                        <i class="fa fa-search big-icon naranja"></i>
+                        <span id="titlePopupGuardias" style="font-size:18px;margin-left:5px"></span>
+                    </span>                                        
+                </div>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="Medicos/SetReclamoGuardia" id="formSetReclamo">
+                    <input type="hidden" name="GuardiaID" id="GuardiaID" />
+                    <div class="row row-show-grid">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-check-circle big-icon icon-right-margin verde"></i>
+                                    <input type="radio" name="Conforme" value="1">
+                                </span>
+                                <input type="text" readonly class="form-control" value="ESTOY CONFORME" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="fa fa-times-circle big-icon icon-right-margin rojo"></i>
+                                    <input type="radio" name="Conforme" value="0">
+                                </span>
+                                <input type="text" readonly class="form-control" value="NO ESTOY CONFORME" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="popupGrdContNoConforme">
+                        <hr />
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="ftrMotivoReclamoGuardias">Seleccione Motivo:</label>
+                                <div id="ftrMotivoReclamoGuardias" name="MotivoId"></div>
+                            </div>
+                            <div id="horariosGuardia">
+                                <div class="form-group col-md-3">
+                                    <label for="popupGrdEntrada">Su entrada</label>
+                                    <div id="popupGrdEntrada" class="popupGrdHorario" name="Entrada"></div>
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label for="popupGrdSalida">Su salida</label>
+                                    <div id="popupGrdSalida" class="popupGrdHorario" name="Salida"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row row-show-grid">
+                            <div class="form-group col-md-12">
+                                <label for="popupGrdObservaciones">Observaciones:</label>
+                                <textarea id="popupGrdObservaciones" class="form-control" name="Reclamo" maxlength="250"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row" id="rowEstadoForMedico" style="display:none">
+                            <div class="col-md-12">
+                                <div class="alert fade in" id="alertRowEstadoForMedico">
+                                    <strong id="txtRowEstadoForMedico"></strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row row-show-grid" id="rowResolucionForAdmin" style="display:none">
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-exclamation-circle big-icon icon-right-margin amarillo"></i>
+                                        <input type="radio" name="Estado" value="0" checked>
+                                    </span>
+                                    <input type="text" readonly class="form-control" value="Pendiente" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-check-circle big-icon icon-right-margin azul"></i>
+                                        <input type="radio" name="Estado" value="1">
+                                    </span>
+                                    <input type="text" readonly class="form-control" value="Aceptado" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="fa fa-times-circle big-icon icon-right-margin naranja"></i>
+                                        <input type="radio" name="Estado" value="2">
+                                    </span>
+                                    <input type="text" readonly class="form-control" value="Rechazado" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="popupGrdRespuesta">Respuesta recibida:</label>
+                                <textarea id="popupGrdRespuesta" class="form-control" name="Respuesta"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="btn-group col-md-offset-4">
+                            <button type="button" class="btn btn-default btn-lg" data-dismiss="modal">Cerrar</button>
+                            <input type="submit" id="btnGuardarReclamoGuardia" class="btn btn-primary btn-lg">
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+

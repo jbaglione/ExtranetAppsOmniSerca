@@ -1,0 +1,43 @@
+﻿<div class="container">
+    <row>
+        <header class="margin20 no-margin-left no-margin-right" style="background-color: #c0c4c7;">
+            <div class="clear-float" style="padding: 1em; margin-top: -45px;">
+                <a class="place-left" href="#" style="margin-top: 16px;">
+                    @*ng-style="(mostrarAcciones) ? 'margin-top: 3.5em;' : 'margin-top: 0;'">*@
+                    <img src="~/Content/img/serca.png" alt="Logo Serca">
+                </a>
+                @if (System.Configuration.ConfigurationManager.AppSettings["SiteLocation"] == "Salta")
+                {
+                    <h1 class="fg-grayLight" id="titleHeaderNOA">NOA Serca Extranet</h1>
+                }
+                else if (System.Configuration.ConfigurationManager.AppSettings["SiteLocation"] == "Cordoba")
+                {
+                    <h1 class="fg-grayLight" id="titleHeader">Serca Extranet Cba</h1>
+                }
+                else
+                {
+                    <h1 class="fg-grayLight" id="titleHeader">Serca Extranet</h1>
+                }
+                
+                <div class="place-right" ng-show="!mostrarAcciones">
+                    <img src="~/Content/img/ambulancia.png" alt="Ambulancia Serca" style="position: absolute; margin-top: -8.1em; margin-left: -15em; z-index: 1000;" id="ambulancia-serca">
+                </div>
+                <div class="place-right" style="margin-top:-3.3em;" ng-show="mostrarAcciones">
+                    <div class="tile-area-controls">
+                        <button class="image-button icon-right bg-transparent fg-white bg-darkCobalt bg-hover-dark no-border"><span class="sub-header no-margin text-light">{{mostrarAcciones.userfullname}}</span> <span class="icon mif-user"></span></button>
+                        @*<a href="https://www.yammer.com/serca.com.ar/" class="square-button bg-transparent fg-white bg-darkCobalt bg-hover-dark no-border" target="_blank"><img src="~/Content/img/yammer.png" alt="Yammer" /></a>*@
+                        <a href="javascript:void(0);" class="square-button bg-transparent fg-white bg-darkCobalt bg-hover-dark no-border dropdown-toggle">
+                            <span class="mif-cog" style="margin-left: 0.3em;"></span>
+                        </a>
+                        <ul class="d-menu place-right" data-role="dropdown" style="display: none;">
+                            <li><a href="#/changepass">Cambiar Contraseña</a></li>
+                            <li><a href="#/changesettings">Cambiar Preferencias</a></li>
+                        </ul>
+                        <a href="javascript:void(0);" ng-click="cerrarSesion()" class="square-button bg-transparent fg-white bg-darkCobalt bg-hover-dark no-border"><span class="mif-switch"></span></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </row>
+</div>
+

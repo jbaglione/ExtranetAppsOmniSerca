@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:s0="http://tempuri.org" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org">
+      <s:element name="GetAsistencia">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pLiqId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAsistenciaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetAsistenciaResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DataSet">
+        <s:sequence>
+          <s:element ref="s:schema" />
+          <s:any />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetConformidad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pItmLiq" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetConformidadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetConformidadResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpresas">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pAcc" type="s:long" />
+            <s:element minOccurs="0" name="pPer" type="s:long" />
+            <s:element minOccurs="0" name="pEst" type="s:long" />
+            <s:element minOccurs="0" name="pTip" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmpresasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetEmpresasResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIncidenteCalculo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pLiqId" type="s:long" />
+            <s:element minOccurs="0" name="pInc" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIncidenteCalculoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetIncidenteCalculoResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIncidenteDetalle">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pItmLiq" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIncidenteDetalleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetIncidenteDetalleResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIncidentes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pLiqId" type="s:long" />
+            <s:element minOccurs="0" name="pPer" type="s:long" />
+            <s:element minOccurs="0" name="pDia" type="s:long" />
+            <s:element minOccurs="0" name="pEst" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIncidentesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetIncidentesResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMotivosReclamos">
+        <s:complexType>
+          <s:sequence />
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMotivosReclamosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetMotivosReclamosResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMoviles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pAcc" type="s:long" />
+            <s:element minOccurs="0" name="pPer" type="s:long" />
+            <s:element minOccurs="0" name="pEst" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMovilesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetMovilesResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResumen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pLiqId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResumenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetResumenResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResumenInsumos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pLiqId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResumenInsumosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetResumenInsumosResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResumenOtrosDescuentos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pLiqId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResumenOtrosDescuentosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetResumenOtrosDescuentosResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResumenPremios">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pLiqMovId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResumenPremiosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetResumenPremiosResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResumenProductividad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pLiqMovId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetResumenProductividadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetResumenProductividadResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsuarioValidacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pEmp" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsuarioValidacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetUsuarioValidacionResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Reliquidar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pLiqId" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReliquidarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="ReliquidarResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetConformidad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pLiqId" type="s:long" />
+            <s:element minOccurs="0" name="pFec" type="s:long" />
+            <s:element minOccurs="0" name="pNro" type="s:string" />
+            <s:element minOccurs="0" name="pRpl" type="s:long" />
+            <s:element minOccurs="0" name="pCnf" type="s:long" />
+            <s:element minOccurs="0" name="pMot" type="s:long" />
+            <s:element minOccurs="0" name="pDif" type="s:decimal" />
+            <s:element minOccurs="0" name="pLiq" type="s:decimal" />
+            <s:element minOccurs="0" name="pNue" type="s:decimal" />
+            <s:element minOccurs="0" name="pObs" type="s:string" />
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetConformidadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="SetConformidadResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetOrdenServicio">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pLiqId" type="s:long" />
+            <s:element minOccurs="0" name="pInc" type="s:long" />
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetOrdenServicioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="SetOrdenServicioResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetRespuesta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pLiqId" type="s:long" />
+            <s:element minOccurs="0" name="pFec" type="s:long" />
+            <s:element minOccurs="0" name="pNro" type="s:string" />
+            <s:element minOccurs="0" name="pSta" type="s:long" />
+            <s:element minOccurs="0" name="pRta" type="s:string" />
+            <s:element minOccurs="0" name="pUsr" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetRespuestaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="SetRespuestaResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAsistenciaSoapIn">
+    <wsdl:part name="parameters" element="s0:GetAsistencia" />
+  </wsdl:message>
+  <wsdl:message name="GetAsistenciaSoapOut">
+    <wsdl:part name="parameters" element="s0:GetAsistenciaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetConformidadSoapIn">
+    <wsdl:part name="parameters" element="s0:GetConformidad" />
+  </wsdl:message>
+  <wsdl:message name="GetConformidadSoapOut">
+    <wsdl:part name="parameters" element="s0:GetConformidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpresasSoapIn">
+    <wsdl:part name="parameters" element="s0:GetEmpresas" />
+  </wsdl:message>
+  <wsdl:message name="GetEmpresasSoapOut">
+    <wsdl:part name="parameters" element="s0:GetEmpresasResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIncidenteCalculoSoapIn">
+    <wsdl:part name="parameters" element="s0:GetIncidenteCalculo" />
+  </wsdl:message>
+  <wsdl:message name="GetIncidenteCalculoSoapOut">
+    <wsdl:part name="parameters" element="s0:GetIncidenteCalculoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIncidenteDetalleSoapIn">
+    <wsdl:part name="parameters" element="s0:GetIncidenteDetalle" />
+  </wsdl:message>
+  <wsdl:message name="GetIncidenteDetalleSoapOut">
+    <wsdl:part name="parameters" element="s0:GetIncidenteDetalleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIncidentesSoapIn">
+    <wsdl:part name="parameters" element="s0:GetIncidentes" />
+  </wsdl:message>
+  <wsdl:message name="GetIncidentesSoapOut">
+    <wsdl:part name="parameters" element="s0:GetIncidentesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMotivosReclamosSoapIn">
+    <wsdl:part name="parameters" element="s0:GetMotivosReclamos" />
+  </wsdl:message>
+  <wsdl:message name="GetMotivosReclamosSoapOut">
+    <wsdl:part name="parameters" element="s0:GetMotivosReclamosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMovilesSoapIn">
+    <wsdl:part name="parameters" element="s0:GetMoviles" />
+  </wsdl:message>
+  <wsdl:message name="GetMovilesSoapOut">
+    <wsdl:part name="parameters" element="s0:GetMovilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResumenSoapIn">
+    <wsdl:part name="parameters" element="s0:GetResumen" />
+  </wsdl:message>
+  <wsdl:message name="GetResumenSoapOut">
+    <wsdl:part name="parameters" element="s0:GetResumenResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResumenInsumosSoapIn">
+    <wsdl:part name="parameters" element="s0:GetResumenInsumos" />
+  </wsdl:message>
+  <wsdl:message name="GetResumenInsumosSoapOut">
+    <wsdl:part name="parameters" element="s0:GetResumenInsumosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResumenOtrosDescuentosSoapIn">
+    <wsdl:part name="parameters" element="s0:GetResumenOtrosDescuentos" />
+  </wsdl:message>
+  <wsdl:message name="GetResumenOtrosDescuentosSoapOut">
+    <wsdl:part name="parameters" element="s0:GetResumenOtrosDescuentosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResumenPremiosSoapIn">
+    <wsdl:part name="parameters" element="s0:GetResumenPremios" />
+  </wsdl:message>
+  <wsdl:message name="GetResumenPremiosSoapOut">
+    <wsdl:part name="parameters" element="s0:GetResumenPremiosResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetResumenProductividadSoapIn">
+    <wsdl:part name="parameters" element="s0:GetResumenProductividad" />
+  </wsdl:message>
+  <wsdl:message name="GetResumenProductividadSoapOut">
+    <wsdl:part name="parameters" element="s0:GetResumenProductividadResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsuarioValidacionSoapIn">
+    <wsdl:part name="parameters" element="s0:GetUsuarioValidacion" />
+  </wsdl:message>
+  <wsdl:message name="GetUsuarioValidacionSoapOut">
+    <wsdl:part name="parameters" element="s0:GetUsuarioValidacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReliquidarSoapIn">
+    <wsdl:part name="parameters" element="s0:Reliquidar" />
+  </wsdl:message>
+  <wsdl:message name="ReliquidarSoapOut">
+    <wsdl:part name="parameters" element="s0:ReliquidarResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetConformidadSoapIn">
+    <wsdl:part name="parameters" element="s0:SetConformidad" />
+  </wsdl:message>
+  <wsdl:message name="SetConformidadSoapOut">
+    <wsdl:part name="parameters" element="s0:SetConformidadResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetOrdenServicioSoapIn">
+    <wsdl:part name="parameters" element="s0:SetOrdenServicio" />
+  </wsdl:message>
+  <wsdl:message name="SetOrdenServicioSoapOut">
+    <wsdl:part name="parameters" element="s0:SetOrdenServicioResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetRespuestaSoapIn">
+    <wsdl:part name="parameters" element="s0:SetRespuesta" />
+  </wsdl:message>
+  <wsdl:message name="SetRespuestaSoapOut">
+    <wsdl:part name="parameters" element="s0:SetRespuestaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TercerosLiquidacionesSoap">
+    <wsdl:operation name="GetAsistencia">
+      <wsdl:input message="s0:GetAsistenciaSoapIn" />
+      <wsdl:output message="s0:GetAsistenciaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConformidad">
+      <wsdl:input message="s0:GetConformidadSoapIn" />
+      <wsdl:output message="s0:GetConformidadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpresas">
+      <wsdl:input message="s0:GetEmpresasSoapIn" />
+      <wsdl:output message="s0:GetEmpresasSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidenteCalculo">
+      <wsdl:input message="s0:GetIncidenteCalculoSoapIn" />
+      <wsdl:output message="s0:GetIncidenteCalculoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidenteDetalle">
+      <wsdl:input message="s0:GetIncidenteDetalleSoapIn" />
+      <wsdl:output message="s0:GetIncidenteDetalleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentes">
+      <wsdl:input message="s0:GetIncidentesSoapIn" />
+      <wsdl:output message="s0:GetIncidentesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMotivosReclamos">
+      <wsdl:input message="s0:GetMotivosReclamosSoapIn" />
+      <wsdl:output message="s0:GetMotivosReclamosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMoviles">
+      <wsdl:input message="s0:GetMovilesSoapIn" />
+      <wsdl:output message="s0:GetMovilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResumen">
+      <wsdl:input message="s0:GetResumenSoapIn" />
+      <wsdl:output message="s0:GetResumenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResumenInsumos">
+      <wsdl:input message="s0:GetResumenInsumosSoapIn" />
+      <wsdl:output message="s0:GetResumenInsumosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResumenOtrosDescuentos">
+      <wsdl:input message="s0:GetResumenOtrosDescuentosSoapIn" />
+      <wsdl:output message="s0:GetResumenOtrosDescuentosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResumenPremios">
+      <wsdl:input message="s0:GetResumenPremiosSoapIn" />
+      <wsdl:output message="s0:GetResumenPremiosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResumenProductividad">
+      <wsdl:input message="s0:GetResumenProductividadSoapIn" />
+      <wsdl:output message="s0:GetResumenProductividadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuarioValidacion">
+      <wsdl:input message="s0:GetUsuarioValidacionSoapIn" />
+      <wsdl:output message="s0:GetUsuarioValidacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Reliquidar">
+      <wsdl:input message="s0:ReliquidarSoapIn" />
+      <wsdl:output message="s0:ReliquidarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetConformidad">
+      <wsdl:input message="s0:SetConformidadSoapIn" />
+      <wsdl:output message="s0:SetConformidadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetOrdenServicio">
+      <wsdl:input message="s0:SetOrdenServicioSoapIn" />
+      <wsdl:output message="s0:SetOrdenServicioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetRespuesta">
+      <wsdl:input message="s0:SetRespuestaSoapIn" />
+      <wsdl:output message="s0:SetRespuestaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TercerosLiquidacionesSoap" type="s0:TercerosLiquidacionesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAsistencia">
+      <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.GetAsistencia" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetConformidad">
+      <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.GetConformidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmpresas">
+      <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.GetEmpresas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidenteCalculo">
+      <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.GetIncidenteCalculo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidenteDetalle">
+      <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.GetIncidenteDetalle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIncidentes">
+      <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.GetIncidentes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMotivosReclamos">
+      <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.GetMotivosReclamos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMoviles">
+      <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.GetMoviles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResumen">
+      <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.GetResumen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResumenInsumos">
+      <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.GetResumenInsumos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResumenOtrosDescuentos">
+      <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.GetResumenOtrosDescuentos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResumenPremios">
+      <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.GetResumenPremios" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResumenProductividad">
+      <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.GetResumenProductividad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsuarioValidacion">
+      <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.GetUsuarioValidacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Reliquidar">
+      <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.Reliquidar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetConformidad">
+      <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.SetConformidad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetOrdenServicio">
+      <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.SetOrdenServicio" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetRespuesta">
+      <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.SetRespuesta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TercerosLiquidaciones">
+    <wsdl:port name="TercerosLiquidacionesSoap" binding="s0:TercerosLiquidacionesSoap">
+      <soap:address location="http://remote.omnisaludsa.com.ar:57772/csp/shaman/WebServices.TercerosLiquidaciones.cls" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

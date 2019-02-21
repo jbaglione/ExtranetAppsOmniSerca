@@ -1,0 +1,33 @@
+﻿<div class="row" ng-show="acceso == 3">
+    <div class="col-md-4">
+        <div class="alert alert-warning" style="padding: 4px; height: 46px;">
+            <div>
+                <div class="col-md-3" style="line-height: 28px">
+                    <strong>Proveedor:</strong>
+                </div>
+                <div class="col-md-9">
+                    <select style="width:100%" class="form-control" ng-model="filter.UsuarioId" ng-options="proveedor.UsuarioId as proveedor.NombreProveedor for proveedor in data.proveedores"></select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <button class="btn btn-default btn-primary btn-block" ng-click="$ctrl.GetData()" style="margin-top:5px;"><span class="glyphicon glyphicon-filter" style="margin-right:10px;"></span>Consultar</button>
+    </div>
+</div>
+
+<jqx-grid id="gridCuentas" jqx-instance="$ctrl.grid" jqx-settings="$ctrl.settings"></jqx-grid>
+<!--
+<div id="treeGrid"></div>
+<jqx-tree-grid jqx-settings="treeGridSettings"></jqx-tree-grid>
+<jqx-tree-grid jqx-settings="$ctrl.treeGridSettings"></jqx-tree-grid>
+-->
+<div class="row" style="margin-top:10px;text-align: center;" ng-show="$ctrl.facturasAdeudadas == 1">
+    <b>Usted adeuda {{$ctrl.facturasAdeudadas}} factura.</b>
+</div>
+<div class="row" style="margin-top:10px;text-align: center;" ng-show="$ctrl.facturasAdeudadas > 1">
+    <b>Usted adeuda {{$ctrl.facturasAdeudadas}} facturas.</b>
+</div>
+<div class="row" style="margin-top:10px;text-align: center;" ng-show="FacturaSinOP == 1">
+    <b>Para subir una factura sin orden de pago haga click <a ng-click="$ctrl.nueva()">aqui</a></b>
+</div>

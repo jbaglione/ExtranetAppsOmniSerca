@@ -1,0 +1,50 @@
+﻿<div ng-controller="afiliacionesCtrl" class="row" id="displayTabs">
+
+    <div class="row" style="padding:25px;">
+        <div class="col-md-12">
+            <div class="tab-content">
+                <div class="row" style="padding-top: 10px;">
+                    @Html.Partial("_Filter")
+                    @Html.Partial("../Mapa/_Mapa")
+                </div>
+                <div class="row">
+                    <div class="col-md-10" id="divClientesPotenciales" style="margin-top: 20px !important; padding-right: 15px;">
+                        @Html.Partial("_Clientes")
+                    </div>
+                    <div class="col-md-2">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item active" style="margin-top: 20px !important">Instrucciones de uso</a>
+                            <a href="#" class="list-group-item"><span class="fa fa-check-circle-o verde icon-right-margin big-icon "></span>Activo</a>
+                            <a href="#" class="list-group-item"><span class="fa fa-exclamation-circle amarillo icon-right-margin big-icon "></span>Potencial</a>
+                            <a href="#" class="list-group-item"><span class="fa fa-check-circle-o  azul icon-right-margin big-icon "></span>Listo para afiliar</a>
+                            <a href="#" class="list-group-item"><span class="fa fa-times-circle-o rojo icon-right-margin big-icon "></span>Inactivo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" style="padding: 30px;">
+            <h6>
+                La información a la que Ud. tiene acceso es confidencial y está dirigida solamente a las personas que posee el usuario y contraseña correspondiente para el ingreso al sistema.
+                Dicha información solo debe ser considerada a título informativo.
+                Todo acceso no autorizado, uso, reproducción, o divulgación está prohibido.
+                SERCA no asumirá responsabilidad ni obligación legal alguna por cualquier información incorrecta o alterada contenida en el sistema.
+            </h6>
+        </div>
+    </div>
+</div>
+
+@*<style>
+    ul.list-group:after {
+        clear: both;
+        display: block;
+        content: "";
+    }
+
+    .list-group-item {
+        float: left;
+        border: 0px;
+    }
+</style>*@

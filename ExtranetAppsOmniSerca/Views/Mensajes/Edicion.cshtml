@@ -1,0 +1,217 @@
+﻿<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+@model ExtranetAppsOmniSerca.Models.Notificacion
+<div class="row">
+
+    @if (@Session["page"] != null && @Session["page"].ToString() == "EmpleadosLiquidaciones")
+    {
+        <div class="col-md-2" style="padding-left: 45px;">
+            <label>Gerencia:</label>
+        </div>
+    }
+    else
+    {
+        <div class="col-md-2" style="padding-left: 50px;">
+            <label>Grupo:</label>
+        </div>
+    }
+
+    <div class="col-md-6">
+        <div id="grupos"></div>
+    </div>
+    <div class="col-md-4">
+        @if (Model.Mail && Model.Id > 0)
+        {
+            <input type="checkbox" class="form-control" id="mail" value="true" style="margin-top:0px;width: 20px;display: inline-block;" checked disabled />
+        }
+        else if (Model.Mail && Model.Id == 0)
+        {
+            <input type="checkbox" class="form-control" id="mail" value="true" style="margin-top:0px;width: 20px;display: inline-block;" checked />
+        }
+        else
+        {
+            <input type="checkbox" class="form-control" id="mail" value="true" style="margin-top:0px;width: 20px;display: inline-block;" />
+        }
+        <label style="padding-left: 5px;">E-Mail</label>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-5" style="text-align:center;">
+        <label>Usuarios:</label>
+    </div>
+    <div class="col-md-2"></div>
+    <div class="col-md-5" style="text-align:center;">
+        <label>Seleccionados:</label>
+    </div>
+</div>
+<div class="row" style="margin-bottom: 5px;">
+    <div class="col-md-5">
+        <div id="usuarios"></div>
+    </div>
+    <div class="col-md-2" style="text-align: center;">
+        @if (Model.Mail && Model.Id > 0)
+        {
+        <button id="btn1" class="btn btn-default fa fa-angle-double-right" style="width: 100%;" disabled></button>
+        <button id="btn2" class="btn btn-default fa fa-angle-right" style="width: 100%;" disabled></button>
+        <button id="btn3" class="btn btn-default fa fa-angle-left" style="width: 100%;" disabled></button>
+        <button id="btn4" class="btn btn-default fa fa-angle-double-left" style="width: 100%;" disabled></button>
+        }
+        else
+        {
+            <button id="btn1" class="btn btn-default fa fa-angle-double-right" style="width: 100%;"></button>
+            <button id="btn2" class="btn btn-default fa fa-angle-right" style="width: 100%;"></button>
+            <button id="btn3" class="btn btn-default fa fa-angle-left" style="width: 100%;"></button>
+            <button id="btn4" class="btn btn-default fa fa-angle-double-left" style="width: 100%;"></button>
+        }
+
+    </div>
+    <div class="col-md-5">
+        <div id="seleccionado"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <label>Mensaje:</label>
+    </div>
+</div>
+<div class="row">
+    <div class="form-group col-md-12">
+        <div class="input-group">
+            @Html.TextAreaFor(m => m.Mensaje, new { rows = "8", style = "resize:none;width:400px;", placeholder = Html.DisplayNameFor(m => m.Mensaje), @class = "form-control input-lg textarea-editor" })
+        </div>
+    </div>
+</div>
+@if (Model.Id > 0 && Model.Mail)
+{
+    <div class="row form-group" style="text-align: center;">
+        <label>
+            El mail ya se ha enviado anteriormente, las modificaciones realizadas NO serán enviadas.
+        </label>
+    </div>
+}
+<div class="row">
+    <div class="col-md-6 col-md-offset-3" style="text-align: center;">
+        <div class="btn-group btn-group-lg" role="group">
+            <button type="button" class="btn btn-default" style="width:127px;" data-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary" style="width:127px;" id="popupMensajeEdicionok">Guardar</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        var data = [{ID: '' ,descripcion: 'Seleccionar...' }];
+        $("#seleccionado").jqxListBox({ width: 288, height: 150 });
+        @foreach (var r in Model.Grupos)
+        {
+			@:data.push({ID: @r.Id ,descripcion: '@r.Descripcion' });
+                                                                                        }
+
+        debugger;
+
+        var cerrado = ('@Model.Mail'=== 'true' || '@Model.Mail' === "True") && @Model.Id > 0;
+
+        if(false){//!cerrado){
+            @foreach (var r in Model.UsuarioList)
+            {
+                @:$("#seleccionado").jqxListBox('addItem', {value:'@r.Id', label:'@r.Nombre'});
+                                                                                                                        }
+        }
+        else
+        {
+            var dataSeleccionado = new Array();
+            var i = 0;
+            @foreach (var item in Model.UsuarioList) {
+                <text>
+            var row = {};
+            row["value"] = '@item.Id';
+            row["label"] = '@item.Nombre';
+            row["MailOpen"] = @item.MailOpen;
+            row["AppOpen"] = @item.AppOpen;
+            dataSeleccionado[i] = row;
+            i++;
+            </text>
+            }
+            var source =
+            {
+                localdata: dataSeleccionado,
+                datatype: "array"
+            };
+            var dataAdapterSeleccionado = new $.jqx.dataAdapter(source);
+
+            // Create jqxListBox
+            $('#seleccionado').jqxListBox({ selectedIndex: 0,  source: dataAdapterSeleccionado, valueMember: "value", displayMember: "label", itemHeight: 25, width: 288, height: 150,
+                renderer: function (index, label, value) {
+                    var datarecord;
+                    debugger;
+                    datarecord = dataSeleccionado.find( us => us.value === value );
+                    if(!datarecord){
+                        //ver de agregarlo en dataSeleccionado
+                        datarecord = dataAdapter.loadedData.find( us2 => us2.Id === value );
+                        if(!datarecord) return;
+                        dataSeleccionado.push(datarecord);
+                        datarecord.label = datarecord.Nombre;
+                        datarecord.value = datarecord.Id;
+                    }
+                    var iconMailOpen;
+                    var iconAppOpen;
+                    var titleMailOpen;
+                    var titleAppOpen;
+
+                    if(datarecord.MailOpen === 1){
+                        iconMailOpen = "fa fa-envelope-open";
+                        titleMailOpen = "El email ya fue enviado a esta persona.";
+                    }
+                    else{
+                        iconMailOpen = "fa fa-envelope";
+                        titleMailOpen = "El email aun no se envio a esta persona.";
+                    }
+                    if(datarecord.AppOpen === 1){
+                        iconAppOpen = "fas fa-book-open";
+                        titleAppOpen = "El mensaje ya fue leido por esta persona en la aplicación.";
+                    }
+                    else{
+                        iconAppOpen = "fa fa-book";
+                        titleAppOpen = "El mensaje aun no fue leido por esta persona en la aplicación.";
+                    }
+
+                    var table = '<table attrmailopen="' + datarecord.MailOpen + '" attrappopen="' + datarecord.AppOpen + '" style="min-width: 270px;">' +
+                                    '<tr><td>' + datarecord.label + '</td>' +
+                                    '<td style="width: 20px;" title="'+ titleMailOpen + '"><i class="' + iconMailOpen + '"></i></td>' +
+                                    '<td style="width: 20px;" title="'+ titleAppOpen + '"><i class="' + iconAppOpen + '"></i></td></tr></table>';
+                    return table;
+                }
+            });
+        }
+        $("#grupos").jqxComboBox({
+            width: 350,
+            height: 25,
+            source: data,
+            selectedIndex: 0,
+            displayMember: "descripcion",
+            valueMember: "ID"
+        });
+        $("#usuarios").jqxListBox({ width: 288, height: 150, source: dataAdapter, displayMember: "Nombre", valueMember: "Id" });
+
+        $('.textarea-editor').summernote(
+        {
+            height: 150,                 // set editor height
+            width:740,
+            minHeight: null,             // set minimum height of editor
+            maxHeight: null,             // set maximum height of editor
+            focus: true,                  // set focus to editable area after initializing summernote
+            toolbar: [
+                ['style', ['style']],
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['fontname', ['fontname']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['insert', ['ltr', 'rtl']],
+                ['insert', ['table']],
+                //['insert', ['link', 'picture', 'video', 'hr']],
+                ['view', ['fullscreen', 'help']] //'codeview'
+            ]
+        });
+        //$("#content").summernote()
+        $('.dropdown-toggle').dropdown()
+        //
+    });
+</script>

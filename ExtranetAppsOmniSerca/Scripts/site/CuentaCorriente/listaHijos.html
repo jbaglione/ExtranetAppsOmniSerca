@@ -1,0 +1,60 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Comprobantes asociados a la OP {{$ctrl.model.NroOrdenPago}}</h3>
+</div>
+<div class="modal-body">
+    <form name="frmComprobantesOP" class="form-horizontal">
+        <div class="form-group">
+            <table class="table table-striped" ng-show="esEmpresa!=1">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col"><i>Tipo</i></th>
+                        <th scope="col"><i>Nro Comprobante</i></th>
+<!--
+                        <th scope="col"><i>Arba</i></th>
+                        <th scope="col"><i>Agip</i></th>
+                        <th scope="col"><i>Ganancias</i></th>
+                        <th scope="col"><i>Caja</i></th>
+                        <th scope="col"><i>Iva</i></th>
+-->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in $ctrl.model.CuentaCorrientes">
+                        <td>{{item.TipoComprobante}}</td>
+                        <td>{{item.NroComprobante}}</td>
+<!--
+                        <td>
+                            <div style="cursor: pointer;" ng-show="item.Arba"><span style="margin-left:34%;line-height:33px;" class="glyphicon glyphicon-download amarillo icon-right-margin big-icon"></span></div>
+                            <span style="margin-left:34%;line-height:33px" ng-hide="item.Arba"></span>
+                        </td>
+                        <td>
+                            <div style="cursor: pointer;" ng-show="item.Agip"><span style="margin-left:34%;line-height:33px;" class="glyphicon glyphicon-download rojo icon-right-margin big-icon"></span></div>
+                            <span style="margin-left:34%;line-height:33px" ng-hide="item.Agip"></span>
+                        </td>
+                        <td>
+                            <div style="cursor: pointer;" ng-show="item.Ganancias"><span style="margin-left:34%;line-height:33px;" class="glyphicon glyphicon-download verde icon-right-margin big-icon"></span></div>
+                            <span style="margin-left:34%;line-height:33px" ng-hide="item.Ganancias"></span>
+                        </td>
+                        <td>
+                            <div style="cursor: pointer;" ng-show="item.CajaPrevisional"><span style="margin-left:34%;line-height:33px;" class="glyphicon glyphicon-download naranja icon-right-margin big-icon"></span></div>
+                            <span style="margin-left:34%;line-height:33px" ng-hide="item.CajaPrevisional"></span>
+                        </td>
+                        <td>
+                            <div style="cursor: pointer;" ng-show="item.Iva"><span style="margin-left:34%;line-height:33px;" class="glyphicon glyphicon-download azul icon-right-margin big-icon"></span></div>
+                            <span style="margin-left:34%;line-height:33px" ng-hide="item.Iva"></span>
+                        </td>
+-->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-5"></div>
+            <div class="col-md-2">
+                <button class="btn btn-default btn-lg" style="width:100%;" ng-click="$ctrl.close({})">Cerrar</button>
+            </div>
+            <div class="col-md-5"></div>
+        </div>
+    </form>
+</div>

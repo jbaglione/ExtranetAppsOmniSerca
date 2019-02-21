@@ -1,0 +1,105 @@
+﻿<div class="container">
+	<div class="modal fade" id="calculoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<span class="modal-title">Apertura del cálculo</span>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-12">
+							<div id="grdCalculo"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade modal-full" id="comprobanteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<span class="modal-title">Comprobante</span>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-2"><i class="fa fa-cog fa-spin fa-5x"></i></div>
+						<div class="col-md-10 text-right">Consultando comprobante</div>
+					</div>
+					<input type="hidden" id="comprobanteID"/>
+					<button type="button" class="btn btn-info" onclick="descargaPDF()"><i class="fa fa-cloud-download"></i> Descargar</button><br />
+					<canvas id="the-canvas" style="border:1px solid black"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade modal-full" id="servicioModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<span class="modal-title">Servicio</span>
+				</div>
+				<div class="modal-body">
+					<input type="hidden" id="servicioID" />
+					<button type="button" class="btn btn-info" onclick="descargaServicio()"><i class="fa fa-cloud-download"></i> Descargar</button>
+					<ul class="bxslider"></ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title">Consultando</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-2"><i class="fa fa-cog fa-spin fa-5x"></i></div>
+						<div class="col-md-10 text-right">Consultando los servicios del comprobante</div>
+					</div>
+					 
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row" style="margin-top: 20px;" id="displayTabs">
+		<div class="col-md-12" style="margin-top: -10px">
+			<ul class="nav nav-tabs" id="tabsFacturacion">
+				<li id="liComprobantes" class="active"><a href="#comprobantes" data-toggle="tab">Comprobantes</a></li>
+				<li id="liServicios"><a href="#servicios" data-toggle="tab">Servicios</a></li>
+				<li class="fright">
+					<button data-original-title="descargar todas las órdenes de servicio" type="button" class="btn btn-info" onclick="descargaImagenes()" data-toggle="tooltip" data-placement="top" title="" style="width:110px;"><i class="fa fa-cloud-download"></i> Ordenes</button>
+					<button title="" data-placement="top" data-toggle="tooltip" onclick="descargaXLS()" class="btn btn-info" type="button" data-original-title="descarga completa con datos adicionales" style="width:110px;"><i class="fa fa-cloud-download"></i> Excel</button>
+				</li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane fade active in" id="comprobantes">
+					<div class="row">
+						<div class="col-md-12 ">
+							<div id="grdComprobantes"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="tab-pane fade" id="servicios">
+					<div class="row">
+						<div class="col-md-12">
+							<div id="grdServicios"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+@section scripts{
+<script src="~/Scripts/site/Facturacion/index.js"></script>
+<script src="~/Scripts/pdfjs/pdf.js"></script>
+<script src="~/Scripts/bxslider/jquery.bxslider.js"></script>
+}
+

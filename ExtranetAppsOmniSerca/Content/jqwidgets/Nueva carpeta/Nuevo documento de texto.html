@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title id='Description'>In this sample is illustrated the usage of the jqxListBox's
+        renderer function.</title>
+    <link rel="stylesheet" href="../../jqwidgets/styles/jqx.base.css" type="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1" />	
+    <!--<script type="text/javascript" src="../../scripts/jquery-1.11.1.min.js"></script>-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script type="text/javascript" src="../../jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxbuttons.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxsplitter.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxlistbox.js"></script>
+    <script type="text/javascript" src="../../jqwidgets/jqxdata.js"></script>
+    <!--<script type="text/javascript" src="../../scripts/demos.js"></script>-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //<i class="fa fa-camera-retro"></i> fa-camera-retro
+            //$("#splitter").jqxSplitter({  width: 600, height: 600, panels: [{ size: '40%'}] });
+            // prepare the data
+            var data = new Array();
+            var firstNames = ["Nancy Davolio", "Andrew Fuller", "Janet Leverling", "Margaret Peacock"];
+            var mailOpen = ["fa fa-envelope-open", "fa fa-envelope", "fa fa-envelope", "fa fa-envelope-open"];
+            var appOpen = ["fas fa-book-open", "fa fa-book", "fas fa-book-open", "fa fa-book"];
+            var k = 0;
+            for (var i = 0; i < firstNames.length; i++) {
+                var row = {};
+                row["firstname"] = firstNames[k];
+                row["mailOpen"] = mailOpen[k];
+                row["appOpen"] = appOpen[k];
+                data[i] = row;
+                k++;
+            }
+            var source =
+            {
+                localdata: data,
+                datatype: "array"
+            };
+            var dataAdapter = new $.jqx.dataAdapter(source);
+      
+            // Create jqxListBox
+            $('#listbox').jqxListBox({ selectedIndex: 0,  source: dataAdapter, displayMember: "firstname", itemHeight: 35, height: '100%', width: '100%',
+                renderer: function (index, label, value) {
+                    var datarecord = data[index];
+                    var classMailOpen = '<i class="' + datarecord.mailOpen + '"></i>';
+                    var classAppOpen = '<i class="' + datarecord.appOpen + '"></i>';
+                    var table = '<table style="min-width: 230px;"><tr><td>' + datarecord.firstname + '</td><td style="width: 20px;">' + classMailOpen + '</td><td style="width: 20px;">' + classAppOpen + '</td></tr></table>';
+                    return table;
+                }
+            });
+            
+        });
+    </script>
+</head>
+<body class='default'>
+
+            <div style="border: none;" id="listbox">
+            </div>
+
+</body>
+</html>
