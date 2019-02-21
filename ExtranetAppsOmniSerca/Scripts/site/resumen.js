@@ -45,6 +45,11 @@ $('#ftrMedicoResumen').on('select', function (event) {
 
 });
 
+$('#ftrPeriodoResumen').on('select', function (event) {
+    $('#ftrMedicoResumen').jqxDropDownList({ source: getSourceFiltroMedicos() });
+    $('#ftrCoordResumen').jqxDropDownList({ source: setSrcFtrCoordResumen() });
+});
+
 function getSelectedPeriodoResumen() {
     return $("#ftrPeriodoResumen").jqxDropDownList('getSelectedItem').value;
 }

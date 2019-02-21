@@ -194,9 +194,9 @@ namespace ExtranetAppsOmniSerca.Controllers
             try
             {
                 List<FiltroCoordinaciones> lstCoord = new List<FiltroCoordinaciones>();
-                //TODO: BORRAR
-                lstCoord.Add(new FiltroCoordinaciones(1, "descripcion"));
-                return Json(lstCoord, JsonRequestBehavior.AllowGet);
+                ////TODO: BORRAR
+                //lstCoord.Add(new FiltroCoordinaciones(1, "descripcion"));
+                //return Json(lstCoord, JsonRequestBehavior.AllowGet);
                 
                 WSContratadosLiquidaciones.ContratadosLiquidacionesSoapClient wsClient = new WSContratadosLiquidaciones.ContratadosLiquidacionesSoapClient();
                 DataSet dsCoordinaciones = wsClient.GetCoordinaciones(usr_id);
@@ -286,8 +286,6 @@ namespace ExtranetAppsOmniSerca.Controllers
                 {
                     lstMedicos = lstMedicos.Where(x => x.UsuarioID == usr_id).ToList();
                 }
-                //TODO: BORRAR
-                lstMedicos.Add(new Medico { UsuarioID = 1, Nombre= "yo" });
                 return Json(lstMedicos, JsonRequestBehavior.AllowGet);
             }
             catch (FaultException ex)

@@ -110,10 +110,8 @@ $('#ftrMedicoGuardias').on('select', function (event) {
 });
 
 $('#ftrEstadoGuardias, #ftrPeriodoGuardias').on('select', function (event) {
-
     $('#ftrMedicoGuardias').jqxDropDownList({ source: getSourceFiltroMedicos() });
     $('#ftrCoordGuardias').jqxDropDownList({ source: setSrcFtrCoordGuardias() });
-
 });
 
 /*********************************************************************************************************/
