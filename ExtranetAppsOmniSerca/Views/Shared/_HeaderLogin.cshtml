@@ -4,7 +4,7 @@
             <div class="clear-float" style="padding: 1em; margin-top: -45px;">
                 <a class="place-left" href="#" style="margin-top: 16px;">
                     @*ng-style="(mostrarAcciones) ? 'margin-top: 3.5em;' : 'margin-top: 0;'">*@
-                    <img src="~/Content/img/serca.png" alt="Logo Serca">
+                    <img src="~/Content/img/serca.png" alt="Logo Serca" style="height:65px !important; width:195px !important">
                 </a>
                 @if (System.Configuration.ConfigurationManager.AppSettings["SiteLocation"] == "Salta")
                 {
@@ -20,7 +20,7 @@
                 }
                 
                 <div class="place-right" ng-show="!mostrarAcciones">
-                    <img src="~/Content/img/ambulancia.png" alt="Ambulancia Serca" style="position: absolute; margin-top: -8.1em; margin-left: -15em; z-index: 1000;" id="ambulancia-serca">
+                    <img src="~/Content/img/ambulancia.png" alt="Ambulancia Serca" style="position: absolute; margin-top: -8.1em; margin-left: -15em; z-index: 1000; height:157px !important; width:200px !important" id="ambulancia-serca">
                 </div>
                 <div class="place-right" style="margin-top:-3.3em;" ng-show="mostrarAcciones">
                     <div class="tile-area-controls">

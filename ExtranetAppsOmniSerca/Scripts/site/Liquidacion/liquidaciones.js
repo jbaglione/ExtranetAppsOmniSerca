@@ -251,10 +251,13 @@
         var meses = $scope.acceso == 3 ? 6 : 4;
 
         for (var i = 0; i < meses; i++) {
-            $scope.data.periodos.push({
-                Descripcion: (date.getMonth() < 9 ? '0' : '') + (date.getMonth() + 1).toString() + '/' + date.getFullYear().toString(),
-                ID: date.getFullYear().toString() + (date.getMonth() < 9 ? '0' : '') + (date.getMonth() + 1).toString()
-            });
+            //TODO: Fix porque no hay datos previos, eliminar en 2020
+            if (date.getMonth() > 2 && date.getFullYear() > 2018) {
+                $scope.data.periodos.push({
+                    Descripcion: (date.getMonth() < 9 ? '0' : '') + (date.getMonth() + 1).toString() + '/' + date.getFullYear().toString(),
+                    ID: date.getFullYear().toString() + (date.getMonth() < 9 ? '0' : '') + (date.getMonth() + 1).toString()
+                });
+            }
             date.setMonth(date.getMonth() - 1);
         }
     }

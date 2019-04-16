@@ -296,11 +296,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\WSEmpleadosLiquidaciones\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Service References\WSNotificaciones\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -321,11 +316,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\WSProveedoresCuentas\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Service References\WSTercerosLiquidaciones\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -341,11 +331,6 @@
     <Compile Include="ViewModels\SessionData.cs" />
     <Compile Include="ViewModels\Login.cs" />
     <Compile Include="ViewModels\EmpleadoLiquidacion.cs" />
-    <Compile Include="Service References\WSVendedores\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="ViewModels\FiltroCoordinaciones.cs" />
     <Compile Include="ViewModels\FiltroMoviles.cs" />
     <Compile Include="ViewModels\FiltroPeriodos.cs" />
@@ -627,12 +612,10 @@
     <Content Include="Content\images\wp_check_white.png" />
     <Content Include="Content\img\404.gif" />
     <Content Include="Content\img\ambulancia.png" />
-    <Content Include="Content\img\deltamedic_f.jpg" />
     <Content Include="Content\img\error.png" />
-    <Content Include="Content\img\fundacion_f.jpg" />
     <Content Include="Content\img\paramedic-loader.gif" />
-    <Content Include="Content\img\paramedic.png" />
-    <Content Include="Content\img\paramedic_f.jpg" />
+    <Content Include="Content\img\serca.png" />
+    <Content Include="Content\img\serca_f.jpg" />
     <Content Include="Content\img\shaman_f.jpg" />
     <Content Include="Content\img\valid.png" />
     <Content Include="Content\jquery-ui\jquery-ui.min.css" />
@@ -1063,10 +1046,14 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\fonts\fontawesome-webfont.eot" />
     <Content Include="Content\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\fonts\FontAwesome.otf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
@@ -1187,7 +1174,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\WSContratadosLiquidaciones\WebServices.wsdl" />
-    <None Include="Service References\WSEmpleadosLiquidaciones\WebServices1.wsdl" />
     <None Include="Service References\WSNotificaciones\WebServices.wsdl" />
     <None Include="Service References\WSOperativaClientes\WebServices.wsdl" />
     <None Include="Service References\WSProduccionContratadosLiquidaciones\configuration91.svcinfo" />
@@ -1214,27 +1200,10 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Service References\WSProveedoresCuentas\WebServices.wsdl">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSProveedoresCuentas\configuration91.svcinfo">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\WSProveedoresCuentas\configuration.svcinfo" />
-    <None Include="Service References\WSProveedoresCuentas\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Service References\WSShamanFecae\WSShamanFECAE.wsdl" />
     <None Include="Service References\WSTercerosLiquidaciones\configuration91.svcinfo" />
     <None Include="Service References\WSTercerosLiquidaciones\configuration.svcinfo" />
     <None Include="Service References\WSTercerosLiquidaciones\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\WSEmpleadosLiquidaciones\configuration91.svcinfo" />
-    <None Include="Service References\WSEmpleadosLiquidaciones\configuration.svcinfo" />
-    <None Include="Service References\WSEmpleadosLiquidaciones\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -1245,16 +1214,9 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Service References\WSTercerosLiquidaciones\WebServices1.wsdl" />
-    <None Include="Service References\WSVendedores\WebServices1.wsdl" />
     <None Include="Service References\WSWebApps\configuration91.svcinfo" />
     <None Include="Service References\WSWebApps\configuration.svcinfo" />
     <None Include="Service References\WSWebApps\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\WSVendedores\configuration91.svcinfo" />
-    <None Include="Service References\WSVendedores\configuration.svcinfo" />
-    <None Include="Service References\WSVendedores\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -1352,15 +1314,12 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\WSClientesDocumentos\" />
     <WCFMetadataStorage Include="Service References\WSContratadosLiquidaciones\" />
-    <WCFMetadataStorage Include="Service References\WSEmpleadosLiquidaciones\" />
     <WCFMetadataStorage Include="Service References\WSNotificaciones\" />
     <WCFMetadataStorage Include="Service References\WSOperativaClientes\" />
     <WCFMetadataStorage Include="Service References\WSProduccionContratadosLiquidaciones\" />
     <WCFMetadataStorage Include="Service References\WSProduccionOperativaClientes\" />
-    <WCFMetadataStorage Include="Service References\WSProveedoresCuentas\" />
     <WCFMetadataStorage Include="Service References\WSShamanFecae\" />
     <WCFMetadataStorage Include="Service References\WSTercerosLiquidaciones\" />
-    <WCFMetadataStorage Include="Service References\WSVendedores\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

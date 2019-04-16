@@ -287,71 +287,73 @@ namespace ExtranetAppsOmniSerca.Helpers
 
         public static bool SetComprobante(Factura value, long usr_id,out string error)
         {
-            var wsClient = GetProveedoresCuentasWS();
+            //TODO: WS no existe
+            //var wsClient = GetProveedoresCuentasWS();
             error = "";
-            try
-            {
-                wsClient.Open();
-                DataSet dsResult = wsClient.SetComprobante(value.ID, value.CAE, value.Fecha.FormatedDateToAnsi(), value.Tipo, value.Numero, value.Monto, usr_id);
-                wsClient.Abort();
-                if (!string.IsNullOrEmpty(dsResult.Tables[0].Rows[0][1] as string)){
-                    error = dsResult.Tables[0].Rows[0][1] as string;
-                    return false;
-                }
-                return true;
-            }
-            catch (SoapException ex)
-            {
-                error = ex.Message;
-                logger.Error(ex);
-            }
-            catch (FaultException ex)
-            {
-                error = ex.Message;
-                logger.Error(ex);
-                logger.Error(UltimaRespuesta);
-            }
-            catch (Exception ex)
-            {
-            error = ex.Message;
-                logger.Error(ex);
-            }
+            //try
+            //{
+            //    wsClient.Open();
+            //    DataSet dsResult = wsClient.SetComprobante(value.ID, value.CAE, value.Fecha.FormatedDateToAnsi(), value.Tipo, value.Numero, value.Monto, usr_id);
+            //    wsClient.Abort();
+            //    if (!string.IsNullOrEmpty(dsResult.Tables[0].Rows[0][1] as string)){
+            //        error = dsResult.Tables[0].Rows[0][1] as string;
+            //        return false;
+            //    }
+            //    return true;
+            //}
+            //catch (SoapException ex)
+            //{
+            //    error = ex.Message;
+            //    logger.Error(ex);
+            //}
+            //catch (FaultException ex)
+            //{
+            //    error = ex.Message;
+            //    logger.Error(ex);
+            //    logger.Error(UltimaRespuesta);
+            //}
+            //catch (Exception ex)
+            //{
+            //error = ex.Message;
+            //    logger.Error(ex);
+            //}
                 return false;
         }
 
 
         public static bool SetComprobanteV2(Factura value, long usr_id, out string error)
         {
-            WSProveedoresCuentas.ProveedoresCuentasSoapClient wsClient = GetProveedoresCuentasWS();
+            //TODO: WS no existe
+            //WSProveedoresCuentas.ProveedoresCuentasSoapClient wsClient = GetProveedoresCuentasWS();
             error = "";
-            try
-            {
-                wsClient.Open();
-                DataSet dsResult = wsClient.SetComprobanteV2(value.NroOP, value.Tipo, value.Numero, value.Fecha.FormatedDateToAnsi(), value.CAE, value.Monto, usr_id);
-                wsClient.Close();
-                if (!string.IsNullOrEmpty(dsResult.Tables[0].Rows[0][1] as string))
-                {
-                    error = dsResult.Tables[0].Rows[0][1] as string;
-                    return false;
-                }
-                return true;
-            }
-            catch (SoapException ex)
-            {
-                error = ex.Message;
-                logger.Error(ex);
-            }
-            catch (FaultException ex)
-            {
-                error = ex.Message;
-                logger.Error(ex);
-                logger.Error(UltimaRespuesta);
-            }
-            catch (Exception ex)
-            {
-                error = ex.Message;
-                logger.Error(ex);
-            }
+            //try
+            //{
+            //    wsClient.Open();
+            //    DataSet dsResult = wsClient.SetComprobanteV2(value.NroOP, value.Tipo, value.Numero, value.Fecha.FormatedDateToAnsi(), value.CAE, value.Monto, usr_id);
+            //    wsClient.Close();
+            //    if (!string.IsNullOrEmpty(dsResult.Tables[0].Rows[0][1] as string))
+            //    {
+            //        error = dsResult.Tables[0].Rows[0][1] as string;
+            //        return false;
+            //    }
+            //    return true;
+            //}
+            //catch (SoapException ex)
+            //{
+            //    error = ex.Message;
+            //    logger.Error(ex);
+            //}
+            //catch (FaultException ex)
+            //{
+            //    error = ex.Message;
+            //    logger.Error(ex);
+            //    logger.Error(UltimaRespuesta);
+            //}
+            //catch (Exception ex)
+            //{
+            //    error = ex.Message;
+            //    logger.Error(ex);
+            //}
             return false;
         }
 
@@ -402,12 +404,14 @@ namespace ExtranetAppsOmniSerca.Helpers
             //wsClient.Endpoint.Behaviors.Add(new MyFaultLogger());
             try
             {
-                WSProveedoresCuentas.ProveedoresCuentasSoapClient wsClient = new WSProveedoresCuentas.ProveedoresCuentasSoapClient();
-                wsClient.Open();
-                DataSet ds = wsClient.GetCuentaCorrienteV2(usr_id);
-                //DataSet dsResult = wsClient.GetCuentaCorrienteV2(usr_id); //.GetCuentaCorriente(usr_id);
-                wsClient.Close();
-                return ds.Tables[0];
+                //TODO: WS no existe
+                //WSProveedoresCuentas.ProveedoresCuentasSoapClient wsClient = new WSProveedoresCuentas.ProveedoresCuentasSoapClient();
+                //wsClient.Open();
+                //DataSet ds = wsClient.GetCuentaCorrienteV2(usr_id);
+                ////DataSet dsResult = wsClient.GetCuentaCorrienteV2(usr_id); //.GetCuentaCorriente(usr_id);
+                //wsClient.Close();
+                //return ds.Tables[0];
+                return null;
             }
             catch (SoapException ex)
             {
@@ -429,11 +433,13 @@ namespace ExtranetAppsOmniSerca.Helpers
         {
             try
             {
-                WSProveedoresCuentas.ProveedoresCuentasSoapClient wsClient = new WSProveedoresCuentas.ProveedoresCuentasSoapClient();
-                wsClient.Open();
-                DataSet ds = wsClient.GetProveedores();
-                wsClient.Close();
-                return ds.Tables[0];
+                return null;
+                //TODO: WS no existe
+                //WSProveedoresCuentas.ProveedoresCuentasSoapClient wsClient = new WSProveedoresCuentas.ProveedoresCuentasSoapClient();
+                //wsClient.Open();
+                //DataSet ds = wsClient.GetProveedores();
+                //wsClient.Close();
+                //return ds.Tables[0];
             }
             catch (SoapException ex)
             {
@@ -464,12 +470,12 @@ namespace ExtranetAppsOmniSerca.Helpers
         }
 
 
-        public static WSProveedoresCuentas.ProveedoresCuentasSoapClient GetProveedoresCuentasWS()
-        {
-            var ws = new WSProveedoresCuentas.ProveedoresCuentasSoapClient();
-            ws.Endpoint.Behaviors.Add(new MyFaultLogger());
-            return ws;
-        }
+        //public static WSProveedoresCuentas.ProveedoresCuentasSoapClient GetProveedoresCuentasWS()
+        //{
+        //    var ws = new WSProveedoresCuentas.ProveedoresCuentasSoapClient();
+        //    ws.Endpoint.Behaviors.Add(new MyFaultLogger());
+        //    return ws;
+        //}
 
         public static WSNotificaciones.NotificacionesSoapClient GetNotificacionesWS()
         {

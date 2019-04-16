@@ -163,42 +163,43 @@ namespace ExtranetAppsOmniSerca.Controllers
         }
         public bool validarUsuario(long usr)
         {
-            try
-            {
-                var wsClient = ServiceHelper.GetProveedoresCuentasWS();
-                wsClient.Open();
-                DataTable dtUsuario = wsClient.GetUsuarioValidacion(usr).Tables[0];
-                wsClient.Abort();
-                // 1,2 receptor
-                // 3 administrador
-                //dtUsuario.Rows[0]["Acceso"] = 3;
-                if (Convert.ToInt32(dtUsuario.Rows[0]["Acceso"]) == 0)
-                {
-                    return false;
-                }
-                else
-                {
-                    Session["usr_id"] = usr;
-                    Session["UserName"] = dtUsuario.Rows[0]["NombreUsuario"].ToString();
-                    Session["Acceso"] = Convert.ToInt32(dtUsuario.Rows[0]["Acceso"]);
-                    Session["FacturaSinOP"] = Convert.ToInt32(dtUsuario.Rows[0]["FacturaSinOP"]);
-                    Session["ProveedorTangoDefaultId"] = dtUsuario.Rows[0]["ProveedorTangoDefaultId"].ToString();
-                    return true;
-                }
-            }
-            catch (SoapException ex)
-            {
-                logger.Error(ex);
-            }
-            catch (FaultException ex)
-            {
-                logger.Error(ex);
-                logger.Error (ServiceHelper.UltimaRespuesta);
-            }
-            catch (Exception ex)
-            {
-                logger.Error(ex);
-            }
+            //TODO: WS no existe
+            //try
+            //{
+            //    var wsClient = ServiceHelper.GetProveedoresCuentasWS();
+            //    wsClient.Open();
+            //    DataTable dtUsuario = wsClient.GetUsuarioValidacion(usr).Tables[0];
+            //    wsClient.Abort();
+            //    // 1,2 receptor
+            //    // 3 administrador
+            //    //dtUsuario.Rows[0]["Acceso"] = 3;
+            //    if (Convert.ToInt32(dtUsuario.Rows[0]["Acceso"]) == 0)
+            //    {
+            //        return false;
+            //    }
+            //    else
+            //    {
+            //        Session["usr_id"] = usr;
+            //        Session["UserName"] = dtUsuario.Rows[0]["NombreUsuario"].ToString();
+            //        Session["Acceso"] = Convert.ToInt32(dtUsuario.Rows[0]["Acceso"]);
+            //        Session["FacturaSinOP"] = Convert.ToInt32(dtUsuario.Rows[0]["FacturaSinOP"]);
+            //        Session["ProveedorTangoDefaultId"] = dtUsuario.Rows[0]["ProveedorTangoDefaultId"].ToString();
+            //        return true;
+            //    }
+            //}
+            //catch (SoapException ex)
+            //{
+            //    logger.Error(ex);
+            //}
+            //catch (FaultException ex)
+            //{
+            //    logger.Error(ex);
+            //    logger.Error (ServiceHelper.UltimaRespuesta);
+            //}
+            //catch (Exception ex)
+            //{
+            //    logger.Error(ex);
+            //}
             return false;
 
         }
