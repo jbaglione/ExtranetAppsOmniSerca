@@ -11,6 +11,7 @@ namespace ExtranetAppsOmniSerca.Models
         public string Fecha { get; set; }
         public string NroInc { get; set; }
         public string Iva { get; set; }
+        public string Cliente { get; set; }
         public string Paciente { get; set; }
         public string Localidad { get; set; }
         public string Cdn { get; set; }

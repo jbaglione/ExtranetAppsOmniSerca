@@ -687,6 +687,7 @@ namespace ExtranetAppsOmniSerca.Controllers
                 servicio.NroInc = dtRow["NroIncidente"].ToString();
                 servicio.Fecha = getGuardiaFechaFormatted(fecInc, 1);
                 servicio.Iva = dtRow["Iva"].ToString();
+                servicio.Cliente = dtRow["Cliente"].ToString();
                 servicio.Paciente = dtRow["Paciente"].ToString();
                 servicio.Localidad = dtRow["Localidad"].ToString();
                 servicio.Cdn = dtRow["Cdn"].ToString();

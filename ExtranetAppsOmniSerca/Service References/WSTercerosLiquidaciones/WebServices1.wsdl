@@ -129,6 +129,20 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GetPeriodos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" name="pIsEmp" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPeriodosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element name="GetPeriodosResult" type="s0:DataSet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GetResumen">
         <s:complexType>
           <s:sequence>
@@ -258,6 +272,7 @@
             <s:element minOccurs="0" name="pLiqId" type="s:long" />
             <s:element minOccurs="0" name="pInc" type="s:long" />
             <s:element minOccurs="0" name="pUsr" type="s:long" />
+            <s:element minOccurs="0" name="pEnt" type="s:long" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -336,6 +351,12 @@
   </wsdl:message>
   <wsdl:message name="GetMovilesSoapOut">
     <wsdl:part name="parameters" element="s0:GetMovilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPeriodosSoapIn">
+    <wsdl:part name="parameters" element="s0:GetPeriodos" />
+  </wsdl:message>
+  <wsdl:message name="GetPeriodosSoapOut">
+    <wsdl:part name="parameters" element="s0:GetPeriodosResponse" />
   </wsdl:message>
   <wsdl:message name="GetResumenSoapIn">
     <wsdl:part name="parameters" element="s0:GetResumen" />
@@ -429,6 +450,10 @@
     <wsdl:operation name="GetMoviles">
       <wsdl:input message="s0:GetMovilesSoapIn" />
       <wsdl:output message="s0:GetMovilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPeriodos">
+      <wsdl:input message="s0:GetPeriodosSoapIn" />
+      <wsdl:output message="s0:GetPeriodosSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GetResumen">
       <wsdl:input message="s0:GetResumenSoapIn" />
@@ -538,6 +563,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetMoviles">
       <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.GetMoviles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPeriodos">
+      <soap:operation soapAction="http://tempuri.org/WebServices.TercerosLiquidaciones.GetPeriodos" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

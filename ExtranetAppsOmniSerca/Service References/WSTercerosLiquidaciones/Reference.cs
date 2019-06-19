@@ -48,6 +48,10 @@ namespace ExtranetAppsOmniSerca.WSTercerosLiquidaciones {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataSet GetMoviles(long pUsr, long pAcc, long pPer, long pEst);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WebServices.TercerosLiquidaciones.GetPeriodos", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetPeriodos(long pIsEmp);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WebServices.TercerosLiquidaciones.GetResumen", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataSet GetResumen(long pLiqId);
@@ -82,7 +86,7 @@ namespace ExtranetAppsOmniSerca.WSTercerosLiquidaciones {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WebServices.TercerosLiquidaciones.SetOrdenServicio", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet SetOrdenServicio(long pLiqId, long pInc, long pUsr);
+        System.Data.DataSet SetOrdenServicio(long pLiqId, long pInc, long pUsr, long pEnt);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/WebServices.TercerosLiquidaciones.SetRespuesta", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -148,6 +152,10 @@ namespace ExtranetAppsOmniSerca.WSTercerosLiquidaciones {
             return base.Channel.GetMoviles(pUsr, pAcc, pPer, pEst);
         }
         
+        public System.Data.DataSet GetPeriodos(long pIsEmp) {
+            return base.Channel.GetPeriodos(pIsEmp);
+        }
+        
         public System.Data.DataSet GetResumen(long pLiqId) {
             return base.Channel.GetResumen(pLiqId);
         }
@@ -180,8 +188,8 @@ namespace ExtranetAppsOmniSerca.WSTercerosLiquidaciones {
             return base.Channel.SetConformidad(pLiqId, pFec, pNro, pRpl, pCnf, pMot, pDif, pLiq, pNue, pObs, pUsr);
         }
         
-        public System.Data.DataSet SetOrdenServicio(long pLiqId, long pInc, long pUsr) {
-            return base.Channel.SetOrdenServicio(pLiqId, pInc, pUsr);
+        public System.Data.DataSet SetOrdenServicio(long pLiqId, long pInc, long pUsr, long pEnt) {
+            return base.Channel.SetOrdenServicio(pLiqId, pInc, pUsr, pEnt);
         }
         
         public System.Data.DataSet SetRespuesta(long pLiqId, long pFec, string pNro, long pSta, string pRta, long pUsr) {

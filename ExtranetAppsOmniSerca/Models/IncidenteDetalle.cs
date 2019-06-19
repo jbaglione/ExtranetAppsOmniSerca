@@ -40,8 +40,8 @@ namespace ExtranetAppsOmniSerca.Models
             Motivo = dr["Motivo"].ToString();
             Importe = Convert.ToDecimal(dr["Importe"].ToString());
             CoPago = Convert.ToDecimal(dr["CoPago"].ToString());
-            HorDespacho = Convert.ToDateTime(dr["HorDespacho"].ToString());
-            HorLlegada = Convert.ToDateTime(dr["HorLlegada"].ToString());
+            HorDespacho = ConvertToDateTimeSecure(dr["HorDespacho"]);
+            HorLlegada = ConvertToDateTimeSecure(dr["HorLlegada"]);
             IncidenteCalculoList = new List<IncidenteCalculo>();
             if (dtCalculo != null)
                 foreach (DataRow drCalculo in dtCalculo.Rows)
@@ -65,6 +65,18 @@ namespace ExtranetAppsOmniSerca.Models
                 } while (i < Edad.Length - 1);
             }
 
+        }
+
+        private DateTime ConvertToDateTimeSecure(object cell)
+        {
+            DateTime output = DateTime.Now;
+
+            DateTime limitExpiryDate;
+
+            if (cell != DBNull.Value && DateTime.TryParse(cell.ToString(), out limitExpiryDate))
+                output = limitExpiryDate;
+
+            return output;
         }
     }
 }

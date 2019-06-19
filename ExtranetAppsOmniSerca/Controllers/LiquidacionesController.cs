@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using ExtranetAppsOmniSerca.ViewModels;
 using System.Text;
 using Ionic.Zip;
+using ParamedicMedicosPrestaciones.Models;
 
 namespace ExtranetAppsOmniSerca.Controllers
 {
@@ -223,6 +224,24 @@ namespace ExtranetAppsOmniSerca.Controllers
             return Json(lstMotivoReclamo, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult GetPeriodos()
+        {
+            WSTercerosLiquidaciones.TercerosLiquidacionesSoapClient wsClient = new WSTercerosLiquidaciones.TercerosLiquidacionesSoapClient();
+            wsClient.Open();
+            DataSet ds = wsClient.GetPeriodos(Convert.ToInt32(EsEmpresa()));
+            wsClient.Close();
+
+            List<Periodo> lstPeriodo = new List<Periodo>();
+            //List<string> lstPeriodoStr = new List<string>();
+            foreach (DataRow item in ds.Tables[0].Rows)
+            {
+                Periodo per = new Periodo(item);
+                lstPeriodo.Add(per);
+                //lstPeriodoStr.Add(per.PeriodoStr);
+            }
+            return Json(lstPeriodo, JsonRequestBehavior.AllowGet);
+        }
+
         public JsonResult GetIncidenteDetalle(string pItmLiq, long pLiqId, long pInc)
         {
             WSTercerosLiquidaciones.TercerosLiquidacionesSoapClient wsClient = new WSTercerosLiquidaciones.TercerosLiquidacionesSoapClient();
@@ -336,7 +355,7 @@ namespace ExtranetAppsOmniSerca.Controllers
                 long pUsr = Convert.ToInt32(Session["usr_id"]);
                 WSTercerosLiquidaciones.TercerosLiquidacionesSoapClient wsClient = new WSTercerosLiquidaciones.TercerosLiquidacionesSoapClient();
                 wsClient.Open();
-                DataSet ds = wsClient.SetOrdenServicio(pLiqId, IncidenteId, pUsr);
+                DataSet ds = wsClient.SetOrdenServicio(pLiqId, IncidenteId, pUsr, 1);
                 wsClient.Close();
                 if (ds.Tables[0].Rows[0]["Resultado"].ToString() == "0")
                 {

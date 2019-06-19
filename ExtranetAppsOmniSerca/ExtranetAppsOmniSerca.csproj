@@ -226,6 +226,7 @@
     <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Helpers\ServiceHelper.cs" />
     <Compile Include="Helpers\SoapHelper.cs" />
+    <Compile Include="Models\Periodo.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\ClientesLicencia.cs" />
     <Compile Include="Models\DatosAdministrativos.cs" />

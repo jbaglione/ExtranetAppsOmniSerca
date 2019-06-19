@@ -242,25 +242,19 @@
     }, function errorCallback(response) {
         console.log(response);
     });
+
     //Obtengo los periodos para el combo
     $scope.GetPeriodos = function () {
-        debugger;
-        var date = new Date();
-        $scope.data.periodos = [];
-
-        var meses = $scope.acceso == 3 ? 6 : 4;
-
-        for (var i = 0; i < meses; i++) {
-            //TODO: Fix porque no hay datos previos, eliminar en 2020
-            if (date.getMonth() > 2 && date.getFullYear() > 2018) {
-                $scope.data.periodos.push({
-                    Descripcion: (date.getMonth() < 9 ? '0' : '') + (date.getMonth() + 1).toString() + '/' + date.getFullYear().toString(),
-                    ID: date.getFullYear().toString() + (date.getMonth() < 9 ? '0' : '') + (date.getMonth() + 1).toString()
-                });
-            }
-            date.setMonth(date.getMonth() - 1);
-        }
+        $http({
+            method: 'GET',
+            url: '/liquidaciones/GetPeriodos'
+        }).then(function successCallback(response) {
+            $scope.data.periodos = response.data;
+        }, function errorCallback(response) {
+            console.log(response);
+        });
     }
+
     //Obtengo los Móviles
     $scope.GetMoviles = function (pPeriodoDesOriginal) {
         $http({
